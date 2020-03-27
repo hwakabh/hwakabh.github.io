@@ -38,7 +38,7 @@
 
       <div class="profile">
         <img src="{% static 'intro/assets/img/profile-img.jpg' %}" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">@hwakabh</a></h1>
+        <h1 class="text-light"><a href="{% url 'home' %}">@hwakabh</a></h1>
         <div class="social-links mt-3 text-center">
           <a href="https://github.com/hwakabh" class="gitub"><i class="bx bxl-github"></i></a>
           <a href="https://twitter.com/hwakabh" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -52,11 +52,10 @@
         <ul>
           <li class="active"><a href="#hero"><i class="bx bx-home"></i> <span>Home</span></a></li>
           <li><a href="#about"><i class="bx bx-user"></i> <span>Biography</span></a></li>
-          <li><a href="#skills"><i class="bx bx-file-blank"></i> <span>Projects</span></a></li>
-          <li><a href="#portfolio"><i class="bx bx-book-content"></i> <span>Personal Works</span></a></li>
-          <li><a href="https://medium.com/@hwakabh"><i class="bx bx-server"></i> Blogs</a></li>
+          <li><a href="#projects"><i class="bx bx-file-blank"></i> <span>Projects</span></a></li>
+          <li><a href="#portfolio"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
+          <li><a href="#blogs"><i class="bx bx-server"></i> Blogs</a></li>
           <li><a href="#contact"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-
         </ul>
       </nav><!-- .nav-menu -->
       <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
@@ -64,233 +63,12 @@
     </div>
   </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      <h1>Hiroyuki Wakabayashi</h1>
-      <p><span class="typed" data-typed-items="Engineer, Consultant, Freelancer"></span></p>
-    </div>
-  </section><!-- End Hero -->
-
-  {% block content %}
 
   <main id="main">
-
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Biography</h2>
-          <p>
-            <strong>Software Engineer / Backends, Server-side</strong><br>
-            ### {{ msg }}</br>
-            Worked as Delivery Specialist for 3+ years. Experienced implementations and customizations with DellEMC storages and servers.<br>
-            Developed web-based applications mainly with Python and Django for IT infrastructure.<br>
-            Installed and configured the products with efficiency, using programming and technology skills.<br>
-            Handled troubleshooting of high-severity cases with customer and global development/support team.<br>
-            Experienced to collaborations with customers and made readiness of OSS solutions.
-          </p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3>About</h3>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="icofont-rounded-right"></i> <strong>Birthday:</strong> 1991 / 10 /24 </li>
-                  <li><i class="icofont-rounded-right"></i> <strong>Nationality:</strong> Japan</li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="icofont-rounded-right"></i> <strong>City:</strong> Tokyo, Japan</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>Email:</strong> hrykwkbys1024@gmail.com</li>
-                </ul>
-              </div>
-            </div>
-
-            <h3>Skills</h3>
-              <ul>
-                <li><i class="icofont-rounded-right"></i> <strong>Programming Languages:</strong> Python, ShellScript, PowerShell</li>
-                <li><i class="icofont-rounded-right"></i> <strong>Operating Systems:</strong> Linux(RHEL / CentOS / ArchLinux), Windows Server, OSX </li>
-                <li><i class="icofont-rounded-right"></i> <strong>Infrastrucutre Platforms:</strong> vSphere, OpenStack </li>
-                <li><i class="icofont-rounded-right"></i> <strong>Application Platforms:</strong> GCP, Pivotal Cloud Fundry, Docker</li>
-                <li><i class="icofont-rounded-right"></i> <strong>Databases:</strong> RDBMS(PostgreSQL / MySQL / MariaDB / SQLite3), NoSQL(MongoDB / InfluxDB)</li>
-              </ul>
-            <h3>Qualifications</h3>
-              <ul>
-                <li><i class="icofont-rounded-right"></i> <strong>2019:</strong> Certificated Kubernetes Application Developer (CKAD)</li>
-                <li><i class="icofont-rounded-right"></i> <strong>2019:</strong> VMware Certified Professional 6 Data Center Virtualization (VCP-DCV 6.5)</li>
-                <li><i class="icofont-rounded-right"></i> <strong>2016:</strong> VMware Certified Professional 5 Data Center Virtualization (VCP-DCV 5.5)</li>
-                <li><i class="icofont-rounded-right"></i> <strong>2015:</strong> TOEIC 730</li>
-                <li><i class="icofont-rounded-right"></i> <strong>2015:</strong> EMC e-Proven Information Storage Associate v2 (EMCISA)</li>
-                <li><i class="icofont-rounded-right"></i> <strong>2015:</strong> Fundamental Information Technology Engineer Examination</li>
-              </ul>
-            <h3>Career & Educations</h3>
-              <ul>
-                <li><i class="icofont-rounded-right"></i> <strong>2019/06 - </strong> Technical Consultant, Professional Service Organization @VMware</li>
-                <li><i class="icofont-rounded-right"></i> <strong>2017/01 - 2019/06</strong> Senior Analyst, Delivery Specialist @EMC Japan</li>
-                <li><i class="icofont-rounded-right"></i> <strong>2015/04 - 2017/01</strong> Analyst, Associate Delivery Specialist @EMC Japan</li>
-                <li><i class="icofont-rounded-right"></i> <strong>2011/04 - 2015/03</strong> Bachelor’s degree, Econometrics and Quantitative Economics @Waseda Univ, Tokyo, Japan</li>
-              </ul>
-
-          </div>
-        </div>
-      </div>
-    </section><!-- End About Section -->
-
-    <!-- ======= Skills Section ======= -->
-    <section id="skills" class="skills section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Projects</h2>
-          <p>Detailed descriptions of each projects</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12">
-            <h2>Project-Alpha</h2>
-            <p>Some description here</p>
-            <h2>Project-Alpha</h2>
-            <p>Some description here</p>
-            <h2>Project-Alpha</h2>
-            <p>Some description here</p>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Skills Section -->
-
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Personal Works</h2>
-          <p>Detailed descriptions of each works</p>
-        </div>
-
-        <div class="row" data-aos="fade-up">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">Musics</li>
-              <li data-filter=".filter-web">Web</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="{% static 'intro/assets/img/portfolio/portfolio-1.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="{% static 'intro/assets/img/portfolio/portfolio-1.jpg' %}" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>
-                <a href="https://github.com/hwakabh/sonic-pi-examples/blob/master/hello_sonic_pi.rb" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="{% static 'intro/assets/img/portfolio/portfolio-2.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="{% static 'intro/assets/img/portfolio/portfolio-2.jpg' %}" data-gall="portfolioGallery" class="venobox" title="Bennu Official"><i class="bx bx-plus"></i></a>
-                <a href="https://bennu-official-hp.herokuapp.com/home/" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="{% static 'intro/assets/img/portfolio/portfolio-3.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="{% static 'intro/assets/img/portfolio/portfolio-3.jpg' %}" data-gall="portfolioGallery" class="venobox" title="App 2"><i class="bx bx-plus"></i></a>
-                <a href="#" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div> -->
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="{% static 'intro/assets/img/portfolio/portfolio-4.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="{% static 'intro/assets/img/portfolio/portfolio-4.jpg' %}" data-gall="portfolioGallery" class="venobox" title="Web 2"><i class="bx bx-plus"></i></a>
-                <a href="#" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Portfolio Section -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Contact</h2>
-          <p>
-            Some contact forms to My Gmail<br>
-            Some contact forms to My Gmail<br>
-            Some contact forms to My Gmail<br>
-            Some contact forms to My Gmail<br>
-            Some contact forms to My Gmail<br>
-            Some contact forms to My Gmail<br>
-            Some contact forms to My Gmail<br>
-          </p>
-        </div>
-
-        <div class="row" data-aos="fade-in">
-
-          <div class="col-lg-12 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="" method="post" role="form" class="php-email-form">
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="name">Your Name</label>
-                  <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                  <div class="validate"></div>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="name">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
-                  <div class="validate"></div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="name">Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                <div class="validate"></div>
-              </div>
-              <div class="form-group">
-                <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
-                <div class="validate"></div>
-              </div>
-              <div class="mb-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Compose email</button></div>
-            </form>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Contact Section -->
-
+  {% block content %}
+  {% endblock %}
   </main><!-- End #main -->
 
-  {% endblock %}
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
@@ -308,7 +86,7 @@
     </div>
   </footer><!-- End  Footer -->
 
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+  <a href="#hero" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="{% static 'intro/assets/vendor/jquery/jquery.min.js' %}"></script>

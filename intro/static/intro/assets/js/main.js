@@ -102,8 +102,8 @@
     time: 1000
   });
 
-  // Skills section
-  $('.skills-content').waypoint(function() {
+  // projects section
+  $('.projects-content').waypoint(function() {
     $('.progress .progress-bar').each(function() {
       $(this).css("width", $(this).attr("aria-valuenow") + '%');
     });
