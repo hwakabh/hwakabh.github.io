@@ -18,11 +18,7 @@
         <h2>Biography</h2>
         <p>
           <strong>Software Engineer / Backends, Server-side</strong><br>
-          Worked as Delivery Specialist for 3+ years. Experienced implementations and customizations with DellEMC storages and servers.<br>
-          Developed web-based applications mainly with Python and Django for IT infrastructure.<br>
-          Installed and configured the products with efficiency, using programming and technology projects.<br>
-          Handled troubleshooting of high-severity cases with customer and global development/support team.<br>
-          Experienced to collaborations with customers and made readiness of OSS solutions.
+          Some brief introductions of myself
         </p>
       </div>
 
@@ -81,17 +77,25 @@
 
       <div class="section-title">
         <h2>Projects</h2>
-        <p>Detailed descriptions of each projects</p>
+        <p>
+          Worked as Delivery Specialist for 3+ years. Experienced implementations and customizations with DellEMC storages and servers.<br>
+          Developed web-based applications mainly with Python and Django for IT infrastructure.<br>
+          Installed and configured the products with efficiency, using programming and technology projects.<br>
+          Handled troubleshooting of high-severity cases with customer and global development/support team.<br>
+          Experienced to collaborations with customers and made readiness of OSS solutions.
+        </p>
       </div>
 
       <div class="row">
-        <div class="col-lg-12">
-          <h2>Project-Alpha</h2>
-          <p>Some description here</p>
-          <h2>Project-Alpha</h2>
-          <p>Some description here</p>
-          <h2>Project-Alpha</h2>
-          <p>Some description here</p>
+        <div class="col-lg-12 content">
+          {% for item in projects %}
+            <h3>{{ item.name }}</h3>
+            <ul>
+            <li><i class="icofont-rounded-right"></i> <strong>{{ item.start }} - {{ item.end }}</strong></li>
+            <li><i class="icofont-rounded-right"></i> {{ item.description | linebreaksbr }}</li>
+            </ul>
+          {% endfor %}
+          <br>
         </div>
       </div>
 
