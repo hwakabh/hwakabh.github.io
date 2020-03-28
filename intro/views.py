@@ -5,7 +5,6 @@ from django.views.generic import TemplateView
 
 # Landing page
 class HomeTemplateView(TemplateView):
-    # [Home]Landing Picture
     template_name = 'intro/home.html'
 
     def get_context_data(self, **kwargs):
