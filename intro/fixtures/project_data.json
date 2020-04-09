@@ -1,0 +1,24 @@
+[
+  {
+    "model": "intro.Project",
+    "pk": "1",
+    "fields": {
+      "name": "Server OS Installation for Public Cloud Corp",
+      "start": "2015-09-01",
+      "end": "2016-04-01",
+      "description": "Joining after as new graduates to EMC, engaged to build system of auto-deployment of 100+ OS Installation(ESXi).\nOptimized Server operations (ESXi auto-Installation and configuration) with open-sourced software and scripting auto installation programs.\nUsing with PXE-Booting technology, Linux Kickstarting installtion, and custom PowerCLI scripts, reduced the TCO of OS deployment and configurations.\nAs the result of the automation, decreased lead-time and cost of server implementation from 30h to 5h total.",
+      "stacks": "Linux(RHEL, CentOS), ESXi\nKnowledge for automated OS installation(DHCP/DNS/TFTP/HTTP, KickStart, PXE)\nVirtualization platform(vSphere) and its administration tool(Web Client/PowerCLI)"
+    }
+  },
+  {
+    "model": "intro.Project",
+    "pk": 2,
+    "fields": {
+      "name": "Auto deployment for Software Defined Storeges",
+      "start": "2016-12-01",
+      "end": "2017-04-01",
+      "description": "To reduce time/cost of installation and configuration of EMC ScaleIO for 400+ Linux/ESXi servers, used OSS, Ansible, and customized for the requirements.\nSince Ansible-ScaleIO project in EMC{Code} had been already launched in world-wide, to folk it in local Japan customer, handled communications with the global EMC GitHub committer to enhance it.\nAfter the project had been closed, our team accomplishment had awarded as President Award in EMC Japan.",
+      "stacks": "Linux(RHEL), ESXi\nKnowledge for automated OS installation(DHCP/DNS/TFTP/HTTP, KickStart, PXE)\nVirtualization platform(vSphere) and its administration tool(Web Client/PowerCLI)\nOpen-sourced configuration tools (Ansible)\nEMC Software Products (ScaleIO)"
+    }
+  }
+]
