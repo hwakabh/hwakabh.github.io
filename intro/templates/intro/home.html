@@ -91,8 +91,18 @@
           {% for item in projects %}
             <h3>{{ item.name }}</h3>
             <ul>
-            <li><i class="icofont-rounded-right"></i> <strong>{{ item.start }} - {{ item.end }}</strong></li>
-            <li><i class="icofont-rounded-right"></i> {{ item.description | linebreaksbr }}</li>
+              <li>
+                <i class="icofont-rounded-right"></i> <strong>Project Period</strong>
+                <div class="project-content">{{ item.start }} - {{ item.end }}</div>
+              </li>
+              <li>
+                <i class="icofont-rounded-right"></i> <strong>Descriptions</strong>
+                <div class="project-content">{{ item.description | linebreaksbr }}</div>
+              </li>
+              <li>
+                <i class="icofont-rounded-right"></i> <strong>Technology Stacks</strong>
+                <div class="project-content">{{ item.stacks | linebreaksbr }}</div>
+              </li>
             </ul>
           {% endfor %}
           <br>
