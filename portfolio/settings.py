@@ -51,7 +51,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'portfolio.wsgi.application'
 
-
 # Determine dev/prod with hostname of environment
 from socket import gethostname
 HOSTNAME = gethostname()
