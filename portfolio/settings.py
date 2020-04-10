@@ -66,6 +66,9 @@ HOSTNAME = gethostname()
 
 DEBUG = True
 
+# Configs for gunicorn
+STATIC_URL = '/static/'
+
 # For production env
 if 'hwakab' not in HOSTNAME:
     django_heroku.settings(locals())
@@ -73,8 +76,6 @@ if 'hwakab' not in HOSTNAME:
     PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
     # Configs for collectstatic, since it would be run automatically in Heroku
     STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
-    # Configs for gunicorn
-    STATIC_URL = '/static/'
 else:
     ALLOWED_HOSTS = []
 
