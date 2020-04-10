@@ -60,24 +60,23 @@ DATABASES = {
 
 WSGI_APPLICATION = 'portfolio.wsgi.application'
 
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
-
 # Determine dev/prod with hostname of environment
 from socket import gethostname
 HOSTNAME = gethostname()
 
-# if 'hwakab' in HOSTNAME:
-#     DEBUG = True
-#     ALLOWED_HOSTS = []
-# else:
-#     DEBUG = False
-#     ALLOWED_HOSTS = ['*']
 DEBUG = True
-ALLOWED_HOSTS = ['*']
 
+# For production env
 if 'hwakab' not in HOSTNAME:
     django_heroku.settings(locals())
+    ALLOWED_HOSTS = ['*']
+    PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+    # Configs for collectstatic, since it would be run automatically in Heroku
+    STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+    # Configs for gunicorn
+    STATIC_URL = '/static/'
+else:
+    ALLOWED_HOSTS = []
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -110,7 +109,3 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-
-# Static files (CSS, JavaScript, Images)
-STATIC_URL = '/static/'
