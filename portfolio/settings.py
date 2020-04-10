@@ -67,15 +67,16 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 from socket import gethostname
 HOSTNAME = gethostname()
 
-if 'hwakab' in HOSTNAME:
-    DEBUG = True
-    ALLOWED_HOSTS = []
-else:
-    DEBUG = False
-    ALLOWED_HOSTS = ['*']
+# if 'hwakab' in HOSTNAME:
+#     DEBUG = True
+#     ALLOWED_HOSTS = []
+# else:
+#     DEBUG = False
+#     ALLOWED_HOSTS = ['*']
+DEBUG = True
+ALLOWED_HOSTS = ['*']
 
-if not DEBUG:
-    import django_heroku
+if 'hwakab' not in HOSTNAME:
     django_heroku.settings(locals())
 
 # Password validation
