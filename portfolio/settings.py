@@ -68,7 +68,6 @@ else:
     DEBUG = False
     ALLOWED_HOSTS = ['*']
     import dj_database_url
-    db_from_env = dj_database_url.config()
     DATABASES = {
         'default': dj_database_url.config()
     }
@@ -107,6 +106,4 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.0/howto/static-files/
-
 STATIC_URL = '/static/'
