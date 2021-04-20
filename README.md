@@ -1,7 +1,3 @@
-# portfolio
+# hwakabh.github.io
 
-Personal Portfolio Pages with Python/Django
-
-***
-
-## Architectures
+Personal Portfolio Pages
