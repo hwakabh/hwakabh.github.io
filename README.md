@@ -20,6 +20,9 @@ yarn serve
 
 ```bash
 yarn build
+# Note for production deployments with GitHub Pages, we need to add `--dest` options
+# since GitHub Pages requires allocate `index.html` in $PROJECT_ROOT or $PROJECT_ROOT/docs
+yarn build --dest ./docs
 ```
 
 ### Lints and fixes files
