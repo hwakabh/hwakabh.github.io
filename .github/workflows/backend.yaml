@@ -1,0 +1,15 @@
+name: Backend CI
+on:
+  push:
+    branches:
+      - main
+    # All updates except api-server/** will be ignored
+    paths:
+      - 'api-server/**'
+jobs:
+  image_build_and_push:
+    name: Build OCI image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test
+        run: echo 'Backend CI'

@@ -1,0 +1,15 @@
+name: Preparations for ArgoCD GitOps
+on:
+  push:
+    branches:
+      - main
+    # All updates except manifests/** will be ignored
+    paths:
+      - 'manifests/**'
+jobs:
+  update_deploy_manifest:
+    name: Update Deployment manifests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test
+        run: echo 'Manifest CI'
