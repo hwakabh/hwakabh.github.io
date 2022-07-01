@@ -1,8 +1,9 @@
-name: Build Vue Apps with yarn
+name: Frontend CI
 on:
   push:
     branches:
       - main
+    # All updates except web-frontend/** will be ignored
     paths:
       - 'web-frontend/**'
 jobs:
@@ -15,7 +16,7 @@ jobs:
       - name: Install npm package
         uses: borales/actions-yarn@v3.0.0
         with:
-          cmd: --cwd ./web-frontend install # will run `yarn install` command
+          cmd: --cwd ./web-frontend install
       - name: Generate static file to /docs
         uses: borales/actions-yarn@v3.0.0
         with:
