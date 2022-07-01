@@ -19,8 +19,11 @@ spec:
         name: app
     spec:
       containers:
-      # - image: ghcr.io/hwakabh/hwakabh-api-server:latest
-      - image: nginx:latest
+      - image: ghcr.io/hwakabh/hwakabh-api-server:latest
+        env:
+        - name: PORT
+          value: 8080
+      # - image: nginx:latest
         name: express-container
         ports:
           - containerPort: 8080
