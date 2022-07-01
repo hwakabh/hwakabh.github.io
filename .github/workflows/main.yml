@@ -3,20 +3,33 @@ on:
   push:
     branches:
       - main
-  #   paths:
-  #     - 'web-frontend/**'
-  # pull_request:
-  #   paths:
-  #     - 'web-frontend/**'
+    paths:
+      - './web-frontend/**'
+  pull_request:
+    paths:
+      - './web-frontend/**'
 jobs:
-  build:
-    name: Vue Build
+  build_and_update:
+    name: Build Vue app and push new staticfiles
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: borales/actions-yarn@v3.0.0
+      - name: Checkout git source
+        uses: actions/checkout@v2
+      - name: Install npm package
+        uses: borales/actions-yarn@v3.0.0
         with:
           cmd: --cwd ./web-frontend install # will run `yarn install` command
-      - uses: borales/actions-yarn@v3.0.0
+      - name: Generate static file to /docs
+        uses: borales/actions-yarn@v3.0.0
         with:
-          cmd: build --dest ../docs
+          cmd: --cwd ./web-frontend build --dest ../docs
+      - name: Update /docs with commmit
+        env:
+          GIT_EMAIL_DOMAIN: users.noreply.github.com
+          DEPLOY_URL_DOMAIN: github.com
+        run: |
+          git config --local user.name "${{ secrets.GIT_USERNAME_DEPLOY }}"
+          git config --local user.email "${{ secrets.GIT_USERNAME_DEPLOY }}@${{ env.GIT_EMAIL_DOMAIN }}"
+          git add ./docs
+          git commit --message "Updated staticifiles."
+          
