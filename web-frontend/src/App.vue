@@ -1,6 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <Navigation msg="Hello world !!!"/>
+  <Navigation msg="hello world from gh-pages and gh-actions !"/>
   <About/>
 </template>
 
