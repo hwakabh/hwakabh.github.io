@@ -1,4 +1,9 @@
 ---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: gh-pages-backend
+---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -12,6 +17,8 @@ spec:
     repoURL: https://github.com/hwakabh/hwakabh.github.io.git
     path: manifests/backend
     targetRevision: HEAD
+    directory:
+      recurse: true
   destination:
     server: https://kubernetes.default.svc
     namespace: gh-pages-backend
