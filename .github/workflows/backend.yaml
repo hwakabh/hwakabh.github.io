@@ -29,9 +29,12 @@ jobs:
         run: |
           echo "${{ secrets.GHCR_PAT }}" |docker login ghcr.io -u hwakabh --password-stdin
 
+      - name: Tag the image for preparation of push
+        run: |
+          docker image tag hwakabh-api-server ghcr.io/hwakabh/hwakabh-api-server:latest
+          docker image ls
+
       - name: Push container image to GHCR
         run: |
-          echo '>>> Listing local images'
-          docker image ls
           echo '>>> Push artifact images to remote repository'
           docker image push ghcr.io/hwakabh/hwakabh-api-server:latest
