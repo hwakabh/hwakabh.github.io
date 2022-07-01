@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/hwakabh/hwakabh.github.io.git
-    path: manifests/childapps
+    path: manifests/argocd/childapps
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
