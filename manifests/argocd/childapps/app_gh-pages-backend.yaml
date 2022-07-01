@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: gke-production-argo-rootapp
+  name: gh-pages-backend
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
