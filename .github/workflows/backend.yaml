@@ -8,12 +8,15 @@ on:
       - 'api-server/**'
 jobs:
   image_build_and_push:
-    name: Build OCI image
+    name: Build & Ship OCI image
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
+      # References:
+      # - https://github.com/mamezou-tech/buildpacks-action
+      # - https://github.com/marketplace/actions/buildpacks-action
       - name: Build OCI container image with Google Cloud buildpacks
         uses: mamezou-tech/buildpacks-action@master
         with:
@@ -21,9 +24,7 @@ jobs:
           tag: 'latest'
           path: './api-server'
           builder: 'gcr.io/buildpacks/builder:v1'
-
-      - name: Check container image with docker
-        run: docker image ls
+          # Google Cloud Buildpacks: https://github.com/GoogleCloudPlatform/buildpacks
 
       - name: Login to GHCR
         run: |
@@ -32,9 +33,8 @@ jobs:
       - name: Tag the image for preparation of push
         run: |
           docker image tag hwakabh-api-server ghcr.io/hwakabh/hwakabh-api-server:latest
-          docker image ls
 
+      # To Run image locally, refer: https://github.com/GoogleCloudPlatform/buildpack-samples/tree/master/sample-node
       - name: Push container image to GHCR
         run: |
-          echo '>>> Push artifact images to remote repository'
           docker image push ghcr.io/hwakabh/hwakabh-api-server:latest
