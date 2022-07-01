@@ -1,0 +1,22 @@
+name: Build Vue Apps with yarn
+on:
+  push:
+    branches:
+      - main
+  #   paths:
+  #     - 'web-frontend/**'
+  # pull_request:
+  #   paths:
+  #     - 'web-frontend/**'
+jobs:
+  build:
+    name: Vue Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: --cwd ./web-frontend install # will run `yarn install` command
+      - uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: build --dest ../docs
