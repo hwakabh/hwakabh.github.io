@@ -11,5 +11,26 @@ jobs:
     name: Build OCI image
     runs-on: ubuntu-latest
     steps:
-      - name: Test
-        run: echo 'Backend CI'
+      - name: Checkout
+        uses: actions/checkout@v2
+
+    - name: Build OCI container image with Google Cloud buildpacks
+      uses: mamezou-tech/buildpacks-action@master
+      with:
+        image: 'hwakabh-api-server'
+        tag: 'latest'
+        path: './api-server'
+        builder: 'gcr.io/buildpacks/builder:v1'
+
+    - name: Check container image with docker
+      run: docker image ls
+
+    - name: Login to GHCR
+      uses: docker/login-action@v2
+      with:
+        username: hwakabh
+        password: ${{ secrets.GHCR_PAT }}
+
+    - name: Push container image to GHCR
+      run: |
+        docker image push ghcr.io/hwakabh/hwakabh-api-server:latest

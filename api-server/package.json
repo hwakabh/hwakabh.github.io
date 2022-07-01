@@ -1,0 +1,12 @@
+{
+  "name": "api-server",
+  "version": "1.0.0",
+  "description": "Backend api-server of hwakabh.github.io",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hwakabh",
+  "license": "ISC"
+}
