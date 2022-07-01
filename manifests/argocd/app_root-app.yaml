@@ -10,10 +10,11 @@ spec:
   project: default
   source:
     repoURL: https://github.com/hwakabh/hwakabh.github.io.git
-    path: manifests/argocd
+    path: manifests/childapps
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
+    namespace: argocd
    # Enable auto-sync with git-repository
   syncPolicy:
     automated: {}
