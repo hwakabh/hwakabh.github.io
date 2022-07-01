@@ -51,7 +51,7 @@ jobs:
       
       - name: Update with git push
         run: |
-          echo "${{ steps.kustomize.outputs.kustomize_build_output}}" > ./manifests/backend/overlays/prod/deploy_express-server.yaml
+          echo "${{ steps.kustomize.outputs.kustomize_build_output}}" |sudo tee ./manifests/backend/overlays/prod/deploy_express-server.yaml
           git status
           git add ./manifests/backend/overlays/prod/deploy_express-server.yaml
           git commit --message "[gh-action] Updated backend k8s manifests."
