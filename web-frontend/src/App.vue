@@ -1,6 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <Navigation msg="Deployed by updated gh-actions!"/>
+  <Navigation msg="Hello world from hwakabh.github.io !"/>
   <About/>
 </template>
 

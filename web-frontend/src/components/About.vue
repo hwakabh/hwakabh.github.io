@@ -1,8 +1,8 @@
 <template>
   <div class="about">
-    <h3>Blog here</h3>
+    <h3>Microblogs</h3>
     <p>
-      Here's my post list
+      Here's some posts
     </p>
     <ul>
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
