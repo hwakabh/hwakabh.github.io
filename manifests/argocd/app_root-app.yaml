@@ -1,0 +1,19 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gke-production-argo-rootapp
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/hwakabh/hwakabh.github.io.git
+    path: manifests/argocd
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+   # Enable auto-sync with git-repository
+  syncPolicy:
+    automated: {}

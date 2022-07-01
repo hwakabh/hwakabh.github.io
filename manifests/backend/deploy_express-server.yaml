@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: express-server
+  namespace: gh-pages-backend
+  labels:
+    name: app
+spec:
+  strategy:
+    type: RollingUpdate
+  replicas: 3
+  selector:
+    matchLabels:
+      name: app
+  template:
+    metadata:
+      name: express-server
+      labels:
+        name: app
+    spec:
+      containers:
+      - image: ghcr.io/hwakabh/hwakabh-api-server:latest
+        name: express-container
+        ports:
+          - containerPort: 8080
