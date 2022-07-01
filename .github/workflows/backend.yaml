@@ -38,3 +38,14 @@ jobs:
       - name: Push container image to GHCR
         run: |
           docker image push ghcr.io/hwakabh/hwakabh-api-server:latest
+
+      # https://github.com/karancode/kustomize-github-action
+      - name: Kustomize Build
+        uses: karancode/kustomize-github-action@master
+        with:
+          kustomize_version: '4.5.5'
+          kustomize_build_dir: 'manifests/backend/overlays/prod'
+          kustomize_comment: true
+          kustomize_output_file: "deploy_express-server.yaml"
+          kustomize_build_options: "--load_restrictor none"
+          enable_alpha_plugins: true
