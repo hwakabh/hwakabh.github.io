@@ -7,26 +7,29 @@ on:
     paths:
       - 'web-frontend/**'
 jobs:
-  build_and_update:
-    name: Build Vue app and push new staticfiles
+  build_and_deploy:
+    name: Build Vue app and Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout git source
+      - name: Checkout
         uses: actions/checkout@v2
-      - name: Install npm package
+
+      - name: yarn install
         uses: borales/actions-yarn@v3.0.0
         with:
           cmd: --cwd ./web-frontend install
-      - name: Generate static file to /docs
+
+      - name: yarn build to /docs
         uses: borales/actions-yarn@v3.0.0
         with:
           cmd: --cwd ./web-frontend build --dest ../docs
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ../docs
+          publish_dir: ./docs
 
       # - name: Update /docs with commmit
       #   env:
