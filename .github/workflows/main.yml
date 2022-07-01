@@ -5,9 +5,6 @@ on:
       - main
     paths:
       - 'web-frontend/**'
-  pull_request:
-    paths:
-      - 'web-frontend/**'
 jobs:
   build_and_update:
     name: Build Vue app and push new staticfiles
