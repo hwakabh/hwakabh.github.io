@@ -51,8 +51,8 @@ jobs:
       
       - name: Update with git push
         run: |
-          echo "${{ steps.kustomize.outputs.kustomize_build_output}}" |sudo tee ./manifests/backend/overlays/prod/deploy_express-server.yaml
           git status
+          cat ./manifests/backend/overlays/prod/deploy_express-server.yaml
           git config --local user.name hwakabh 
           git config --local user.email hwakabh@users.noreply.github.com
           git add ./manifests/backend/overlays/prod/deploy_express-server.yaml
