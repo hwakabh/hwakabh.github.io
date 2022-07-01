@@ -29,3 +29,5 @@ jobs:
           git config --local user.email "hwakabh@${{ env.GIT_EMAIL_DOMAIN }}"
           git add ./docs
           git commit --message "Updated staticifiles."
+          git remote set-url origin "https://hwakabh:${{ secrets.GIT_PAT }}@github.com/hwakabh/hwakabh.github.io.git"
+          git push origin main
