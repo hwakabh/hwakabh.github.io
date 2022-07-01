@@ -1,0 +1,1 @@
+apiVersion: apps/v1 kind: Deployment metadata: labels: name: app name: express-server namespace: gh-pages-backend spec: replicas: 3 selector: matchLabels: name: app strategy: type: RollingUpdate template: metadata: labels: name: app name: express-server spec: containers: - env: - name: PORT value: 8080 image: nginx:latest name: express-container ports: - containerPort: 8080
