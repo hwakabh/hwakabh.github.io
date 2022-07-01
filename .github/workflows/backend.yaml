@@ -41,9 +41,19 @@ jobs:
 
       # https://github.com/karancode/kustomize-github-action
       - name: Kustomize Build
+        id: kustomize
         uses: karancode/kustomize-github-action@master
         with:
           kustomize_version: '4.5.5'
           kustomize_build_dir: './manifests/backend/overlays/prod'
           kustomize_comment: true
           kustomize_output_file: './manifests/backend/overlays/prod/deploy_express-server.yaml'
+      
+      - name: Update with git push
+        run: |
+          echo "${{ steps.kustomize.outputs.kustomize_build_output}}" > ./manifests/backend/overlays/prod/deploy_express-server.yaml
+          git status
+          git add ./manifests/backend/overlays/prod/deploy_express-server.yaml
+          git commit --message "[gh-action] Updated backend k8s manifests."
+          git remote set-url origin "https://hwakabh:${{ secrets.GIT_PAT }}@github.com/hwakabh/hwakabh.github.io.git"
+          git push origin main
