@@ -21,14 +21,21 @@ jobs:
         uses: borales/actions-yarn@v3.0.0
         with:
           cmd: --cwd ./web-frontend build --dest ../docs
-      - name: Update /docs with commmit
-        env:
-          GIT_EMAIL_DOMAIN: users.noreply.github.com
-          DEPLOY_URL_DOMAIN: github.com
-        run: |
-          git config --local user.name "hwakabh"
-          git config --local user.email "hwakabh@${{ env.GIT_EMAIL_DOMAIN }}"
-          git add ./docs
-          git commit --message "Updated staticifiles."
-          git remote set-url origin "https://hwakabh:${{ secrets.GIT_PAT }}@github.com/hwakabh/hwakabh.github.io.git"
-          git push origin main
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ../docs
+
+      # - name: Update /docs with commmit
+      #   env:
+      #     GIT_EMAIL_DOMAIN: users.noreply.github.com
+      #     DEPLOY_URL_DOMAIN: github.com
+      #   run: |
+      #     git config --local user.name "hwakabh"
+      #     git config --local user.email "hwakabh@${{ env.GIT_EMAIL_DOMAIN }}"
+      #     git add ./docs
+      #     git commit --message "Updated staticifiles."
+      #     git remote set-url origin "https://hwakabh:${{ secrets.GIT_PAT }}@github.com/hwakabh/hwakabh.github.io.git"
+      #     git push origin main
