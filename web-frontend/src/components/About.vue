@@ -2,7 +2,7 @@
   <div class="about">
     <h3>Microblogs</h3>
     <p>
-      Here's some posts
+      Here's some blog posts
     </p>
     <ul>
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
