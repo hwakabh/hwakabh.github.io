@@ -6,6 +6,8 @@ on:
     # All updates except api-server/** will be ignored
     paths:
       - 'api-server/**'
+  workflow_dispatch:
+
 jobs:
   image_build_and_push:
     name: Build & Ship OCI image
