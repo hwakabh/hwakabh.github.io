@@ -27,8 +27,13 @@ jobs:
           # Google Cloud Buildpacks: https://github.com/GoogleCloudPlatform/buildpacks
 
       - name: Login to GHCR
-        run: |
-          echo "${{ secrets.GHCR_PAT }}" |docker login ghcr.io -u hwakabh --password-stdin
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GHCR_PAT }}
+        # run: |
+        #   echo "${{ secrets.GHCR_PAT }}" |docker login ghcr.io -u hwakabh --password-stdin
 
       - name: Tag the image for preparation of push
         run: |
