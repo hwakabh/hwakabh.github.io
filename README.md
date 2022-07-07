@@ -1,3 +1,6 @@
 # hwakabh.github.io
 
-Personal Portfolio with GitHub Pages & Vue.js
+Personal Portfolio Page with JavaScript
+
+Frontend: Vue.js
+Backend: Express
