@@ -1,11 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+import './assets/main.css'
 
-// const app = new Vue({
-//   el: '#app',
-//   data: {
-//     msg: 'Hello World with Vue.js !!!'
-//   }
-// });
+createApp(App).mount('#app')
