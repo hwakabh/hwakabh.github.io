@@ -14,15 +14,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: yarn install
-        uses: borales/actions-yarn@v3.0.0
+      - name: Setup node.js environment
+        uses: actions/setup-node@v3
+        working-directory: ./web-frontend
         with:
-          cmd: --cwd ./web-frontend install
+          node-version: 17.3.0
 
-      - name: yarn build to /docs
-        uses: borales/actions-yarn@v3.0.0
-        with:
-          cmd: --cwd ./web-frontend build --dest ../docs
+      - name: Install packages with CI pipeline
+        run: npm ci
+        working-directory: ./web-frontend
+
+      - name: Build vue-app to /docs
+        run: npx vite build --outDir ../docs
+        working-directory: ./web-frontend
           # Build vue app with outside of app-root
 
       - name: Deploy to GitHub Pages to branch/gh-pages
