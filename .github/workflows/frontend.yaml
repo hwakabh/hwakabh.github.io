@@ -6,6 +6,8 @@ on:
     # All updates except web-frontend/** will be ignored
     paths:
       - 'web-frontend/**'
+  workflow_dispatch:
+
 jobs:
   build_and_deploy:
     name: Build Vue app and Deploy
