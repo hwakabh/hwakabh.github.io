@@ -1,6 +1,0 @@
-resources:
-  - ../../base
-images:
-  - name: ghcr.io/hwakabh/hwakabh-api-server
-    newName: nginx
-    newTag: latest
