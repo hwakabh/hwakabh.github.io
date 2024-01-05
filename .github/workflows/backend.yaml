@@ -1,11 +1,11 @@
 name: Backend CI
 on:
   push:
-    # branches:
-    #   - main
-    # # All updates except api-server/** will be ignored
-    # paths:
-    #   - 'api-server/**'
+    branches:
+      - main
+    # All updates except api-server/** will be ignored
+    paths:
+      - 'api-server/**'
   workflow_dispatch:
 
 jobs:
@@ -25,10 +25,6 @@ jobs:
       - name: Install pack
         uses: buildpacks/github-actions/setup-pack@v5.0.0
         # https://github.com/buildpacks/github-actions#setup-pack-cli-action
-
-      - name: Verify pack version
-        run: |
-          pack version
 
       # https://github.com/google-github-actions/auth
       - name: Auth with Google Cloud
