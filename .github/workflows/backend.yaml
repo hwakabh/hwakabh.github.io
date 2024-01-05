@@ -1,8 +1,8 @@
 name: Backend CI
 on:
   push:
-    branches:
-      - main
+    # branches:
+    #   - main
     # All updates except api-server/** will be ignored
     paths:
       - 'api-server/**'
@@ -12,6 +12,12 @@ jobs:
   image_build_and_push:
     name: Build & Ship OCI image
     runs-on: ubuntu-latest
+
+    # For Workload Identity
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -41,6 +47,15 @@ jobs:
             --path ./api-server/ \
             --publish
 
-      # # TODO: To be implemented
-      # # https://github.com/google-github-actions/deploy-cloudrun
-      # - name: Deploy to Cloud Run
+      # https://github.com/google-github-actions/auth
+      - name: Auth with Google Cloud
+        uses: 'google-github-actions/auth@v2'
+        with:
+          workload_identity_provider: 'projects/1037550336239/locations/global/workloadIdentityPools/default-pool/providers/default-provider'
+          service_account: 'gh-action-cloudrun@hwakabh-dev.iam.gserviceaccount.com'
+
+      # https://github.com/google-github-actions/deploy-cloudrun
+      - uses: 'google-github-actions/deploy-cloudrun@v2'
+        with:
+          image: 'ghcr.io/hwakabh/gh-pages-api:latest'
+          service: 'gh-pages-api-server'
