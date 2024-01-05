@@ -23,6 +23,24 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Install pack
+        uses: buildpacks/github-actions/setup-pack@v5.0.0
+        # https://github.com/buildpacks/github-actions#setup-pack-cli-action
+
+      - name: Verify pack version
+        run: |
+          pack version
+
+      # Google Cloud buildpacks
+      #   https://cloud.google.com/docs/buildpacks/builders
+      #   https://cloud.google.com/docs/buildpacks/nodejs
+      - name: Publish packages
+        run: |
+          pack build ghcr.io/hwakabh/gh-pages-api:latest \
+            --builder gcr.io/buildpacks/builder:latest \
+            --path ./api-server/ \
+            --publish
+
       # # TODO: To be implemented
       # # https://github.com/google-github-actions/deploy-cloudrun
       # - name: Deploy to Cloud Run
