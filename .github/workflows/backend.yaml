@@ -16,53 +16,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      # References:
-      # - https://github.com/mamezou-tech/buildpacks-action
-      # - https://github.com/marketplace/actions/buildpacks-action
-      - name: Build OCI container image with Google Cloud buildpacks
-        uses: mamezou-tech/buildpacks-action@master
-        with:
-          image: 'hwakabh-api-server'
-          tag: 'latest'
-          path: './api-server'
-          builder: 'gcr.io/buildpacks/builder:v1'
-          # Google Cloud Buildpacks: https://github.com/GoogleCloudPlatform/buildpacks
-
       - name: Login to GHCR
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GHCR_PAT }}
-        # run: |
-        #   echo "${{ secrets.GHCR_PAT }}" |docker login ghcr.io -u hwakabh --password-stdin
+          password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Tag the image for preparation of push
-        run: |
-          docker image tag hwakabh-api-server ghcr.io/hwakabh/hwakabh-api-server:latest
-
-      # To Run image locally, refer: https://github.com/GoogleCloudPlatform/buildpack-samples/tree/master/sample-node
-      - name: Push container image to GHCR
-        run: |
-          docker image push ghcr.io/hwakabh/hwakabh-api-server:latest
-
-      # https://github.com/karancode/kustomize-github-action
-      - name: Kustomize Build
-        id: kustomize
-        uses: karancode/kustomize-github-action@master
-        with:
-          kustomize_version: '4.5.5'
-          kustomize_build_dir: './manifests/backend/overlays/prod'
-          kustomize_comment: true
-          kustomize_output_file: './manifests/backend/overlays/prod/deploy_express-server.yaml'
-      
-      - name: Update with git push
-        run: |
-          git status
-          cat ./manifests/backend/overlays/prod/deploy_express-server.yaml
-          git config --local user.name hwakabh 
-          git config --local user.email hwakabh@users.noreply.github.com
-          git add ./manifests/backend/overlays/prod/deploy_express-server.yaml
-          git commit --message "[gh-action] Updated backend k8s manifests."
-          git remote set-url origin "https://hwakabh:${{ secrets.GIT_PAT }}@github.com/hwakabh/hwakabh.github.io.git"
-          git push origin main
+      # # TODO: To be implemented
+      # # https://github.com/google-github-actions/deploy-cloudrun
+      # - name: Deploy to Cloud Run
