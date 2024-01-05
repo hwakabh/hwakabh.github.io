@@ -3,9 +3,9 @@ on:
   push:
     # branches:
     #   - main
-    # All updates except api-server/** will be ignored
-    paths:
-      - 'api-server/**'
+    # # All updates except api-server/** will be ignored
+    # paths:
+    #   - 'api-server/**'
   workflow_dispatch:
 
 jobs:
