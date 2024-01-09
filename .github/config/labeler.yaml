@@ -1,0 +1,28 @@
+# File matches
+app(api):
+- changed-files:
+  - any-glob-to-any-file: ['api-server/**']
+
+app(ui):
+- changed-files:
+  - any-glob-to-any-file: ['web-frontend/**']
+
+ci:
+- changed-files:
+  - any-glob-to-any-file: ['.github/**/*']
+
+deps:
+- changed-files:
+  - any-glob-to-any-file: ['api-server/package.json', 'web-frontend/package.json']
+- head-branch: ['^dependabot/']
+
+docs:
+- changed-files:
+  - any-glob-to-any-file: ['**/*.md']
+
+# Branch name matches
+dependabot:
+- head-branch: ['^dependabot/']
+
+bugs:
+- head-branch: ['^fix/', '^hotfix/']
