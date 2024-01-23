@@ -1,0 +1,36 @@
+version: 2
+updates:
+  - package-ecosystem: "yarn"
+    directory: "/api-server"
+    schedule:
+      interval: "daily"
+      timezone: "Asia/Tokyo"
+    labels:
+      - "dependabot"
+      - "deps"
+      - "app(api)"
+    reviewers:
+      - "hwakabh"
+  - package-ecosystem: "npm"
+    directory: "/web-frontend"
+    schedule:
+      interval: "daily"
+      timezone: "Asia/Tokyo"
+    labels:
+      - "dependabot"
+      - "deps"
+      - "app(ui)"
+    reviewers:
+      - "hwakabh"
+  - package-ecosystem: github-actions
+    directory: /.github
+    schedule:
+      interval: "weekly"
+      time: "09:00"
+      timezone: "Asia/Tokyo"
+    labels:
+      - "dependabot"
+      - "deps"
+      - "ci"
+    reviewers:
+      - "hwakabh"
