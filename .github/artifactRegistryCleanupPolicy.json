@@ -1,0 +1,17 @@
+[
+  {
+    "name": "clean-untagged-older-than-7-days",
+    "action": {"type": "Delete"},
+    "condition": {
+      "tagState": "untagged",
+      "olderThan": "7d"
+    }
+  },
+  {
+    "name": "keep-last-2",
+    "action": {"type": "Keep"},
+    "mostRecentVersions": {
+      "keepCount": 2
+    }
+  }
+]
