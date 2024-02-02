@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "nodemon ./bin/www"
   },
   "engines": {
     "node": "18.16.0"
@@ -13,8 +13,10 @@
     "debug": "~4.3.4",
     "express": "~4.18.2",
     "http-errors": "~2.0.0",
-    "jade": "~1.11.0",
     "json5": "^2.2.3",
     "morgan": "~1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
   }
 }
