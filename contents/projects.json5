@@ -1,7 +1,7 @@
 // Fields structures of "Project" details
 {
   "path": "/api/v1/cv/projects",
-  "projects": [
+  "list": [
     {
       // This is some comment with multiple lines with breaks
       // Note that we can use both single-quotes and double-quotes

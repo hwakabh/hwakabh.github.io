@@ -10,8 +10,8 @@ router.get('/', function(req, res, next) {
 
   res.header('Content-Type', 'application/json; charset=utf-8');
   res.json({
-    "path": req.path,
-    "projects": projects
+    "path": projects.path,
+    "data": projects.list
   });
 });
 
