@@ -15,6 +15,3 @@ assignees: hwakabh
 
 ## (Optional) Acceptance
 
-
-## (Optional) Additional Contexts
-Relates: #
