@@ -2,9 +2,8 @@ name: Release
 
 on:
   push:
-    # -- For debug
-    # branches:
-    #   - main
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
