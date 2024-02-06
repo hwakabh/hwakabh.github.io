@@ -1,0 +1,42 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Push tag to remote
+        id: fetch-latest-tag
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+
+          export CALVER_TAG=$(TZ=Asia/Tokyo date '+%Y-%m-%d.%H%M%S')
+          echo "TAGNAME=$CALVER_TAG" >> "$GITHUB_OUTPUT"
+          git tag --annotate $CALVER_TAG --message "release $CALVER_TAG"
+          git push origin $CALVER_TAG
+
+      - name: Create release and its notes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CALVER_TAG: ${{ steps.fetch-latest-tag.outputs.TAGNAME }}
+        run: |
+          gh release create "$CALVER_TAG" \
+              --title="$CALVER_TAG" \
+              --generate-notes
+
+      # # TODO: TBD
+      # - name: Upload artifacts
