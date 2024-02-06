@@ -36,6 +36,8 @@ jobs:
           CALVER_TAG: ${{ steps.fetch-latest-tag.outputs.TAGNAME }}
         run: |
           gh release create "$CALVER_TAG" \
-              --repo="$GITHUB_REPOSITORY" \
-              --title="${GITHUB_REPOSITORY#*/} ${tag#v}" \
+              --title="$CALVER_TAG" \
               --generate-notes
+
+      # # TODO: TBD
+      # - name: Upload artifacts
