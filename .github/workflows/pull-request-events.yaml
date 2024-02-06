@@ -1,0 +1,29 @@
+name: "Triage Pull Request"
+
+on:
+- pull_request_target
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  triage_pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set default assignee
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.number }}
+        run: |
+          gh pr edit $PR_NUMBER --add-assignee "@hwakabh"
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Label to PR
+        uses: actions/labeler@v5
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          sync-labels: true
+          configuration-path: .github/config/labeler.yaml
