@@ -12,15 +12,15 @@ jobs:
   triage_pr:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Set default assignee
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.number }}
         run: |
           gh pr edit $PR_NUMBER --add-assignee "@hwakabh"
-
-      - name: Checkout
-        uses: actions/checkout@v4
 
       - name: Label to PR
         uses: actions/labeler@v5
