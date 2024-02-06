@@ -13,16 +13,18 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-// CORS allow list
-app.use(cors());
-// app.use(cors({
-//   origin: 'http://localhost:3000',
-//   // add "Access-Control-Allow-Credentials" to header
-//   credentials: true,
-// }))
 
+app.use(cors({
+  // add Vite app as allowed list
+  origin: 'http://localhost:5173',
+  // add "Access-Control-Allow-Credentials" to header
+  credentials: true,
+}))
+
+const URL_PREFIX = '/api/v1';
 app.use('/', indexRouter);
-app.use('/projects', projectsRouter);
+app.use(URL_PREFIX + '/cv', projectsRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
