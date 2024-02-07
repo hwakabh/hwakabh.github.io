@@ -1,0 +1,9 @@
+chore(release): <%= Time.now %>
+## Release PR
+This PR is generated automatically by [git-pr-release-action](https://github.com/bakunyo/git-pr-release-action).
+See [git-pr-release](https://github.com/x-motemen/git-pr-release) as ruby Gem for more information.
+
+## Changes
+<% pull_requests.each do |pr| -%>
+<%=  pr.to_checklist_item %>
+<% end -%>

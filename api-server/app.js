@@ -19,11 +19,10 @@ app.use(cors({
 }))
 
 // Include router
-const URL_PREFIX = '/api/v1';
 const indexRouter = require('./routes/index');
 const apiRouter = require('./routes/api');
 app.use('/', indexRouter);
-app.use(URL_PREFIX, apiRouter);
+app.use('/', apiRouter);
 
 
 // catch 404 and forward to error handler

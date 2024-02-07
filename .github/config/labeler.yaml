@@ -14,12 +14,16 @@ ci:
 
 deps:
 - changed-files:
-  - any-glob-to-any-file: ['api-server/package.json', 'web-frontend/package.json']
+  - any-glob-to-any-file: ['api-server/package.json', 'web-frontend/package.json', 'schema/package.json']
 - head-branch: ['^dependabot/']
 
 docs:
 - changed-files:
   - any-glob-to-any-file: ['**/*.md']
+
+schemas:
+- changed-files:
+  - any-glob-to-any-file: ['schemas/**/*']
 
 tests:
 - changed-files:
