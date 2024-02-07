@@ -21,8 +21,8 @@ jobs:
         uses: bakunyo/git-pr-release-action@master
         env:
           TZ: "Asia/Tokyo"
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT_GIT_PR_RELEASE }}
           GIT_PR_RELEASE_BRANCH_PRODUCTION: releases
           GIT_PR_RELEASE_BRANCH_STAGING: main
-          GIT_PR_RELEASE_TEMPLATE: .github/config/release-pr-template.rb
+          GIT_PR_RELEASE_TEMPLATE: .github/PULL_REQUEST_TEMPLATE/release-pr-template.erb
           GIT_PR_RELEASE_LABELS: release
