@@ -1,9 +1,7 @@
 name: Create PR from main to release
 
 on:
-  pull_request:
-    type:
-      - closed
+  push:
     branches:
       - main
   workflow_dispatch:
