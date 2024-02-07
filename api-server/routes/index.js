@@ -1,12 +1,14 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
+// API root
 router.get('/', function(req, res) {
   res.json({
-    "path": req.path,
-    "body": "Hello, Developers!"
+    "path": req.originalUrl,
+    "content": "Hello, Developers!"
   });
 });
+
 
 // Endpoint of probe target
 router.get('/healthz', function(req, res) {
@@ -14,5 +16,6 @@ router.get('/healthz', function(req, res) {
     "status": "ok"
   });
 });
+
 
 module.exports = router;
