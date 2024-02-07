@@ -6,9 +6,15 @@ changelog:
     - title: Breaking Changes
       labels:
         - breaking-changes
-    - title: New Features
+    - title: Frontend changes
       labels:
-        - enhancement
+        - app(ui)
+    - title: Backend changes
+      labels:
+        - app(api)
+    - title: API Schemas
+      labels:
+        - schemas
     - title: Bug Fixes
       labels:
         - bugs

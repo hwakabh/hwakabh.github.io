@@ -19,7 +19,7 @@ deps:
 
 docs:
 - changed-files:
-  - any-glob-to-any-file: ['**/*.md']
+  - any-glob-to-any-file: ['**/README.md']
 
 schemas:
 - changed-files:
