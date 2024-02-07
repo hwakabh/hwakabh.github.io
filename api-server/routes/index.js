@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-// API root
 router.get('/', function(req, res) {
+  // #swagger.description = 'API root'
   res.json({
     "path": req.originalUrl,
     "content": "Hello, Developers!"
@@ -10,8 +10,8 @@ router.get('/', function(req, res) {
 });
 
 
-// Endpoint of probe target
 router.get('/healthz', function(req, res) {
+  // #swagger.description = 'Endpoint of probe target'
   res.status(200).json({
     "status": "ok"
   });
