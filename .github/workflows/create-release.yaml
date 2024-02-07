@@ -1,9 +1,7 @@
-name: Release
+name: Release CI
 
 on:
-  pull_request:
-    type:
-      - closed
+  push:
     branches:
       - releases
   workflow_dispatch:
