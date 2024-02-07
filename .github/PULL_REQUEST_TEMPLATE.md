@@ -1,4 +1,4 @@
-## Issue link
+## Issue/PR link
 Closes: #
 Relates: #
 
@@ -6,6 +6,7 @@ Relates: #
 
 
 ## What does not include in this PR?
-
+N/A
 
 ## (Optional) Additional Contexts
+N/A
