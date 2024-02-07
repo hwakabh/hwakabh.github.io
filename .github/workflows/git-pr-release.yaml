@@ -1,0 +1,29 @@
+name: Create PR from main to release
+
+on:
+  pull_request:
+    type:
+      - closed
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  git_pr_release:
+    name: git-pr-release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Make release PR
+        uses: bakunyo/git-pr-release-action@master
+        env:
+          TZ: "Asia/Tokyo"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_PR_RELEASE_BRANCH_PRODUCTION: releases
+          GIT_PR_RELEASE_BRANCH_STAGING: main
+          GIT_PR_RELEASE_TEMPLATE: .github/config/release-pr-template.rb
