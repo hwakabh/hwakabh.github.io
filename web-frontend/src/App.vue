@@ -13,7 +13,10 @@ import HelloWorld from './components/HelloWorld.vue'
       <HelloWorld
         msg="Hello, developers!" />
       Routes below:
-      <router-link to="/about">About me</router-link> + <router-link to="/works">Go to my works</router-link>
+      <router-link to="/about">About me</router-link> +
+      <router-link to="/cv">Resume</router-link> +
+      <router-link to="/works">Side Gigs</router-link> +
+      <router-link to="/contact">Contact forms</router-link> +
    </div>
   </header>
 
