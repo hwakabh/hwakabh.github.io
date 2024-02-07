@@ -5,13 +5,14 @@ const aboutRouter = require('./about');
 const cvRouter = require('./cv');
 const worksRouter = require('./works');
 
-router.use('/about', aboutRouter);
-router.use('/cv', cvRouter);
-router.use('/works', worksRouter);
+const URL_PREFIX = '/api/v1';
+router.use(URL_PREFIX + '/about', aboutRouter);
+router.use(URL_PREFIX + '/cv', cvRouter);
+router.use(URL_PREFIX + '/works', worksRouter);
 
 
 // TODO: need to change with POST only
-router.get('/contact', (req, res, next) => {
+router.get(URL_PREFIX + '/contact', (req, res, next) => {
   console.log(req);
   res.header('Content-Type', 'application/json; charset=utf-8');
   res.json({
