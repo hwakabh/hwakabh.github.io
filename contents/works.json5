@@ -1,0 +1,29 @@
+{
+  "filename": "works.json5",
+  "list": [
+    {
+      "title": "Bennu Official Homepage",
+      "url": "https://bennu-official.page/",
+      "imageUrl": "",
+      "gitHubRepoUrl": "https://github.com/hwakabh/bennu-official",
+      "descriptions": "Official Homepage of Bennu",
+      "techStacks": [
+        "Python",
+        "Django",
+        "Kubernetes", "Google Kubernetes Engine",
+        "Cloud Native Builpacks", "Google Cloud Buildpacks",
+      ],
+    },
+    {
+      "title": "random-travelers",
+      "url": "",
+      "imageUrl": "",
+      "gitHubRepoUrl": "https://github.com/hwakabh/random-travelers",
+      "descriptions": "",
+      "techStacks": [
+        "Python",
+        "Poetry"
+      ]
+    },
+  ]
+}

@@ -1,19 +1,16 @@
+const express = require('express');
+const app = express();
+
+// Middlewares
 var createError = require('http-errors');
-var express = require('express');
 var cookieParser = require('cookie-parser');
 const cors = require('cors');
-var logger = require('morgan');
-
-var indexRouter = require('./routes/index');
-var projectsRouter = require('./routes/projects');
-
-var app = express();
+const logger = require('morgan');
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-
 app.use(cors({
   // add Vite app as allowed list
   origin: 'http://localhost:5173',
@@ -21,9 +18,12 @@ app.use(cors({
   credentials: true,
 }))
 
+// Include router
 const URL_PREFIX = '/api/v1';
+const indexRouter = require('./routes/index');
+const apiRouter = require('./routes/api');
 app.use('/', indexRouter);
-app.use(URL_PREFIX + '/cv', projectsRouter);
+app.use(URL_PREFIX, apiRouter);
 
 
 // catch 404 and forward to error handler

@@ -1,6 +1,5 @@
-// Fields structures of "Project" details
 {
-  "path": "/api/v1/cv/projects",
+  "filename": "projects.json5",
   "list": [
     {
       // This is some comment with multiple lines with breaks
