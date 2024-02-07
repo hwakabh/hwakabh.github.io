@@ -1,4 +1,4 @@
-name: Create PR from main to release
+name: PR for release
 
 on:
   push:
