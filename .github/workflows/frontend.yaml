@@ -2,7 +2,7 @@ name: Frontend CI
 on:
   push:
     branches:
-      - main
+      - release
     # All updates except web-frontend/** will be ignored
     paths:
       - 'web-frontend/**'
