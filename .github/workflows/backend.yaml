@@ -2,7 +2,7 @@ name: Backend CI
 on:
   push:
     branches:
-      - release
+      - releases
     # All updates except api-server/** will be ignored
     paths:
       - 'api-server/**'
