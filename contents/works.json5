@@ -4,6 +4,7 @@
     {
       "title": "Bennu Official Homepage",
       "url": "https://bennu-official.page/",
+      "imageUrl": "",
       "gitHubRepoUrl": "https://github.com/hwakabh/bennu-official",
       "descriptions": "Official Homepage of Bennu",
       "techStacks": [
@@ -16,6 +17,7 @@
     {
       "title": "random-travelers",
       "url": "",
+      "imageUrl": "",
       "gitHubRepoUrl": "https://github.com/hwakabh/random-travelers",
       "descriptions": "",
       "techStacks": [
