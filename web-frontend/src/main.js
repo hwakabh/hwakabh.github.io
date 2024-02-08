@@ -1,7 +1,7 @@
 import { createApp } from 'vue' // standard import
+import { router } from './router/index'
 
 import App from './App.vue' // named import
-import { router } from './router/index'
 
 import './assets/main.css'
 
