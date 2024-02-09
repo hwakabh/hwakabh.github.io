@@ -26,14 +26,15 @@ jobs:
         working-directory: ./web-frontend
 
       - name: Build vue-app to /docs
-        run: npx vite build --outDir ../docs
+        run: npx vite build
         working-directory: ./web-frontend
           # Build vue app with outside of app-root
 
       - name: Upload as artifacts for GitHub Pages
         uses: actions/upload-pages-artifact@v1
+        working-directory: ./web-frontend
         with:
-          path: ./web-frontend/dist
+          path: ./dist
           retention-days: 3
 
   deploy:
