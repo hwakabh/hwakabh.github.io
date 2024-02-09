@@ -7,35 +7,23 @@ import GitHubIcon from './icons/GitHub.vue'
 import InstagramIcon from './icons/Instagram.vue'
 import LinkedInIcon from './icons/LinkedIn.vue'
 import XIcon from './icons/X.vue'
+
+const snsIcons = [
+  GitHubIcon,
+  LinkedInIcon,
+  XIcon,
+  InstagramIcon,
+  FacebookIcon,
+]
 </script>
 
 <template>
   <div class="sns-links">
-    <div class="sns-icon">
-      <a href="https://github.com/hwakabh">
-        <GitHubIcon />
-      </a>
-    </div>
-    <div class="sns-icon">
-      <a href="https://www.linkedin.com/in/hiroyuki-wakabayashi-61b661157/">
-        <LinkedInIcon />
-      </a>
-    </div>
-    <div class="sns-icon">
-      <a href="https://twitter.com/hwakabh">
-        <XIcon />
-      </a>
-    </div>
-    <div class="sns-icon">
-      <a href="https://www.instagram.com/hwakabh/">
-        <InstagramIcon />
-      </a>
-    </div>
-    <div class="sns-icon">
-      <a href="https://www.facebook.com/hiroyuki.wakabayashi.146">
-        <FacebookIcon />
-      </a>
-    </div>
+    <component v-for="(snsIcon, idx) in snsIcons"
+      :key="idx"
+      :is="snsIcon"
+      class="sns-icon" >
+    </component>
   </div>
 </template>
 
