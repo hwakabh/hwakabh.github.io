@@ -2,14 +2,7 @@
 import { ref } from 'vue'
 import VueWriter from 'vue-writer'
 
-// SNS Links: SVG from tabler
-// https://tabler.io/icons
-// https://github.com/tabler/tabler-icons/tree/master/packages/icons-vue)
-import GitHubIcon from '../components/icons/GitHub.vue'
-import LinkedInIcon from '../components/icons/LinkedIn.vue'
-import XIcon from '../components/icons/X.vue'
-import FacebookIcon from '../components/icons/Facebook.vue'
-import InstagramIcon from '../components/icons/Instagram.vue'
+import SocialLink from '../components/SocialLink.vue'
 
 const words = ref([
   "Welcome!",
@@ -38,11 +31,8 @@ const words = ref([
     :erase-speed="80"
      >
   </VueWriter>
-  <GitHubIcon />
-  <LinkedInIcon />
-  <XIcon />
-  <InstagramIcon />
-  <FacebookIcon />
+
+  <SocialLink />
 </template>
 
 <style>
