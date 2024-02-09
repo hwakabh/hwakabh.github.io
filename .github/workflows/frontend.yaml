@@ -32,9 +32,8 @@ jobs:
 
       - name: Upload as artifacts for GitHub Pages
         uses: actions/upload-pages-artifact@v1
-        working-directory: ./web-frontend
         with:
-          path: ./dist
+          path: ./web-frontend/dist
           retention-days: 3
 
   deploy:
