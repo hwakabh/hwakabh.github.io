@@ -1,5 +1,10 @@
 <script setup>
-defineProps({
+const myProps = defineProps({
+  name: {
+    type: String,
+    required: false,
+    default: "hiroyuki"
+  },
   msg: {
     type: String,
     required: true
@@ -10,6 +15,7 @@ defineProps({
 
 <template>
   <div class="greetings">
+   <h1 class="green">{{ name }}</h1>
    <h1 class="green">{{ msg }}</h1>
   </div>
 </template>
