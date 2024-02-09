@@ -2,7 +2,9 @@
 import { ref } from 'vue'
 import VueWriter from 'vue-writer'
 
-// SNS Links: SVG from https://tabler.io/icons
+// SNS Links: SVG from tabler
+// https://tabler.io/icons
+// https://github.com/tabler/tabler-icons/tree/master/packages/icons-vue)
 import GitHubIcon from '../components/icons/GitHub.vue'
 import LinkedInIcon from '../components/icons/LinkedIn.vue'
 import XIcon from '../components/icons/X.vue'
