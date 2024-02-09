@@ -11,20 +11,38 @@ import XIcon from './icons/X.vue'
 
 <template>
   <div class="sns-links">
-    <a href="https://github.com/hwakabh">
-      <GitHubIcon />
-    </a>
-    <a href="https://www.linkedin.com/in/hiroyuki-wakabayashi-61b661157/">
-      <LinkedInIcon />
-    </a>
-    <a href="https://github.com/hwakabh">
-      <XIcon />
-    </a>
-    <a href="https://github.com/hwakabh">
-      <InstagramIcon />
-    </a>
-    <a href="https://github.com/hwakabh">
-      <FacebookIcon />
-    </a>
+    <div class="sns-icon">
+      <a href="https://github.com/hwakabh">
+        <GitHubIcon />
+      </a>
+    </div>
+    <div class="sns-icon">
+      <a href="https://www.linkedin.com/in/hiroyuki-wakabayashi-61b661157/">
+        <LinkedInIcon />
+      </a>
+    </div>
+    <div class="sns-icon">
+      <a href="https://twitter.com/hwakabh">
+        <XIcon />
+      </a>
+    </div>
+    <div class="sns-icon">
+      <a href="https://www.instagram.com/hwakabh/">
+        <InstagramIcon />
+      </a>
+    </div>
+    <div class="sns-icon">
+      <a href="https://www.facebook.com/hiroyuki.wakabayashi.146">
+        <FacebookIcon />
+      </a>
+    </div>
   </div>
 </template>
+
+<style scoped>
+.sns-icon {
+  display: inline-block;
+  margin-left: 10pt;
+  margin-right: 10px;
+}
+</style>
