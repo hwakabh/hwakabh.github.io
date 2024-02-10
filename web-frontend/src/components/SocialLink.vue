@@ -17,6 +17,7 @@ const snsIcons = [
 ]
 </script>
 
+
 <template>
   <div class="sns-links">
     <component v-for="(snsIcon, idx) in snsIcons"
@@ -26,6 +27,7 @@ const snsIcons = [
     </component>
   </div>
 </template>
+
 
 <style scoped>
 .sns-icon {
