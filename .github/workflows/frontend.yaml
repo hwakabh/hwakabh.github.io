@@ -31,7 +31,7 @@ jobs:
           # Build vue app with outside of app-root
 
       - name: Upload as artifacts for GitHub Pages
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3.0.1
         with:
           path: ./web-frontend/dist
           retention-days: 3
@@ -49,4 +49,4 @@ jobs:
     steps:
       - name: Deploy GitHub Pages from artifacts
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v4.0.4
