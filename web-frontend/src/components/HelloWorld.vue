@@ -3,7 +3,7 @@ const myProps = defineProps({
   name: {
     type: String,
     required: false,
-    default: "hiroyuki"
+    default: "Hiroyuki"
   },
   msg: {
     type: String,
