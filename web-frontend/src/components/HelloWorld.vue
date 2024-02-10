@@ -15,8 +15,8 @@ const myProps = defineProps({
 
 <template>
   <div class="greetings">
-   <h1 class="green">{{ name }}</h1>
-   <h1 class="green">{{ msg }}</h1>
+    <h1 class="green">{{ name }}</h1>
+    <h1 class="green">{{ msg }}</h1>
   </div>
 </template>
 
