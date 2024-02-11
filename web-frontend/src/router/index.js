@@ -1,10 +1,11 @@
-import { createRouter, createWebHistory } from 'vue-router'
+// import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from '@ionic/vue-router';
 
-import Home from '../pages/Home.vue'
-import About from '../pages/About.vue'
-import Cv from '../pages/Cv.vue'
-import Works from '../pages/Works.vue'
-import Contact from '../pages/Contact.vue'
+import Home from '../pages/Home.vue';
+import About from '../pages/About.vue';
+import Cv from '../pages/Cv.vue';
+import Works from '../pages/Works.vue';
+import Contact from '../pages/Contact.vue';
 
 const routes = [
   {
@@ -31,7 +32,7 @@ const routes = [
   //   path: "/contact/thanks",
   //   component: Works
   // },
-]
+];
 
 export const router = createRouter({
   history: createWebHistory(),
