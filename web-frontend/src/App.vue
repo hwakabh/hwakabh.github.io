@@ -8,11 +8,11 @@ import FooterContent from './components/FooterContent.vue';
       <ion-row>
         <ion-col />
         <ion-col>
-          <div class="wrapper">
-            <router-link to="/">GO HOME</router-link>
-            <router-link to="/about">About me</router-link> +
-            <router-link to="/cv">Resume</router-link> +
-            <router-link to="/works">Side Gigs</router-link> +
+          <div class="route-wrap">
+            <router-link to="/">GO HOME</router-link> /
+            <router-link to="/about">About me</router-link> /
+            <router-link to="/cv">Resume</router-link> /
+            <router-link to="/works">Side Gigs</router-link> /
             <router-link to="/contact">Contact forms</router-link>
          </div>
         </ion-col>
@@ -48,3 +48,10 @@ import FooterContent from './components/FooterContent.vue';
     </ion-grid>
   </footer>
 </template>
+
+<style scoped>
+.route-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+</style>
