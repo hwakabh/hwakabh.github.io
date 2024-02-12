@@ -1,3 +1,9 @@
 <template>
-  <p>THis is footer messages</p>
+  <p class="copyright">(c) 2024 hwakabh All Right Reserved.</p>
 </template>
+
+<style scoped>
+.copyright {
+  text-align: center;
+}
+</style>

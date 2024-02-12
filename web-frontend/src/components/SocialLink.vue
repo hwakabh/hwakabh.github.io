@@ -1,4 +1,6 @@
 <script setup>
+import { IonCol, IonGrid, IonRow } from '@ionic/vue';
+
 // SNS Links: SVG from tabler
 // https://tabler.io/icons
 // https://github.com/tabler/tabler-icons/tree/master/packages/icons-vue)
@@ -33,22 +35,28 @@ const snsIcons = [
 
 
 <template>
-  <div class="sns-links">
-    <div v-for="(snsIcon, idx) in snsIcons"
+  <ion-grid>
+    <ion-row class="sns-links">
+      <div v-for="(snsIcon, idx) in snsIcons"
       :key="idx"
-      class="sns-icon">
-      <a target="_blank" :href="snsIcon.url">
-        <component :is="snsIcon.comp" />
-      </a>
-    </div>
-  </div>
+      class="sns-icon" >
+        <ion-col>
+          <a
+            target="_blank"
+            :href="snsIcon.url"
+            class="sns-link" >
+            <component :is="snsIcon.comp" />
+          </a>
+        </ion-col>
+      </div>
+    </ion-row>
+  </ion-grid>
 </template>
 
 
 <style scoped>
-.sns-icon {
-  display: inline-block;
-  margin-left: 10pt;
-  margin-right: 10px;
+.sns-links {
+  display: flex;
+  justify-content: center;
 }
 </style>

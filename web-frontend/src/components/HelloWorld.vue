@@ -1,10 +1,5 @@
 <script setup>
 const myProps = defineProps({
-  name: {
-    type: String,
-    required: false,
-    default: "Hiroyuki"
-  },
   msg: {
     type: String,
     required: true
@@ -15,8 +10,7 @@ const myProps = defineProps({
 
 <template>
   <div class="greetings">
-    <h1 class="green">{{ name }}</h1>
-    <h1 class="green">{{ msg }}</h1>
+    <h1 class="greetings">{{ msg }}</h1>
   </div>
 </template>
 
@@ -34,7 +28,7 @@ h1 {
 
 @media (min-width: 1024px) {
   .greetings h1 {
-    text-align: left;
+    text-align: center;
   }
 }
 </style>
