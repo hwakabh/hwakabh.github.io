@@ -2,6 +2,10 @@ name: Build CI
 
 on:
   pull_request:
+    branches:
+      - '**'
+      - '!main'
+      - '!releases'
     paths:
       - 'api-server/**'
       - 'web-frontend/**'
