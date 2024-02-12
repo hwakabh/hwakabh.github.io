@@ -1,0 +1,40 @@
+name: Build CI
+
+on:
+  pull_request:
+    paths:
+      - 'api-server/**'
+      - 'web-frontend/**'
+  workflow_dispatch:
+
+jobs:
+  build_and_test:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Filter Path
+        uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            api:
+              - 'api-server/**'
+            ui:
+              - 'web-frontend/**'
+        # https://github.com/dorny/paths-filter
+
+      # Run only for Frontend
+      - name: Build Vite App
+        if: steps.filter.outputs.ui == 'true'
+        run: |
+          echo 'npm run build'
+
+      # Run only for Backend
+      - name: Test Express App
+        if: steps.filter.outputs.api == 'true'
+        run: |
+          echo 'npm run test'
