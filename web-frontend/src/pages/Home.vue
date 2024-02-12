@@ -22,7 +22,6 @@ const words = ref([
 </script>
 
 <template>
-  <h1> Hi there! </h1>
   <VueWriter
     class="top-message"
     :array="words"
@@ -35,8 +34,9 @@ const words = ref([
   <SocialLink />
 </template>
 
-<style>
+<style scoped>
 .top-message {
-  font-size: 60pt;
+  font-size: 40pt;
+  text-align: center;
 }
 </style>
