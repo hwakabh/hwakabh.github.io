@@ -4,7 +4,8 @@ import { router } from './router/index';
 import App from './App.vue' // named import
 import { IonicVue } from '@ionic/vue';
 
-import './assets/main.css';
+// import './assets/main.css';
+
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/vue/css/core.css';
 /* Basic CSS for apps built with Ionic */
