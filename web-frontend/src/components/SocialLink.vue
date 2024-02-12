@@ -1,4 +1,6 @@
 <script setup>
+import { IonCol, IonGrid, IonRow } from '@ionic/vue';
+
 // SNS Links: SVG from tabler
 // https://tabler.io/icons
 // https://github.com/tabler/tabler-icons/tree/master/packages/icons-vue)

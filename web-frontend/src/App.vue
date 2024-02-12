@@ -1,4 +1,5 @@
 <script setup>
+import { IonCol, IonGrid, IonRow } from '@ionic/vue';
 import FooterContent from './components/FooterContent.vue';
 </script>
 
