@@ -1,7 +1,7 @@
-import { createApp } from 'vue'; // standard import
+import { createApp } from 'vue';
 import { router } from './router/index';
 
-import App from './App.vue' // named import
+import App from './App.vue
 import { IonicVue } from '@ionic/vue';
 
 // import './assets/main.css';
