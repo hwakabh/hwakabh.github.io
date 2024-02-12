@@ -1,8 +1,8 @@
-name: Frontend CI
+name: Frontend deploy CI
 on:
   push:
     branches:
-      - releases
+      - main
     # All updates except web-frontend/** will be ignored
     paths:
       - 'web-frontend/**'

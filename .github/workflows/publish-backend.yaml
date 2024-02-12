@@ -1,8 +1,8 @@
-name: Backend CI
+name: Backend deploy CI
 on:
   push:
     branches:
-      - releases
+      - main
     # All updates except api-server/** will be ignored
     paths:
       - 'api-server/**'
