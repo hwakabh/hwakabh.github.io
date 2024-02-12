@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import VueWriter from 'vue-writer'
 
+import HelloWorld from '../components/HelloWorld.vue'
 import SocialLink from '../components/SocialLink.vue'
 
 const words = ref([
@@ -22,6 +23,8 @@ const words = ref([
 </script>
 
 <template>
+  <HelloWorld msg="Hi, there!" />
+
   <VueWriter
     class="top-message"
     :array="words"

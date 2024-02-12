@@ -1,7 +1,4 @@
 <script setup>
-import { IonCol, IonGrid, IonRow } from '@ionic/vue';
-
-import HelloWorld from './components/HelloWorld.vue'
 import FooterContent from './components/FooterContent.vue';
 </script>
 
@@ -31,7 +28,6 @@ import FooterContent from './components/FooterContent.vue';
         <ion-col />
         <ion-col>
 
-          <HelloWorld msg="Hi, there!" />
           <router-view />
 
         </ion-col>
