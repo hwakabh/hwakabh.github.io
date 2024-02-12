@@ -2,8 +2,8 @@ const express = require('express');
 const app = express();
 
 // Middlewares
-var createError = require('http-errors');
-var cookieParser = require('cookie-parser');
+const createError = require('http-errors');
+const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const logger = require('morgan');
 
