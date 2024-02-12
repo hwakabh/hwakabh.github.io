@@ -28,13 +28,26 @@ jobs:
         # https://github.com/dorny/paths-filter
 
       # Run only for Frontend
-      - name: Build Vite App
+      - name: Setup node.js environment
         if: steps.filter.outputs.ui == 'true'
+        uses: actions/setup-node@v3
+        with:
+          node-version: 17.3.0
+
+      - name: Install packages with CI pipeline
+        if: steps.filter.outputs.ui == 'true'
+        working-directory: ./web-frontend
         run: |
-          echo 'npm run build'
+          npm ci && npx vite build
 
       # Run only for Backend
-      - name: Test Express App
+      - name: Install pack
+        if: steps.filter.outputs.api == 'true'
+        uses: buildpacks/github-actions/setup-pack@v5.0.0
+
+      - name: Build packages
         if: steps.filter.outputs.api == 'true'
         run: |
-          echo 'npm run test'
+          pack build us-central1-docker.pkg.dev/hwakabh-dev/gh-pages/api:latest \
+            --builder gcr.io/buildpacks/builder:latest \
+            --path ./api-server/
