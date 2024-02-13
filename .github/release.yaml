@@ -5,7 +5,7 @@ changelog:
   categories:
     - title: Breaking Changes
       labels:
-        - breaking-changes
+        - breaking
     - title: Frontend changes
       labels:
         - app(ui)
