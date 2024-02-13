@@ -1,9 +1,11 @@
+# https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
 version: 2
 updates:
   - package-ecosystem: "npm"
     directory: "/api-server"
     schedule:
       interval: "daily"
+      time: "07:00"
       timezone: "Asia/Tokyo"
     labels:
       - "dependabot"
@@ -15,6 +17,7 @@ updates:
     directory: "/web-frontend"
     schedule:
       interval: "daily"
+      time: "07:00"
       timezone: "Asia/Tokyo"
     labels:
       - "dependabot"
@@ -23,10 +26,10 @@ updates:
     reviewers:
       - "hwakabh"
   - package-ecosystem: github-actions
-    directory: /.github
+    directory: "/"
     schedule:
       interval: "daily"
-      time: "09:00"
+      time: "07:00"
       timezone: "Asia/Tokyo"
     labels:
       - "dependabot"
