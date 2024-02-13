@@ -1,0 +1,40 @@
+# Configurations of `github/issue-labeler` action
+# regexp patterns had basically been aligned for Conventional Commits and Semantic PR
+app(api):
+
+app(ui):
+
+breaking:
+
+bugs:
+- '(fix)'
+
+chore:
+- '(chore)'
+
+ci:
+- '(ci)'
+
+deploy:
+- '(deploy)'
+
+deps:
+- '(deps|dependencies)'
+
+docs:
+- '(docs)'
+
+enhancement:
+
+schemas:
+- '(schema)'
+
+security:
+
+tests:
+- '(test)'
+
+# Note that the following labels will have never been added by issue-labeler,
+# since only for PRs and will not raise issue
+# - dependabot
+# - releases
