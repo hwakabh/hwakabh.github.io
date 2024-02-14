@@ -19,9 +19,25 @@ const docBase = {
   basePath: "/api/v1",
   tags: [
     {
-      name: '',
-      description: ''
+      name: "General",
+      description: "Endpoints for application management"
     },
+    {
+      name: "About",
+      description: "APIs related to information of about me"
+    },
+    {
+      name: "CV",
+      description: "APIs related to information of professional career"
+    },
+    {
+      name: "Works",
+      description: "APIs related to information of personal works"
+    },
+    {
+      name: "Contact",
+      description: "Endpoint for email contact"
+    }
   ],
   components: {}
 };
