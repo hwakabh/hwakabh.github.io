@@ -1,4 +1,9 @@
 # hwakabh.github.io
+
+[![Backend CI](https://github.com/hwakabh/hwakabh.github.io/actions/workflows/backend.yaml/badge.svg?branch=main)](https://github.com/hwakabh/hwakabh.github.io/actions/workflows/backend.yaml)
+
+[![Frontend CI](https://github.com/hwakabh/hwakabh.github.io/actions/workflows/frontend.yaml/badge.svg?branch=main)](https://github.com/hwakabh/hwakabh.github.io/actions/workflows/frontend.yaml)
+
 Personal Portfolio Page
 
 ## Architecture
