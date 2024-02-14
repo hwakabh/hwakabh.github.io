@@ -10,13 +10,13 @@ breaking:
 - '/(?!)/'
 
 bugs:
-- '(fix)'
+- '(fix|fix:)'
 
 chore:
-- '(chore)'
+- '(chore:)'
 
 ci:
-- '(ci)'
+- '(ci:)'
 
 deploy:
 - '(deploy)'
@@ -25,10 +25,10 @@ deps:
 - '(deps|dependencies)'
 
 docs:
-- '(docs)'
+- '(docs|document|diagram)'
 
 enhancement:
-- '/(?!)/'
+- '(feat|feature)'
 
 schemas:
 - '(schema)'
