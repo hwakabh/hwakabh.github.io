@@ -19,6 +19,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Assign author to issue
+        if: github.event.action == 'opened'
+        uses: technote-space/assign-author@v1.6.2
+        # https://github.com/technote-space/assign-author
+
       - name: Label Issue
         uses: github/issue-labeler@v3.4
         with:
