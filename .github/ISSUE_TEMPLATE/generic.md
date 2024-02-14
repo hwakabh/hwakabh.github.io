@@ -1,18 +1,18 @@
 ---
-name: Custom Issue Template
+name: Generic Issue Template
 about: Describe this issue template's purpose here.
 title: ''
 labels: ''
-assignees: hwakabh
+assignees: ''
 
 ---
 
 ## AsIs
 
 
-## ToDo
-- [ ]
-- [ ]
+## Justifications
 
-## (Optional) Acceptance
-N/A
+
+## (Optional) ToDo
+- [ ]
+- [ ]
