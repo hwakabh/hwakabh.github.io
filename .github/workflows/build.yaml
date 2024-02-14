@@ -49,5 +49,7 @@ jobs:
       - name: Build Vite App
         if: steps.filter.outputs.ui == 'true'
         working-directory: ./web-frontend
+        env:
+          VITE_API_ENDPOINT: ${{ secrets.VITE_API_ENDPOINT }}
         run: |
           npm ci && npx vite build
