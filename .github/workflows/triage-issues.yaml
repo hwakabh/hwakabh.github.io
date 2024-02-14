@@ -16,6 +16,9 @@ jobs:
   triage_issue:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Label Issue
         uses: github/issue-labeler@v3.4
         with:
