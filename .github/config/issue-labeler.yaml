@@ -1,10 +1,13 @@
 # Configurations of `github/issue-labeler` action
 # regexp patterns had basically been aligned for Conventional Commits and Semantic PR
 app(api):
+- '/(?!)/'
 
 app(ui):
+- '/(?!)/'
 
 breaking:
+- '/(?!)/'
 
 bugs:
 - '(fix)'
@@ -25,11 +28,13 @@ docs:
 - '(docs)'
 
 enhancement:
+- '/(?!)/'
 
 schemas:
 - '(schema)'
 
 security:
+- '(security)'
 
 tests:
 - '(test)'
