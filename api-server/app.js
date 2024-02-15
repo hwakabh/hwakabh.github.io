@@ -13,15 +13,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors(
   {
-    origin: 'http://localhost:5173',
-    credentials: true,
-  },
-  {
-    origin: 'http://localhost:8080',
-    credentials: true,
-  },
-  {
-    origin: 'https://hwakabh.github.io',
+    origin: [
+      'https://hwakabh.github.io',
+      'http://localhost:5173',
+      'http://localhost:8080',
+    ],
     credentials: true,
   }
 ))
