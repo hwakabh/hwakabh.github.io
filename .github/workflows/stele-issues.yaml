@@ -19,8 +19,9 @@ jobs:
           stale-issue-message: "This issue is stale because it has been open for 14 days with no activity."
           close-issue-message: "This issue was closed because it has been inactive for 3 days since being marked as stale."
           stale-issue-label: "staled"
-          days-before-issue-stale: 14
-          days-before-issue-close: 3
+          # NOTE: for validating behaviors of cron, set minimal values
+          days-before-issue-stale: 1
+          days-before-issue-close: 1
           # Does not apply for PRs
           days-before-pr-stale: -1
           days-before-pr-close: -1
