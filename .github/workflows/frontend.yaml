@@ -28,6 +28,8 @@ jobs:
       - name: Build vue-app to /docs
         run: npx vite build
         working-directory: ./web-frontend
+        env:
+          VITE_API_ENDPOINT: ${{ secrets.VITE_API_ENDPOINT }}
 
       - name: Upload as artifacts for GitHub Pages
         uses: actions/upload-pages-artifact@v3.0.1

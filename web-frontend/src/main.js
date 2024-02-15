@@ -1,8 +1,9 @@
 import { createApp } from 'vue';
 import { router } from './router/index';
-
-import App from './App.vue'
 import { IonicVue } from '@ionic/vue';
+
+import App from './App.vue';
+import axios from 'axios';
 
 // import './assets/main.css';
 
@@ -20,6 +21,8 @@ import '@ionic/vue/css/text-transformation.css';
 import '@ionic/vue/css/flex-utils.css';
 import '@ionic/vue/css/display.css';
 
+
+axios.defaults.baseURL = import.meta.env.VITE_API_ENDPOINT;
 
 const app = createApp(App);
 app.use(IonicVue);
