@@ -14,10 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup node.js environment
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 17.3.0
 
@@ -28,6 +28,8 @@ jobs:
       - name: Build vue-app to /docs
         run: npx vite build
         working-directory: ./web-frontend
+        env:
+          VITE_API_ENDPOINT: ${{ secrets.VITE_API_ENDPOINT }}
 
       - name: Upload as artifacts for GitHub Pages
         uses: actions/upload-pages-artifact@v3.0.1

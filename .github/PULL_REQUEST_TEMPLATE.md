@@ -3,10 +3,9 @@ closes: #
 relates: #
 
 ## What does this PR do?
+Describe what changes you make in your branch:
 
-
-## What does not include in this PR?
-- e2e testings, since this requires merge into `main` to confirm changes would be applied
 
 ## (Optional) Additional Contexts
-N/A
+Describe additional information for reviewers (i.e. What does not included)
+- e2e testings are not included in this PR, since this requires merge into `main` to confirm changes would be applied

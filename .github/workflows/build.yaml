@@ -30,7 +30,7 @@ jobs:
       # Run only for Backend
       - name: Install pack
         if: steps.filter.outputs.api == 'true'
-        uses: buildpacks/github-actions/setup-pack@v5.0.0
+        uses: buildpacks/github-actions/setup-pack@v5.5.3
 
       - name: Build Express App
         if: steps.filter.outputs.api == 'true'
@@ -42,12 +42,14 @@ jobs:
       # Run only for Frontend
       - name: Setup node.js environment
         if: steps.filter.outputs.ui == 'true'
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 17.3.0
 
       - name: Build Vite App
         if: steps.filter.outputs.ui == 'true'
         working-directory: ./web-frontend
+        env:
+          VITE_API_ENDPOINT: ${{ secrets.VITE_API_ENDPOINT }}
         run: |
           npm ci && npx vite build

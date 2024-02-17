@@ -6,6 +6,8 @@ require('json5/lib/register');
 
 // Endpoint: /api/v1/cv
 router.get('/', (req, res, next) => {
+  // #swagger.tags = ['CV']
+  // #swagger.description = 'returns static contents about career summaries'
   res.header('Content-Type', 'application/json; charset=utf-8');
   res.json({
     "path": req.originalUrl,
@@ -14,9 +16,11 @@ router.get('/', (req, res, next) => {
 });
 
 
-// Endpoint: /api/v1/cv/project
+// Endpoint: /api/v1/cv/projects
 router.get('/projects', function(req, res, next) {
-  const projects = require(__dirname + "/../../contents/projects.json5");
+  // #swagger.tags = ['CV']
+  // #swagger.description = 'returns list of projects with static contents'
+  const projects = require(__dirname + "/../fixtures/payloads/projects.json5");
   console.log(projects);
 
   res.header('Content-Type', 'application/json; charset=utf-8');

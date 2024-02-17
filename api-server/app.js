@@ -11,12 +11,16 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(cors({
-  // add Vite app as allowed list
-  origin: 'http://localhost:5173',
-  // add "Access-Control-Allow-Credentials" to header
-  credentials: true,
-}))
+app.use(cors(
+  {
+    origin: [
+      'https://hwakabh.github.io',
+      'http://localhost:5173',
+      'http://localhost:8080',
+    ],
+    credentials: true,
+  }
+))
 
 // Include router
 const indexRouter = require('./routes/index');
