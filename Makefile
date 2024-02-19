@@ -39,7 +39,7 @@ show: ## Show related components for app
 	@echo ">>> "
 
 
-all: ## Start all componentes of portal-core app
+all: ## Start all componentes of application
 	@make install
 	@make doc
 	@make api
