@@ -36,7 +36,8 @@ doc: ## Update Swagger Documents
 
 
 show: ## Show related components for app
-	@echo ">>> "
+	@echo ">>> Listing up all proceess related to application"
+	@ps -ef |grep -E 'node_modules|nodebrew' |grep -v 'grep' || true
 
 
 all: ## Start all componentes of application
@@ -48,6 +49,7 @@ all: ## Start all componentes of application
 
 clean: ## Remove components
 	@echo ">>> Stopping application process ..."
+	@pgrep node |xargs -I {} kill -9 {} || true
 
 
 help: ## Print this help
