@@ -15,7 +15,7 @@ axios.get('/api/v1/cv/projects')
 
 
 // Vue lifecycle hooks
-onMounted(function() {
+onMounted(() => {
   console.log(projectData);
 })
 </script>
