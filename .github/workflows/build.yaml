@@ -3,9 +3,7 @@ name: Build CI
 on:
   pull_request:
     branches:
-      - '**'
-      - '!main'
-      - '!releases'
+      - 'main'
     paths:
       - 'api-server/**'
       - 'web-frontend/**'
