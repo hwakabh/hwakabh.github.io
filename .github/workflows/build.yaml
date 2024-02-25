@@ -2,6 +2,7 @@ name: Build CI
 
 on:
   pull_request:
+    # triggered only when PR created with its target to main
     branches:
       - 'main'
     paths:
