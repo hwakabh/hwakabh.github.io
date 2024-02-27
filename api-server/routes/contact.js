@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 
+// TODO: passing through request body to external SMTP services
 router.post('/', (req, res, next) => {
   // #swagger.tags = ['Contact']
   // #swagger.description = 'invoke external API to send email'
