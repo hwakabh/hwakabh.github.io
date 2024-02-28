@@ -22,7 +22,7 @@ import '@ionic/vue/css/flex-utils.css';
 import '@ionic/vue/css/display.css';
 
 
-axios.defaults.baseURL = import.meta.env.VITE_API_ENDPOINT;
+axios.defaults.baseURL = import.meta.env.VITE_API_ENDPOINT ?? 'http://localhost:3000';
 
 const app = createApp(App);
 app.use(IonicVue);
