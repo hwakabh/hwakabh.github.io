@@ -20,7 +20,7 @@ install: ## Install all dependencies for app
 	@cd "${PROJECT_ROOT}/schemas" && npm install
 	@echo ""
 	@echo ">>> [api-server] Installing all packages required for application ..."
-	@cd "${PROJECT_ROOT}/api-server" && yarn install
+	@cd "${PROJECT_ROOT}/api-server" && npm install
 	@echo ""
 	@echo ">>> [web-frontend] Installing all packages required for application ..."
 	@cd "${PROJECT_ROOT}/web-frontend" && npm install
@@ -29,7 +29,7 @@ install: ## Install all dependencies for app
 
 api: ## Starting up Express API
 	@echo ">>> [api-server] Starting up API server process"
-	@cd "${PROJECT_ROOT}/api-server" && yarn run start &
+	@cd "${PROJECT_ROOT}/api-server" && npm run dev &
 
 
 ui: ## Starting up Vue UI

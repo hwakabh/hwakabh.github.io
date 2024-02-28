@@ -2,12 +2,13 @@
 import axios from "axios";
 import { ref, onMounted } from "vue";
 
+import GitHubIcon from '../components/icons/GitHub.vue';
 
-const projectData = ref('');
-axios.get('/api/v1/cv/projects')
+const workData = ref([]);
+axios.get('/api/v1/works')
   .then((resp) => {
-    console.log(resp.data)
-    projectData.value = resp.data.content[0].descriptions[0];
+    console.log(resp.data.content);
+    workData.value = resp.data.content;
   })
   .catch((err) => {
     console.log(err);
@@ -16,14 +17,34 @@ axios.get('/api/v1/cv/projects')
 
 // Vue lifecycle hooks
 onMounted(() => {
-  console.log(projectData);
+  console.log(workData);
 })
 </script>
 
 
 <template>
-  <p>
-    Here is my works!
-    {{ projectData }}
-  </p>
+  <h3>
+    Personal Works
+  </h3>
+
+  <div v-for="(w, idx) in workData"
+  :key="idx"
+  class="work-detail" >
+    <p>
+      <a :href="w.url" target="_blank"> {{ w.title }} </a>
+
+      <a v-if="w.gitHubRepoUrl" :href="w.gitHubRepoUrl" target="_blank">
+        <component :is="GitHubIcon" />
+      </a>
+      <br>
+
+      Descriptions: {{ w.descriptions }}
+      <br>
+      <!-- TODO: loop with v-for -->
+      Technical Stacks: {{ w.techStacks }}
+      <br>
+      {{ w.imageUrl }}
+    </p>
+  </div>
+
 </template>
