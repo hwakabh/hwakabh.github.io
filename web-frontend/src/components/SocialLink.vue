@@ -9,6 +9,7 @@ import GitHubIcon from './icons/GitHub.vue'
 import InstagramIcon from './icons/Instagram.vue'
 import LinkedInIcon from './icons/LinkedIn.vue'
 import XIcon from './icons/X.vue'
+import ContactIcon from './icons/Contact.vue'
 
 const snsIcons = [
   {
@@ -29,6 +30,10 @@ const snsIcons = [
   {
     comp: FacebookIcon,
     url: "https://www.facebook.com/hiroyuki.wakabayashi.146"
+  },
+  {
+    comp: ContactIcon,
+    url: '/contact'
   }
 ]
 </script>
