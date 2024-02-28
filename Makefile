@@ -29,7 +29,7 @@ install: ## Install all dependencies for app
 
 api: ## Starting up Express API
 	@echo ">>> [api-server] Starting up API server process"
-	@cd "${PROJECT_ROOT}/api-server" && yarn run start &
+	@cd "${PROJECT_ROOT}/api-server" && npm run dev &
 
 
 ui: ## Starting up Vue UI
