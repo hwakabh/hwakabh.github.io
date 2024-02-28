@@ -4,11 +4,11 @@ import { ref, onMounted } from "vue";
 
 import GitHubIcon from '../components/icons/GitHub.vue';
 
-const projectData = ref([]);
+const workData = ref([]);
 axios.get('/api/v1/works')
   .then((resp) => {
     console.log(resp.data.content);
-    projectData.value = resp.data.content;
+    workData.value = resp.data.content;
   })
   .catch((err) => {
     console.log(err);
@@ -17,33 +17,33 @@ axios.get('/api/v1/works')
 
 // Vue lifecycle hooks
 onMounted(() => {
-  console.log(projectData);
+  console.log(workData);
 })
 </script>
 
 
 <template>
-  <p>
+  <h3>
     Personal Works
-  </p>
+  </h3>
 
-  <div v-for="(p, idx) in projectData"
+  <div v-for="(w, idx) in workData"
   :key="idx"
-  class="project-detail" >
+  class="work-detail" >
     <p>
-      <a :href="p.url" target="_blank"> {{ p.title }} </a>
+      <a :href="w.url" target="_blank"> {{ w.title }} </a>
 
-      <a v-if="p.gitHubRepoUrl" :href="p.gitHubRepoUrl" target="_blank">
+      <a v-if="w.gitHubRepoUrl" :href="w.gitHubRepoUrl" target="_blank">
         <component :is="GitHubIcon" />
       </a>
       <br>
 
-      Descriptions: {{ p.descriptions }}
+      Descriptions: {{ w.descriptions }}
       <br>
       <!-- TODO: loop with v-for -->
-      Technical Stacks: {{ p.techStacks }}
+      Technical Stacks: {{ w.techStacks }}
       <br>
-      {{ p.imageUrl }}
+      {{ w.imageUrl }}
     </p>
   </div>
 
