@@ -20,7 +20,7 @@ install: ## Install all dependencies for app
 	@cd "${PROJECT_ROOT}/schemas" && npm install
 	@echo ""
 	@echo ">>> [api-server] Installing all packages required for application ..."
-	@cd "${PROJECT_ROOT}/api-server" && yarn install
+	@cd "${PROJECT_ROOT}/api-server" && npm install
 	@echo ""
 	@echo ">>> [web-frontend] Installing all packages required for application ..."
 	@cd "${PROJECT_ROOT}/web-frontend" && npm install
