@@ -17,7 +17,8 @@ axios.get('/api/v1/about/books')
   <p>
     Born in 1991 in Tokyo, and got into IT from maintaining a university club's homepage. <br>
     Currently works as a software engineer and also works as a freelancer.  <br>
-    Likes coffee, gin, music and relaxing cafes, dislike sweet or spicy foods.  <br>
+    Likes coffee, gin, music and relaxing cafes <br>
+    Dislike sweet or spicy foods  <br>
   </p>
   <h2 class="subsections">Musics</h2>
     <p>
