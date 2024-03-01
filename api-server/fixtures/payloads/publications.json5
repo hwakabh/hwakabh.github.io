@@ -2,10 +2,22 @@
   "filename": "publications.json5",
   "list": [
     {
+      title: 'VMware Explore 2022',
+      descriptions: 'Presentation of step-by-step automations of Kubernetes Operations',
+      date: '2022/11/16',
+      filename: '20221116_VMware-Explore-2022-Japan_MA22278.pdf',
+    },
+    {
       title: 'IaC Seminar',
-      descriptions: '',
+      descriptions: 'Presentations for IaCC (https://iacc.doorkeeper.jp) Event#2',
       date: '2018/04/18',
       filename: '20180418_IaC-Seminar_Presentations.pdf',
     },
+    {
+      title: 'Graduation Thesis',
+      descriptions: 'Winner prediction of Soccer WorldCup 2018 with Ordered Probit model',
+      date: '2015/02/02',
+      filename: '20150202_Graduation_Thesis.pdf',
+    }
   ]
 }
