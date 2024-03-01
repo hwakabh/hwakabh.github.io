@@ -60,9 +60,8 @@ axios.get('/api/v1/cv/publications')
   :key="idx"
   class="education-detail" >
     <p>
-      <h5> {{ e.title }} </h5>
+      <h5> {{ e.start }} - {{ e.end }} : {{ e.title }} </h5>
       <div> {{ e.descriptions }}</div>
-      <div> Period: {{ e.start }} - {{ e.end }} </div>
     </p>
   </div>
 
