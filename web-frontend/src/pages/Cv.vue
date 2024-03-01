@@ -5,7 +5,6 @@ import { ref } from 'vue';
 const projectData = ref([]);
 axios.get('/api/v1/cv/projects')
   .then((resp) => {
-    console.log(resp.data.content);
     projectData.value = resp.data.content;
   })
   .catch((err) => {
@@ -15,7 +14,6 @@ axios.get('/api/v1/cv/projects')
 const educationData = ref([]);
 axios.get('/api/v1/cv/educations')
   .then((resp) => {
-    console.log(resp.data.content);
     educationData.value = resp.data.content;
   })
   .catch((err) => {
@@ -25,7 +23,6 @@ axios.get('/api/v1/cv/educations')
 const publicationData = ref([]);
 axios.get('/api/v1/cv/publications')
   .then((resp) => {
-    console.log(resp.data.content);
     publicationData.value = resp.data.content;
   })
   .catch((err) => {
