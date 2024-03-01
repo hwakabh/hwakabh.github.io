@@ -66,7 +66,7 @@ axios.get('/api/v1/cv/publications')
   </div>
 
   <h3>
-    Publications
+    Publications / Exposures
   </h3>
   <div v-for="(pb, idx) in publicationData"
   :key="idx"
