@@ -4,10 +4,10 @@ const router = express.Router();
 require('json5/lib/register');
 
 
-// Endpont: /api/v1/works
 router.get('/', (req, res, next) => {
   // #swagger.tags = ['Works']
-  // #swagger.description = 'list of personal works with static contents'
+  // #swagger.summary = 'list of personal works with static contents'
+  // #swagger.description = '/api/v1/works'
   const works = require(__dirname + "/../fixtures/payloads/works.json5");
   console.log(works);
 

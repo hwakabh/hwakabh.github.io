@@ -22,8 +22,8 @@
       ],
 
       // Project Period
-      start: '2015-09',
-      end: '2016-04',
+      start: '2015/09',
+      end: '2016/04',
     },
     {
       title: "Auto deployment for Software Defined Storeges",
@@ -38,8 +38,8 @@
         "Ansible",
         "GitHub",
       ],
-      start: '2016-12',
-      end: '2017-04'
+      start: '2016/12',
+      end: '2017/04'
     },
     {
       title: "Visualization Project with OSS Solutions",
@@ -57,8 +57,8 @@
         "CloudStack",
         "GitLab",
       ],
-      start: '2017-08',
-      end: '2018-03'
+      start: '2017/08',
+      end: '2018/03'
     },
     {
       title: "Agile development of Web-Application for Storage Infrastrature",
@@ -75,8 +75,8 @@
         "PKS (Pivotal Container Service)",
         "GitLab CI",
       ],
-      start: '2018-01',
-      end: '2018-09'
+      start: '2018/01',
+      end: '2018/09'
     },
     {
       title: "Residency Project with Software Defined Storages",
@@ -89,8 +89,8 @@
         "EMC Hardware Storages (VNX/VPLEX/Unity)",
         "Cisco SAN Switches (MDS Series)",
       ],
-      start: '2016-05',
-      end: '2019-05'
+      start: '2016/05',
+      end: '2019/05'
     },
     {
       title: "RESTful Web-Application development for Storage Infrastrature",
@@ -108,8 +108,8 @@
         "Git",
         "Ansible",
       ],
-      start: '2018-04',
-      end: '2019-05'
+      start: '2018/04',
+      end: '2019/05'
     }
   ]
 }
