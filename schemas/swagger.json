@@ -118,6 +118,20 @@
         }
       }
     },
+    "/api/v1/cv/certifications": {
+      "get": {
+        "tags": [
+          "CV"
+        ],
+        "summary": "/api/v1/cv/certifications",
+        "description": "returns list of certifications with static contents",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/v1/cv/educations": {
       "get": {
         "tags": [

@@ -15,6 +15,19 @@ router.get('/', (req, res, next) => {
   });
 });
 
+router.get('/certifications', function(req, res, next) {
+  // #swagger.tags = ['CV']
+  // #swagger.summary = '/api/v1/cv/certifications'
+  // #swagger.description = 'returns list of certifications with static contents'
+  const certifications = require(__dirname + "/../fixtures/payloads/certifications.json5");
+
+  res.header('Content-Type', 'application/json; charset=utf-8');
+  res.json({
+    "path": req.originalUrl,
+    "content": certifications.list.reverse()
+  });
+});
+
 router.get('/educations', function(req, res, next) {
   // #swagger.tags = ['CV']
   // #swagger.summary = '/api/v1/cv/educations'
@@ -37,7 +50,7 @@ router.get('/projects', function(req, res, next) {
   res.header('Content-Type', 'application/json; charset=utf-8');
   res.json({
     "path": req.originalUrl,
-    "content": projects.list
+    "content": projects.list.reverse()
   });
 });
 

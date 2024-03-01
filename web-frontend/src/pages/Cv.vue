@@ -28,6 +28,15 @@ axios.get('/api/v1/cv/publications')
   .catch((err) => {
     console.log(err);
   })
+
+const certificationData = ref([]);
+axios.get('/api/v1/cv/certifications')
+  .then((resp) => {
+    certificationData.value = resp.data.content;
+  })
+  .catch((err) => {
+    console.log(err);
+  })
 </script>
 
 <template>
@@ -49,6 +58,20 @@ axios.get('/api/v1/cv/publications')
       Skills: {{ p.skills }}
     </p>
   </div>
+
+  <h3>
+    Certifications
+  </h3>
+  <li v-for="(c, idx) in certificationData"
+  :key="idx"
+  class="certification-detail" >
+    <div v-if="c.credential">
+      {{ c.date }}: <a :href="c.credential"> {{ c.title }} </a>
+    </div>
+    <div v-else>
+      {{ c.date }}: {{ c.title }}
+    </div>
+  </li>
 
   <h3>
     Educations
