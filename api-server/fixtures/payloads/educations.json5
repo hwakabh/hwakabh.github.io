@@ -1,0 +1,11 @@
+{
+  "filename": "educations.json5",
+  "list": [
+    {
+      title: 'Waseda University',
+      descriptions: "Bachelor's Degree, Econometrics and Quantitative Economics",
+      start: '2011/04',
+      end: '2015/03',
+    },
+  ]
+}

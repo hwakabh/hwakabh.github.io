@@ -4,35 +4,112 @@
     {
       // This is some comment with multiple lines with breaks
       // Note that we can use both single-quotes and double-quotes
-      title: 'Project Title here',
+      title: 'Server OS Installation for Public Cloud Corp',
 
       // Project descriptions
       descriptions: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. \
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "Joining after as new graduates to EMC, engaged to build system of auto-deployment of 100+ OS Installation(ESXi).",
+        "Optimized Server operations (ESXi auto-Installation and configuration) with open-sourced software and scripting auto installation programs.",
+        "Using with PXE-Booting technology, Linux Kickstarting installtion, and custom PowerCLI scripts, reduced the TCO of OS deployment and configurations.",
+        "As the result of the automation, decreased lead-time and cost of server implementation from 30h to 5h total.",
+        "After the project had been closed, the project team accomplishment had awarded as 2015 President Award in EMC Japan.",
       ],
       // Related skills used in the project
       skills: [
-        "Linux",
-        "Kubernetes"
+        "ESXi",
+        "PowerShell",
+        "PowerCLI"
       ],
 
       // Project Period
-      start: 'YYYY-mm',
-      end: 'YYYY-mm',
+      start: '2015/09',
+      end: '2016/04',
     },
     {
-      title: "",
+      title: "Auto deployment for Software Defined Storeges",
       descriptions: [
-        "some",
-        "description",
-        "here"
+        "To reduce time/cost of installation and configuration of EMC ScaleIO for 400+ Linux/ESXi servers, used OSS, Ansible, and customized for the requirements.",
+        "Since Ansible-ScaleIO project in EMC{Code} had been already launched in world-wide, ",
+        "to folk it in local Japan customer, handled communications with the global EMC GitHub committer to enhance it.",
+        "After the project had been closed, our team accomplishment had awarded as President Award in EMC Japan.",
       ],
-      skills: [],
-      start: 'yyyy-mm',
-      end: 'yyyy-mm'
+      skills: [
+        "ScaleIO (EMC Software Storage)",
+        "Ansible",
+        "GitHub",
+      ],
+      start: '2016/12',
+      end: '2017/04'
+    },
+    {
+      title: "Visualization Project with OSS Solutions",
+      descriptions: [
+        "To visualize utilizations of customer's network infrastructure, developed container-based application with OSS solutions for ETL.",
+        "Using with Docker, ElasticSearch, Grafana, InfluxDB, and scratched Python scripts for calculation, visualized network metrics, such as throughput, rate-in and rate-out of 100+ network switches.",
+        "In development phase with colleagues, used internal GitLab and experienced agile development with team members.",
+      ],
+      skills: [
+        "Docker",
+        "ElasticSearch",
+        "Grafana",
+        "InfluxDB",
+        "Python",
+        "CloudStack",
+        "GitLab",
+      ],
+      start: '2017/08',
+      end: '2018/03'
+    },
+    {
+      title: "Agile development of Web-Application for Storage Infrastrature",
+      descriptions: [
+        "For reducing human-errors or operational failures, created web-application with Python Django, for internal use of delivery specialists.",
+        "Developed application, whose input is just an Excel format they've been using, of fully-automated to generate commands to implementation.",
+        "For the environments of running application, deployed Pivotal Cloud Foundry(PKS and PCF) on ESXi clusters in local lab, realized to be DevOps solutions with auto-deployment with using GitLab CI",
+      ],
+      skills: [
+        "Python",
+        "Django",
+        "PostgreSQL",
+        "PCF (Pivotal Cloud Foundry)",
+        "PKS (Pivotal Container Service)",
+        "GitLab CI",
+      ],
+      start: '2018/01',
+      end: '2018/09'
+    },
+    {
+      title: "Residency Project with Software Defined Storages",
+      descriptions: [
+        "Experienced operational support with EMC's Software Defined Storage products, such as ViPR-Controller, ScaleIO, mainly enhanced in-housed production of storage operations as role of infrastructure management including backup, and networking.",
+        "Through 2+ years of this residency project, proceed re-design of customer's infrastructure in customer site, and improved efficiency of customer's infrastructure provisioning using EMC products",
+      ],
+      skills: [
+        "ViPR-Controller (EMC Software Storage)",
+        "EMC Hardware Storages (VNX/VPLEX/Unity)",
+        "Cisco SAN Switches (MDS Series)",
+      ],
+      start: '2016/05',
+      end: '2019/05'
+    },
+    {
+      title: "RESTful Web-Application development for Storage Infrastrature",
+      descriptions: [
+        "Forked project from residency service, developed web-application for automation of storage operation, which has RESTful API with Django RESTful Framework(DRF).",
+        "The project started by the trigger of EOS of DellEMC ViPR-Controller and needed to develop alternative functionalities for the product, ViPR-Controller.",
+        "Starting hearing the storage operation with the product from the customer, took the lead of planning schedule, designing and developing of application, deployment, and maintenance of them.",
+        "The application mainly made from Python and Django, and having integration of Ansible, Git, and NoSQL(MongoDB) at the backend.",
+        "After the project had been settled, won personally \"2019 APJ Game Changer Award\".",
+      ],
+      skills: [
+        "Python",
+        "Django",
+        "MongoDB",
+        "Git",
+        "Ansible",
+      ],
+      start: '2018/04',
+      end: '2019/05'
     }
   ]
 }

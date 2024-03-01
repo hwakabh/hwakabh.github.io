@@ -19,10 +19,43 @@
       "url": "",
       "imageUrl": "",
       "gitHubRepoUrl": "https://github.com/hwakabh/random-travelers",
-      "descriptions": "",
+      "descriptions": "People who make thier decisions decided by Cloud Native",
       "techStacks": [
         "Python",
-        "Poetry"
+        "Poetry",
+        "jQuery"
+      ]
+    },
+    {
+      "title": "6ow3idGirl",
+      "url": "",
+      "imageUrl": "",
+      "gitHubRepoUrl": "https://github.com/hwakabh/6ow3idGirl",
+      "descriptions": "Official Homepage of 6ow 3id girl",
+      "techStacks": [
+        "Express",
+      ]
+    },
+    {
+      "title": "waseda-mochida",
+      "url": "",
+      "imageUrl": "",
+      "gitHubRepoUrl": "https://github.com/hwakabh/waseda-mochida",
+      "descriptions": "Official Homepage of Waseda Mochida",
+      "techStacks": [
+        "Python",
+        "Flask",
+        "LINE Pay"
+      ]
+    },
+    {
+      "title": "Luana Shanti",
+      "url": "https://luana-shanti.jp",
+      "imageUrl": "",
+      "gitHubRepoUrl": "",
+      "descriptions": "Luana Shanti Homepage hosted by WordPress",
+      "techStacks": [
+        "WordPress",
       ]
     },
   ]

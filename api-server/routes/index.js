@@ -3,7 +3,8 @@ const router = express.Router();
 
 router.get('/', function(req, res) {
   // #swagger.tags = ['General']
-  // #swagger.description = 'backend API root'
+  // #swagger.summary = 'backend API root'
+  // #swagger.description = '/ (root)'
   res.json({
     "path": req.originalUrl,
     "content": "Hello, Developers!"
@@ -13,7 +14,8 @@ router.get('/', function(req, res) {
 
 router.get('/healthz', function(req, res) {
   // #swagger.tags = ['General']
-  // #swagger.description = 'Endpoint of probe target'
+  // #swagger.summary = 'Endpoint of probe target'
+  // #swagger.description = '/healthz'
   res.status(200).json({
     "status": "ok"
   });

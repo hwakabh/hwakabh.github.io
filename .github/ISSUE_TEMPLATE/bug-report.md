@@ -13,7 +13,5 @@ assignees: ''
 ## Current Behavior
 
 
-## Expected Bahavior
+## Expected Bahavior / Acceptance
 
-
-## Acceptance Criteria

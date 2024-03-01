@@ -3,10 +3,10 @@ const router = express.Router();
 const axios = require('axios');
 
 
-// Endpoint: /api/v1/about
 router.get('/', (req, res, next) => {
   // #swagger.tags = ['About']
-  // #swagger.description = 'returns static information about me'
+  // #swagger.summary = 'returns static information about me'
+  // #swagger.description = '/api/v1/about'
   res.header('Content-Type', 'application/json; charset=utf-8');
   res.json({
     "path": req.originalUrl,
@@ -14,10 +14,10 @@ router.get('/', (req, res, next) => {
   })
 });
 
-// Endpoint: /api/v1/about/books
 router.get('/books', async (req, res, next) => {
   // #swagger.tags = ['About']
-  // #swagger.description = 'list of books responses from Booklog API'
+  // #swagger.summary = 'list of books responses from Booklog API'
+  // #swagger.description = '/api/v1/about/books'
   const url = 'https://api.booklog.jp/v2/json/hwakabh'
   const books = await axios.get(url)
     .then(response => {
@@ -38,10 +38,10 @@ router.get('/books', async (req, res, next) => {
 
 
 // TODO: need to add scraping features
-// Endpoint: /api/v1/about/movies
 router.get('/movies', (req, res, next) => {
   // #swagger.tags = ['About']
-  // #swagger.description = 'list of movies from the results of scrapping Filmarks'
+  // #swagger.summary = 'list of movies from the results of scrapping Filmarks'
+  // #swagger.description = '/api/v1/about/movies'
   res.header('Content-Type', 'application/json; charset=utf-8');
   res.json({
     "path": req.originalUrl,

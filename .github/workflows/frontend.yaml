@@ -26,7 +26,9 @@ jobs:
         working-directory: ./web-frontend
 
       - name: Build vue-app to /docs
-        run: npx vite build
+        run: |
+          npx vite build
+          cp -rp ./dist/index.html ./dist/404.html
         working-directory: ./web-frontend
         env:
           VITE_API_ENDPOINT: ${{ secrets.VITE_API_ENDPOINT }}
