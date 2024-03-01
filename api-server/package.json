@@ -14,7 +14,7 @@
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "debug": "~4.3.4",
-    "express": "~4.18.2",
+    "express": "~4.18.3",
     "http-errors": "~2.0.0",
     "json5": "^2.2.3",
     "morgan": "~1.10.0"
