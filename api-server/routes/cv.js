@@ -15,6 +15,19 @@ router.get('/', (req, res, next) => {
   });
 });
 
+// Endpoint: /api/v1/cv/educations
+router.get('/educations', function(req, res, next) {
+  // #swagger.tags = ['CV']
+  // #swagger.description = 'returns list of projects with static contents'
+  const educations = require(__dirname + "/../fixtures/payloads/educations.json5");
+  console.log(educations);
+
+  res.header('Content-Type', 'application/json; charset=utf-8');
+  res.json({
+    "path": req.originalUrl,
+    "content": educations.list
+  });
+});
 
 // Endpoint: /api/v1/cv/projects
 router.get('/projects', function(req, res, next) {
