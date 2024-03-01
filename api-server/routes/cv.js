@@ -4,9 +4,9 @@ const router = express.Router();
 require('json5/lib/register');
 
 
-// Endpoint: /api/v1/cv
 router.get('/', (req, res, next) => {
   // #swagger.tags = ['CV']
+  // #swagger.summary = '/api/v1/cv'
   // #swagger.description = 'returns static contents about career summaries'
   res.header('Content-Type', 'application/json; charset=utf-8');
   res.json({
@@ -15,9 +15,9 @@ router.get('/', (req, res, next) => {
   });
 });
 
-// Endpoint: /api/v1/cv/educations
 router.get('/educations', function(req, res, next) {
   // #swagger.tags = ['CV']
+  // #swagger.summary = '/api/v1/cv/educations'
   // #swagger.description = 'returns list of educations with static contents'
   const educations = require(__dirname + "/../fixtures/payloads/educations.json5");
 
@@ -28,10 +28,10 @@ router.get('/educations', function(req, res, next) {
   });
 });
 
-// Endpoint: /api/v1/cv/projects
 router.get('/projects', function(req, res, next) {
   // #swagger.tags = ['CV']
-  // #swagger.description = 'returns list of projects with static contents'
+  // #swagger.summary = 'returns list of projects with static contents'
+  // #swagger.description = '/api/v1/cv/projects'
   const projects = require(__dirname + "/../fixtures/payloads/projects.json5");
 
   res.header('Content-Type', 'application/json; charset=utf-8');
@@ -41,10 +41,10 @@ router.get('/projects', function(req, res, next) {
   });
 });
 
-// Endpoint: /api/v1/cv/publications
 router.get('/publications', function(req, res, next) {
   // #swagger.tags = ['CV']
-  // #swagger.description = 'returns list of publications with static contents'
+  // #swagger.summary = 'returns list of publications with static contents'
+  // #swagger.description = '/api/v1/cv/publications'
   let publications = require(__dirname + "/../fixtures/payloads/publications.json5");
 
   // parse JSON with adding `url` fields from `filename` fields
@@ -61,10 +61,10 @@ router.get('/publications', function(req, res, next) {
   });
 });
 
-// Endpoint: /api/v1/cv/publications/:filename
 router.get('/publications/:filename', function(req, res, next) {
   // #swagger.tags = ['CV']
-  // #swagger.description = 'send file with pdf format'
+  // #swagger.summary = 'send file with pdf format'
+  // #swagger.description = '/api/v1/cv/publications/:filename'
   console.log(`Start sending file: ${req.params.filename}`);
   res.setHeader('Content-type', 'application/pdf');
   res.sendFile(`${req.params.filename}`, { root: __dirname + "/../fixtures/pubs/" })

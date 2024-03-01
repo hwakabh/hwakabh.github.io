@@ -39,7 +39,8 @@
         "tags": [
           "General"
         ],
-        "description": "backend API root",
+        "summary": "backend API root",
+        "description": "/ (root)",
         "responses": {
           "200": {
             "description": "OK"
@@ -52,7 +53,8 @@
         "tags": [
           "General"
         ],
-        "description": "Endpoint of probe target",
+        "summary": "Endpoint of probe target",
+        "description": "/healthz",
         "responses": {
           "200": {
             "description": "OK"
@@ -65,7 +67,8 @@
         "tags": [
           "About"
         ],
-        "description": "returns static information about me",
+        "summary": "returns static information about me",
+        "description": "/api/v1/about",
         "responses": {
           "200": {
             "description": "OK"
@@ -78,7 +81,8 @@
         "tags": [
           "About"
         ],
-        "description": "list of books responses from Booklog API",
+        "summary": "list of books responses from Booklog API",
+        "description": "/api/v1/about/books",
         "responses": {
           "200": {
             "description": "OK"
@@ -91,7 +95,8 @@
         "tags": [
           "About"
         ],
-        "description": "list of movies from the results of scrapping Filmarks",
+        "summary": "list of movies from the results of scrapping Filmarks",
+        "description": "/api/v1/about/movies",
         "responses": {
           "200": {
             "description": "OK"
@@ -104,7 +109,22 @@
         "tags": [
           "CV"
         ],
+        "summary": "/api/v1/cv",
         "description": "returns static contents about career summaries",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/cv/educations": {
+      "get": {
+        "tags": [
+          "CV"
+        ],
+        "summary": "/api/v1/cv/educations",
+        "description": "returns list of educations with static contents",
         "responses": {
           "200": {
             "description": "OK"
@@ -117,7 +137,55 @@
         "tags": [
           "CV"
         ],
-        "description": "returns list of projects with static contents",
+        "summary": "returns list of projects with static contents",
+        "description": "/api/v1/cv/projects",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/cv/publications": {
+      "get": {
+        "tags": [
+          "CV"
+        ],
+        "summary": "returns list of publications with static contents",
+        "description": "/api/v1/cv/publications",
+        "parameters": [
+          {
+            "name": "host",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/cv/publications/{filename}": {
+      "get": {
+        "tags": [
+          "CV"
+        ],
+        "summary": "send file with pdf format",
+        "description": "/api/v1/cv/publications/:filename",
+        "parameters": [
+          {
+            "name": "filename",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -130,7 +198,8 @@
         "tags": [
           "Works"
         ],
-        "description": "list of personal works with static contents",
+        "summary": "list of personal works with static contents",
+        "description": "/api/v1/works",
         "responses": {
           "200": {
             "description": "OK"
@@ -143,7 +212,8 @@
         "tags": [
           "Contact"
         ],
-        "description": "invoke external API to send email",
+        "summary": "invoke external API to send email",
+        "description": "/api/v1/contact",
         "responses": {
           "200": {
             "description": "OK"
@@ -156,7 +226,8 @@
         "tags": [
           "Contact"
         ],
-        "description": "returns thanks message after POST requests",
+        "summary": "returns thanks message after POST requests",
+        "description": "/api/v1/contact/thanks",
         "responses": {
           "200": {
             "description": "OK"
