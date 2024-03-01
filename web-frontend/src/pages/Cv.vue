@@ -66,7 +66,7 @@ axios.get('/api/v1/cv/certifications')
   :key="idx"
   class="certification-detail" >
     <div v-if="c.credential">
-      {{ c.date }}: <a :href="c.credential"> {{ c.title }} </a>
+      {{ c.date }}: <a :href="c.credential" target="_blank"> {{ c.title }} </a>
     </div>
     <div v-else>
       {{ c.date }}: {{ c.title }}
