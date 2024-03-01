@@ -74,7 +74,7 @@ axios.get('/api/v1/cv/publications')
     <p>
       <h5> {{ pb.title }} </h5>
       <div> {{ pb.descriptions }}</div>
-      <div> Download Link(pdf): {{ pb.link }} </div>
+      <div> Presented at {{ pb.date }}, <a :href="pb.link" target="_target">Download Link(pdf)</a></div>
     </p>
   </div>
 
