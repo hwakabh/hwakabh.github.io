@@ -5,9 +5,9 @@ const app = express();
 const createError = require('http-errors');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
+const helmet = require('helmet');
 const logger = require('morgan');
 
-app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -21,6 +21,8 @@ app.use(cors(
     credentials: true,
   }
 ))
+app.use(helmet());
+app.use(logger('dev'));
 
 // Include router
 const indexRouter = require('./routes/index');
