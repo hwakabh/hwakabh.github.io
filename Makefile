@@ -11,7 +11,7 @@ API_CONTAINER_NAME := "express"
 
 --check-docker:
 	@echo ">>> Checking docker engine exists ..."
-	@echo "Server: `docker version --format '{{.Server.Version}}'` / Client: `docker version --format '{{.Client.Version}}'`"
+	@echo "Server: `docker version --format '{{.Server.Version}}' 2> /dev/null || true` / Client: `docker version --format '{{.Client.Version}}' 2> /dev/null || true`"
 	@echo ''
 
 
@@ -44,7 +44,7 @@ doc: ## Update Swagger Documents
 
 show: --check-docker ## Show related components for app
 	@echo ">>> Listing up production resources"
-	@docker container ls --filter name=${API_CONTAINER_NAME}
+	@docker container ls --filter name=${API_CONTAINER_NAME} 2> /dev/null || true
 	@echo ""
 	@ps -ef |grep http-server |grep -v 'grep' || true
 	@echo ""
