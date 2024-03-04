@@ -21,6 +21,12 @@ docs:
 - changed-files:
   - any-glob-to-any-file: ['**/README.md', 'app-diagram.drawio.svg']
 
+deploy:
+- changed-files:
+  - any-glob-to-any-file:
+    - 'Makefile'
+    - '.github/workflows/**/*'
+
 schemas:
 - changed-files:
   - any-glob-to-any-file: ['schemas/**/*']
