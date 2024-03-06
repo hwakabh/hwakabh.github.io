@@ -45,8 +45,18 @@ const textCount = computed(() => {
   </p>
 
   <div v-if="isCompleted">
-    <ThanksContent />
+    <!-- Override part of templates in Thanks.vue -->
+    <ThanksContent>
+      <template v-slot:message>
+        Thanks!
+      </template>
+
+    <template v-if="senderEmail" v-slot:sender>
+        {{ senderEmail }}
+      </template>
+    </ThanksContent>
   </div>
+
   <form v-else @submit.prevent="sendMail">
 	  <label for="name">Your Name</label>
   	  <input v-model="senderName" name="sendername" id="sendername">
