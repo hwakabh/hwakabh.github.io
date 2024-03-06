@@ -7,7 +7,7 @@
     "preview": "vite preview --port 4173"
   },
   "dependencies": {
-    "@ionic/vue": "^7.7.3",
+    "@ionic/vue": "^7.7.4",
     "@ionic/vue-router": "^7.7.3",
     "axios": "^1.6.7",
     "vue": "^3.4.21",
