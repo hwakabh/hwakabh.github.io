@@ -28,10 +28,6 @@ const routes = [
     path: "/contact",
     component: Contact
   },
-  // {
-  //   path: "/contact/thanks",
-  //   component: Works
-  // },
 ];
 
 export const router = createRouter({
