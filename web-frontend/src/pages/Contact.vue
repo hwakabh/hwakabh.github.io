@@ -1,6 +1,6 @@
 <script setup>
 import axios from "axios";
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 
 const senderName = ref('');
 const senderEmail = ref('');
@@ -22,11 +22,16 @@ const sendMail = () => {
   .then((resp) => {
     console.log(resp.data);
     console.log('Send payload to backend API.');
+    // TODO: navigate to /thanks page
   })
   .catch((err) => {
     console.log(err);
   })
 };
+
+const textCount = computed(() => {
+  return senderBody.value.length
+})
 </script>
 
 
@@ -50,6 +55,7 @@ const sendMail = () => {
 	  <label for="body">Body</label>
   	  <textarea v-model="senderBody"/>
     <br>
+    <div>Word Count: {{ textCount }}</div>
 
     <button type="submit">Submit</button>
 	</form>
