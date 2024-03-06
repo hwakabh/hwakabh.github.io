@@ -3,11 +3,13 @@ const app = express();
 
 // Middlewares
 const createError = require('http-errors');
+const compression = require('compression');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const helmet = require('helmet');
 const logger = require('morgan');
 
+app.use(compression());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
