@@ -9,6 +9,7 @@ const senderEmail = ref('');
 const senderBody = ref('');
 
 const isCompleted = ref(false);
+const isError = ref(false);
 
 // function should be defined as variables
 const sendMail = () => {
@@ -28,6 +29,7 @@ const sendMail = () => {
   })
   .catch((err) => {
     console.log(err);
+    isError.value = true;
   })
 };
 
@@ -44,6 +46,11 @@ const textCount = computed(() => {
     Please feel free to get in touch!
   </p>
 
+  <div v-if="isError">
+    <p>
+      Failed to send email!
+    </p>
+  </div>
   <div v-if="isCompleted">
     <!-- Override part of templates in Thanks.vue -->
     <ThanksContent>
@@ -57,7 +64,7 @@ const textCount = computed(() => {
     </ThanksContent>
   </div>
 
-  <form v-else @submit.prevent="sendMail">
+  <form v-if="!isCompleted && !isError" @submit.prevent="sendMail">
 	  <label for="name">Your Name</label>
   	  <input v-model="senderName" name="sendername" id="sendername">
     <br>
