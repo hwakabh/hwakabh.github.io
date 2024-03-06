@@ -232,19 +232,25 @@
           "200": {
             "description": "OK"
           }
-        }
-      }
-    },
-    "/api/v1/contact/thanks": {
-      "get": {
-        "tags": [
-          "Contact"
-        ],
-        "summary": "returns thanks message after POST requests",
-        "description": "/api/v1/contact/thanks",
-        "responses": {
-          "200": {
-            "description": "OK"
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "example": "any"
+                  },
+                  "email": {
+                    "example": "any"
+                  },
+                  "body": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
           }
         }
       }

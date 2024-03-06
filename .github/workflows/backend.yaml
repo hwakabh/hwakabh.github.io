@@ -56,6 +56,11 @@ jobs:
 
       # https://github.com/google-github-actions/deploy-cloudrun
       - uses: 'google-github-actions/deploy-cloudrun@v2'
+        env:
+          APIKEY: ${{ secrets.MAIL_API_KEY }}
         with:
           image: 'us-central1-docker.pkg.dev/hwakabh-dev/gh-pages/api:latest'
           service: 'gh-pages-api-server'
+          env_vars: |
+            MAIL_API_API=$APIKEY
+
