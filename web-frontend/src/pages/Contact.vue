@@ -2,6 +2,8 @@
 import axios from "axios";
 import { ref, computed } from 'vue';
 
+import ThanksContent from "../components/Thanks.vue";
+
 const senderName = ref('');
 const senderEmail = ref('');
 const senderBody = ref('');
@@ -43,8 +45,7 @@ const textCount = computed(() => {
   </p>
 
   <div v-if="isCompleted">
-    <!-- TODO: insert slots -->
-    Thanks !
+    <ThanksContent />
   </div>
   <form v-else @submit.prevent="sendMail">
 	  <label for="name">Your Name</label>
