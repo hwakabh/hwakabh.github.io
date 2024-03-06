@@ -6,22 +6,21 @@ const senderName = ref('');
 const senderEmail = ref('');
 const senderBody = ref('');
 
-// const data = new FormData();
-// data.append('name', senderName);
-// data.append('email', senderEmail);
-// data.append('body', senderBody);
-
-const data = {
-  name: senderName,
-  email: senderEmail,
-  body: senderBody
-}
-
-function sendMail() {
+// function should be defined as variables
+const sendMail = () => {
   console.log('Invoke sendMail() ...!');
+
+  // We need not to use FormData() and .append()
+  // since simply sending text to backend
+  const data = {
+    name: senderName.value,
+    email: senderEmail.value,
+    body: senderBody.value
+  }
+
   axios.post('/api/v1/contact', data)
   .then((resp) => {
-    console.log(resp);
+    console.log(resp.data);
     console.log('Send payload to backend API.');
   })
   .catch((err) => {

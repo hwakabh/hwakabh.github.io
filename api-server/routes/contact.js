@@ -10,7 +10,8 @@ router.post('/', (req, res, next) => {
   console.log(req.body);
   res.header('Content-Type', 'application/json; charset=utf-8');
   res.json({
-    status: "POST ok"
+    status: "POST ok",
+    inputs: req.body
   })
 });
 
