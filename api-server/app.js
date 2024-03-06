@@ -10,7 +10,7 @@ const helmet = require('helmet');
 const logger = require('morgan');
 
 const rateLimit = require('express-rate-limit');
-// limit each IP to 20 requests per 1 minitues
+// limit each IP to 20 requests per 1 minute
 const apiRequestLimiter = rateLimit({
   windowMs: 1 * 60 * 1000,
   max: 20,
