@@ -2,14 +2,16 @@
 import axios from "axios";
 import { ref, computed } from 'vue';
 
+import ThanksContent from "../components/Thanks.vue";
+
 const senderName = ref('');
 const senderEmail = ref('');
 const senderBody = ref('');
 
+const isCompleted = ref(false);
+
 // function should be defined as variables
 const sendMail = () => {
-  console.log('Invoke sendMail() ...!');
-
   // We need not to use FormData() and .append()
   // since simply sending text to backend
   const data = {
@@ -21,8 +23,8 @@ const sendMail = () => {
   axios.post('/api/v1/contact', data)
   .then((resp) => {
     console.log(resp.data);
-    console.log('Send payload to backend API.');
-    // TODO: navigate to /thanks page
+    // Flip flags for rendering thanks page
+    isCompleted.value = true;
   })
   .catch((err) => {
     console.log(err);
@@ -31,9 +33,8 @@ const sendMail = () => {
 
 const textCount = computed(() => {
   return senderBody.value.length
-})
+});
 </script>
-
 
 <template>
   <h3>
@@ -43,7 +44,20 @@ const textCount = computed(() => {
     Please feel free to get in touch!
   </p>
 
-  <form @submit.prevent="sendMail">
+  <div v-if="isCompleted">
+    <!-- Override part of templates in Thanks.vue -->
+    <ThanksContent>
+      <template v-slot:message>
+        Thanks!
+      </template>
+
+    <template v-if="senderEmail" v-slot:sender>
+        {{ senderEmail }}
+      </template>
+    </ThanksContent>
+  </div>
+
+  <form v-else @submit.prevent="sendMail">
 	  <label for="name">Your Name</label>
   	  <input v-model="senderName" name="sendername" id="sendername">
     <br>
