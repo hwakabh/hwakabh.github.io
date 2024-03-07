@@ -1,16 +1,36 @@
 const express = require('express');
 const app = express();
 
-// Middlewares
-const createError = require('http-errors');
-const cookieParser = require('cookie-parser');
-const cors = require('cors');
-const logger = require('morgan');
+// --- Middlewares
+const helmet = require('helmet');
+app.use(helmet());
 
-app.use(logger('dev'));
+const logger = require('morgan');
+app.use(logger('combined'));
+
+const compression = require('compression');
+app.use(compression());
+
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
+// limit each IP to 20 requests per 1 minute
+const rateLimit = require('express-rate-limit');
+const apiRequestLimiter = rateLimit({
+  windowMs: 1 * 60 * 1000,
+  max: 20,
+  handler: (req, res) => {
+    return res.status(429).json({
+      path: req.originalUrl,
+      error: 'You sent too many requests. Please wait a while then try again'
+    })
+  }
+});
+app.use(apiRequestLimiter);
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+const cors = require('cors');
 app.use(cors(
   {
     origin: [
@@ -22,19 +42,21 @@ app.use(cors(
   }
 ))
 
-// Include router
+// --- Routes
 const indexRouter = require('./routes/index');
 const apiRouter = require('./routes/api');
 app.use('/', indexRouter);
 app.use('/', apiRouter);
 
 
-// catch 404 and forward to error handler
+// --- error handler
+// catch 404 and forward to error handler + define error handler
+// this should be defined only after including routers
+const createError = require('http-errors');
 app.use((req, res, next) => {
   next(createError(404));
 });
 
-// error handler
 app.use((err, req, res, next) => {
   // set locals, only providing error in development
   res.locals.message = err.message;
@@ -47,4 +69,6 @@ app.use((err, req, res, next) => {
   });
 });
 
+
+// -- exports for including from bin/www
 module.exports = app;
