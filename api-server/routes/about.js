@@ -22,6 +22,9 @@ router.get('/books', async (req, res, next) => {
   // #swagger.tags = ['About']
   // #swagger.summary = 'list of books responses from Booklog API'
   // #swagger.description = '/api/v1/about/books'
+
+  // note: available query strings
+  // ?category=0&status=0&rank=0&count=100
   const url = 'https://api.booklog.jp/v2/json/hwakabh'
   const books = await axios.get(url)
     .then(response => {
@@ -31,13 +34,11 @@ router.get('/books', async (req, res, next) => {
       console.log(error);
     })
 
-  let resBody = {
+  res.header('Content-Type', 'application/json; charset=utf-8');
+  res.json({
     "path": req.originalUrl,
     "content": books
-    }
-
-  res.header('Content-Type', 'application/json; charset=utf-8');
-  res.json(resBody);
+  });
 })
 
 
@@ -54,7 +55,6 @@ router.get('/movies', async (req, res, next) => {
     .catch(error => {
       console.log(error);
     });
-  // console.log(html);
 
   const dom = new JSDOM(html);
   const document = dom.window.document;
@@ -68,13 +68,12 @@ router.get('/movies', async (req, res, next) => {
       src: elm.getAttribute('src')
     });
   });
-  // console.log(movies);
 
   res.header('Content-Type', 'application/json; charset=utf-8');
   res.json({
     "path": req.originalUrl,
     // returns only first 6 instances
-    "about": movies.slice(0, 6)
+    "content": movies.slice(0, 6)
   })
 });
 
