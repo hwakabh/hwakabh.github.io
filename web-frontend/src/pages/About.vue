@@ -2,12 +2,22 @@
 import axios from "axios";
 import { ref } from "vue";
 
-const bookData = ref('');
-
+const bookData = ref([]);
 axios.get('/api/v1/about/books')
   .then((res) => {
     console.log(res.data);
-    bookData.value = res.data.content.tana.name;
+    res.data.content.books.forEach((b) => {
+      bookData.value.push(b.title)
+    })
+  })
+
+const movieData = ref([]);
+axios.get('/api/v1/about/movies')
+  .then((res) => {
+    console.log(res.data);
+    res.data.content.forEach((m) => {
+      movieData.value.push(m.title);
+    })
   })
 </script>
 
@@ -25,13 +35,15 @@ axios.get('/api/v1/about/books')
       TBD
     </p>
   <h2 class="subsections">Books</h2>
-    <p>
-      Personal bookshelf name: {{ bookData }}
-    </p>
+    <p>Fetched from latest books in bookshelf from <a href="https://booklog.jp">booklog</a></p>
+    <li v-for="(b, idx) in bookData" :key="idx">
+      {{ b }}
+    </li>
   <h2 class="subsections">Movies</h2>
-    <p>
-      TBD
-    </p>
+    <p>Fetched from latest clips from <a href="https://filmarks.com">Filmarks</a></p>
+    <li v-for="(m, idx) in movieData" :key="idx">
+      {{ m }}
+    </li>
 </template>
 
 <style scoped>
