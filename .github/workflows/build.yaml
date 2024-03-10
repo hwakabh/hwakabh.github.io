@@ -29,7 +29,7 @@ jobs:
       # Run only for Backend
       - name: Install pack
         if: steps.filter.outputs.api == 'true'
-        uses: buildpacks/github-actions/setup-pack@v5.5.3
+        uses: buildpacks/github-actions/setup-pack@v5.5.4
 
       - name: Build Express App
         if: steps.filter.outputs.api == 'true'
