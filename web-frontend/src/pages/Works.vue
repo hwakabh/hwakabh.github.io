@@ -40,7 +40,6 @@ onMounted(() => {
 
       Descriptions: {{ w.descriptions }}
       <br>
-      <!-- TODO: loop with v-for -->
       Technical Stacks: {{ w.techStacks }}
       <br>
       {{ w.imageUrl }}
