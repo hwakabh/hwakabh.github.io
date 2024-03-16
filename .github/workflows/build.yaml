@@ -27,6 +27,19 @@ jobs:
         # https://github.com/dorny/paths-filter
 
       # Run only for Backend
+      - name: Setup node.js environment
+        if: steps.filter.outputs.api == 'true'
+        working-directory: ./api-server
+        uses: actions/setup-node@v4
+        with:
+          node-version: 21.9.0
+
+      - name: Run Jest
+        if: steps.filter.outputs.api == 'true'
+        working-directory: ./api-server
+        run: |
+          npm ci && npx jest
+
       - name: Install pack
         if: steps.filter.outputs.api == 'true'
         uses: buildpacks/github-actions/setup-pack@v5.5.4
@@ -41,6 +54,7 @@ jobs:
       # Run only for Frontend
       - name: Setup node.js environment
         if: steps.filter.outputs.ui == 'true'
+        working-directory: ./web-frontend
         uses: actions/setup-node@v4
         with:
           node-version: 17.3.0
