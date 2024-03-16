@@ -32,7 +32,7 @@ jobs:
         working-directory: ./api-server
         uses: actions/setup-node@v4
         with:
-          node-version: 21.9.0
+          node-version: 20.9.0
 
       - name: Run Jest
         if: steps.filter.outputs.api == 'true'
