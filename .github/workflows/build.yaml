@@ -19,6 +19,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.9.0
+
       - name: Filter Path
         uses: dorny/paths-filter@v3
         id: filter
@@ -27,12 +32,6 @@ jobs:
         # https://github.com/dorny/paths-filter
 
       # Run only for Backend
-      - name: Setup node.js environment
-        if: steps.filter.outputs.api == 'true'
-        working-directory: ./api-server
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20.9.0
 
       - name: Run Jest
         if: steps.filter.outputs.api == 'true'
@@ -52,13 +51,6 @@ jobs:
             --path ./api-server/
 
       # Run only for Frontend
-      - name: Setup node.js environment
-        if: steps.filter.outputs.ui == 'true'
-        working-directory: ./web-frontend
-        uses: actions/setup-node@v4
-        with:
-          node-version: 17.3.0
-
       - name: Build Vite App
         if: steps.filter.outputs.ui == 'true'
         working-directory: ./web-frontend
