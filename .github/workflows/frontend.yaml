@@ -28,6 +28,7 @@ jobs:
       - name: Build Vite app
         run: |
           npx vite build
+          cp -rp ./dist/index.html ./dist/200.html
           cp -rp ./dist/index.html ./dist/404.html
         working-directory: ./web-frontend
         env:
