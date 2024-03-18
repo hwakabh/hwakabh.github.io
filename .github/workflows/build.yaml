@@ -19,6 +19,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.9.0
+
       - name: Filter Path
         uses: dorny/paths-filter@v3
         id: filter
@@ -27,6 +32,18 @@ jobs:
         # https://github.com/dorny/paths-filter
 
       # Run only for Backend
+      - name: Install dependencies
+        if: steps.filter.outputs.api == 'true'
+        working-directory: ./api-server
+        run: |
+          npm ci
+
+      - name: Run Jest
+        if: steps.filter.outputs.api == 'true'
+        working-directory: ./api-server
+        run: |
+          npx jest
+
       - name: Install pack
         if: steps.filter.outputs.api == 'true'
         uses: buildpacks/github-actions/setup-pack@v5.5.4
@@ -39,11 +56,17 @@ jobs:
             --path ./api-server/
 
       # Run only for Frontend
-      - name: Setup node.js environment
+      - name: Install dependencies
         if: steps.filter.outputs.ui == 'true'
-        uses: actions/setup-node@v4
-        with:
-          node-version: 17.3.0
+        working-directory: ./web-frontend
+        run: |
+          npm ci
+
+      - name: Run Vitest for compoenent testings
+        if: steps.filter.outputs.ui == 'true'
+        working-directory: ./web-frontend
+        run: |
+          npx vitest run
 
       - name: Build Vite App
         if: steps.filter.outputs.ui == 'true'
@@ -51,4 +74,4 @@ jobs:
         env:
           VITE_API_ENDPOINT: ${{ secrets.VITE_API_ENDPOINT }}
         run: |
-          npm ci && npx vite build
+          npx vite build
