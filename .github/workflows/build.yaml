@@ -32,12 +32,17 @@ jobs:
         # https://github.com/dorny/paths-filter
 
       # Run only for Backend
+      - name: Install dependencies
+        if: steps.filter.outputs.api == 'true'
+        working-directory: ./api-server
+        run: |
+          npm ci
 
       - name: Run Jest
         if: steps.filter.outputs.api == 'true'
         working-directory: ./api-server
         run: |
-          npm ci && npx jest
+          npx jest
 
       - name: Install pack
         if: steps.filter.outputs.api == 'true'
@@ -51,10 +56,22 @@ jobs:
             --path ./api-server/
 
       # Run only for Frontend
+      - name: Install dependencies
+        if: steps.filter.outputs.ui == 'true'
+        working-directory: ./web-frontend
+        run: |
+          npm ci
+
+      - name: Run Vitest for compoenent testings
+        if: steps.filter.outputs.ui == 'true'
+        working-directory: ./web-frontend
+        run: |
+          npx vitest run
+
       - name: Build Vite App
         if: steps.filter.outputs.ui == 'true'
         working-directory: ./web-frontend
         env:
           VITE_API_ENDPOINT: ${{ secrets.VITE_API_ENDPOINT }}
         run: |
-          npm ci && npx vite build
+          npx vite build
