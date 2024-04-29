@@ -1,22 +1,30 @@
 {
   "name": "web-frontend",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite --clearScreen false",
     "build": "vite build",
-    "preview": "vite preview --port 4173"
+    "preview": "vite preview --port 4173",
+    "test": "vitest run"
+  },
+  "engines": {
+    "node": "20.9.0"
   },
   "dependencies": {
-    "@ionic/vue": "^7.7.4",
-    "@ionic/vue-router": "^7.8.0",
-    "axios": "^1.6.7",
+    "@ionic/vue": "^8.0.1",
+    "@ionic/vue-router": "^8.0.1",
+    "axios": "^1.6.8",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
     "vue-writer": "^1.2.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.2.0",
+    "@vue/test-utils": "^2.4.5",
+    "happy-dom": "^14.7.1",
     "http-server": "^14.1.1",
-    "vite": "^3.2.8"
+    "vite": "^3.2.10",
+    "vitest": "^1.4.0"
   }
 }
