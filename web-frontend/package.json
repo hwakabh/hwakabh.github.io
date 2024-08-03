@@ -12,7 +12,7 @@
     "node": "20.9.0"
   },
   "dependencies": {
-    "@ionic/vue": "^8.0.1",
+    "@ionic/vue": "^8.2.6",
     "@ionic/vue-router": "^8.2.5",
     "axios": "^1.7.2",
     "vue": "^3.4.34",
