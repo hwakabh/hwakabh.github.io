@@ -15,7 +15,7 @@
     "@ionic/vue": "^8.2.6",
     "@ionic/vue-router": "^8.2.6",
     "axios": "^1.7.3",
-    "vue": "^3.4.37",
+    "vue": "^3.4.38",
     "vue-router": "^4.4.3",
     "vue-writer": "^2.0.2"
   },
