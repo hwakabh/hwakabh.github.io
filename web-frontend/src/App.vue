@@ -14,13 +14,15 @@ import FooterContent from './components/FooterContent.vue';
         <ion-grid>
           <ion-row>
             <ion-col />
-            <ion-col size="6">
+            <ion-col size="8">
               <div class="route-wrap">
-                <router-link to="/">GO HOME</router-link> /
-                <router-link to="/about">About me</router-link> /
-                <router-link to="/cv">Resume</router-link> /
-                <router-link to="/works">Side Gigs</router-link> /
-                <router-link to="/contact">Contact forms</router-link>
+                <router-link to="/">Home</router-link>
+                |
+                <router-link to="/about">About me</router-link>
+                |
+                <router-link to="/cv">Resume</router-link>
+                |
+                <router-link to="/works">Side Gigs</router-link>
             </div>
             </ion-col>
             <ion-col />
@@ -47,7 +49,7 @@ import FooterContent from './components/FooterContent.vue';
         <ion-grid>
           <ion-row>
             <ion-col />
-            <ion-col size="6">
+            <ion-col size="10">
               <FooterContent />
             </ion-col>
             <ion-col />
