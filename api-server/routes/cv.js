@@ -33,15 +33,12 @@ router.get('/certifications', async (req, res, next) => {
       console.log(error);
     })
 
-    console.log(certificates);
-
   res.header({
     'Content-Type': 'application/json; charset=utf-8',
   });
   res.json({
     "path": req.originalUrl,
     "content": certificates
-    // "content": certifications.list.reverse()
   });
 });
 
@@ -58,16 +55,22 @@ router.get('/educations', function(req, res, next) {
   });
 });
 
-router.get('/projects', function(req, res, next) {
+router.get('/projects', async (req, res, next) => {
   // #swagger.tags = ['CV']
   // #swagger.summary = 'returns list of projects with static contents'
   // #swagger.description = '/api/v1/cv/projects'
-  const projects = require(__dirname + "/../fixtures/payloads/projects.json5");
+  const projects = await axios.get(url)
+    .then(response => {
+      return response.data.projects
+    })
+    .catch(error => {
+      console.log(error);
+    })
 
   res.header('Content-Type', 'application/json; charset=utf-8');
   res.json({
     "path": req.originalUrl,
-    "content": projects.list.reverse()
+    "content": projects
   });
 });
 
@@ -82,7 +85,6 @@ router.get('/publications', function(req, res, next) {
     // TODO: make dynamically change with http/https
     elm.link = 'http://' + req.headers.host + '/api/v1/cv/publications/' + elm.filename
   });
-  console.log(publications.list);
 
   res.header('Content-Type', 'application/json; charset=utf-8');
   res.json({
