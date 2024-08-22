@@ -43,33 +43,35 @@ axios.get('/api/v1/cv/certifications')
   <h3>
     Selected Accomplishments
   </h3>
+  <p>
+    All of the project data has been fetched from <a href="https://www.linkedin.com/in/hiroyuki-wakabayashi-61b661157/" target="_blank" rel="noopener noreferrer">LinkedIn profiles</a>.
+  </p>
 
-  <div v-for="(p, idx) in projectData"
+  <div v-for="(p, idx) in projectData.items"
   :key="idx"
   class="project-detail" >
     <p>
       <h5> {{ p.title }} </h5>
-      <li v-for="(d, idx) in p.descriptions">
-        {{ d }}
-      </li>
+      <div> {{ p.description }} </div>
       <br>
-      <div> Period: {{ p.start }} - {{ p.end }} </div>
+      <div> Period: {{ p.start.year }}/{{ p.start.month }} - {{ p.end.year }}/{{ p.end.month }} </div>
       <!-- TODO: loop with v-for -->
-      Skills: {{ p.skills }}
+      <!-- Since we can not retrieve skills associated to projects from responses of RapidApi, need to consider design -->
+      <!-- Skills: {{ p.skills }} -->
     </p>
   </div>
 
   <h3>
     Certifications
   </h3>
+  <p>
+    Certified badges are all stored in <a href="https://www.credly.com/users/hiroyuki-wakabayashi.056b817e" target="_blank" rel="noopener noreferrer">Credly Public Profile</a>
+  </p>
   <li v-for="(c, idx) in certificationData"
   :key="idx"
   class="certification-detail" >
-    <div v-if="c.credential">
-      {{ c.date }}: <a :href="c.credential" target="_blank"> {{ c.title }} </a>
-    </div>
-    <div v-else>
-      {{ c.date }}: {{ c.title }}
+    <div>
+      {{ c.start.year }}/{{ c.start.month }}: {{ c.name }}
     </div>
   </li>
 
