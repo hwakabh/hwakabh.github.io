@@ -22,7 +22,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.2",
     "@vue/test-utils": "^2.4.6",
-    "happy-dom": "^14.7.1",
+    "happy-dom": "^15.0.0",
     "http-server": "^14.1.1",
     "vite": "^5.4.2",
     "vitest": "^2.0.5"
