@@ -32,8 +32,17 @@ axios.get('/api/v1/about/movies')
   </p>
   <h2 class="subsections">Musics</h2>
     <p>
-      TBD
+      Fetched from <a href="https://music.apple.com/jp/playlist/pl.u-xlyNEdkuA4ymPy">Personal Apple Music playlist</a>
     </p>
+    <iframe
+      allow="autoplay *; encrypted-media *;"
+      frameborder="0"
+      height="450"
+      style="width:100%;max-width:660px;overflow:hidden;background:transparent;"
+      sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+      src="https://embed.music.apple.com/jp/playlist/pl.u-xlyNEdkuA4ymPy">
+    </iframe>
+
   <h2 class="subsections">Books</h2>
     <p>Fetched from latest books in bookshelf from <a href="https://booklog.jp">booklog</a></p>
     <li v-for="(b, idx) in bookData" :key="idx">
