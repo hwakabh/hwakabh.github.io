@@ -10,6 +10,7 @@ on:
 
 env:
   MAIL_API_KEY: ${{ secrets.MAIL_API_KEY }}
+  RAPID_API_KEY: ${{ secrets.RAPID_API_KEY }}
 
 jobs:
   image_build_and_push:
@@ -64,4 +65,4 @@ jobs:
           service: 'gh-pages-api-server'
           env_vars: |
             MAIL_API_KEY=${{ env.MAIL_API_KEY }}
-
+            RAPID_API_KEY=${{ env.RAPID_API_KEY }}
