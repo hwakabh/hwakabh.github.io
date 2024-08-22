@@ -62,14 +62,14 @@ axios.get('/api/v1/cv/certifications')
   <h3>
     Certifications
   </h3>
+  <p>
+    Certified badges are all stored in <a href="https://www.credly.com/users/hiroyuki-wakabayashi.056b817e" target="_blank" rel="noopener noreferrer">Credly Public Profile</a>
+  </p>
   <li v-for="(c, idx) in certificationData"
   :key="idx"
   class="certification-detail" >
-    <div v-if="c.credential">
-      {{ c.date }}: <a :href="c.credential" target="_blank"> {{ c.title }} </a>
-    </div>
-    <div v-else>
-      {{ c.date }}: {{ c.title }}
+    <div>
+      {{ c.start.year }}/{{ c.start.month }}: {{ c.name }}
     </div>
   </li>
 
