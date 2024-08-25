@@ -19,7 +19,7 @@
     "express-rate-limit": "^7.4.0",
     "helmet": "^7.1.0",
     "http-errors": "~2.0.0",
-    "jsdom": "^24.1.1",
+    "jsdom": "^25.0.0",
     "json5": "^2.2.3",
     "morgan": "~1.10.0"
   },
