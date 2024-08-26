@@ -14,7 +14,7 @@
   "dependencies": {
     "@ionic/vue": "^8.2.7",
     "@ionic/vue-router": "^8.2.7",
-    "axios": "^1.7.4",
+    "axios": "^1.7.5",
     "vue": "^3.4.38",
     "vue-router": "^4.4.3",
     "vue-writer": "^2.0.2"
@@ -28,7 +28,7 @@
     "vitest": "^2.0.5"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "4.21.0",
-    "@rollup/rollup-linux-arm64-gnu": "4.21.0"
+    "@rollup/rollup-linux-x64-gnu": "4.21.1",
+    "@rollup/rollup-linux-arm64-gnu": "4.21.1"
   }
 }
