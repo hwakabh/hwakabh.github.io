@@ -12,10 +12,10 @@
     "node": "20.9.0"
   },
   "dependencies": {
-    "@ionic/vue": "^8.3.1",
-    "@ionic/vue-router": "^8.3.1",
+    "@ionic/vue": "^8.3.2",
+    "@ionic/vue-router": "^8.3.2",
     "axios": "^1.7.7",
-    "vue": "^3.5.8",
+    "vue": "^3.5.11",
     "vue-router": "^4.4.5",
     "vue-writer": "^2.0.2"
   },
@@ -25,10 +25,10 @@
     "happy-dom": "^15.7.4",
     "http-server": "^14.1.1",
     "vite": "^5.4.8",
-    "vitest": "^2.1.1"
+    "vitest": "^2.1.2"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "4.22.4",
-    "@rollup/rollup-linux-arm64-gnu": "4.22.4"
+    "@rollup/rollup-linux-x64-gnu": "4.24.0",
+    "@rollup/rollup-linux-arm64-gnu": "4.24.0"
   }
 }
