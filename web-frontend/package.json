@@ -20,15 +20,15 @@
     "vue-writer": "^2.0.2"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.1.5",
+    "@vitejs/plugin-vue": "^5.2.0",
     "@vue/test-utils": "^2.4.6",
-    "happy-dom": "^15.11.0",
+    "happy-dom": "^15.11.4",
     "http-server": "^14.1.1",
     "vite": "^5.4.11",
-    "vitest": "^2.1.4"
+    "vitest": "^2.1.5"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "4.25.0",
-    "@rollup/rollup-linux-arm64-gnu": "4.25.0"
+    "@rollup/rollup-linux-x64-gnu": "4.26.0",
+    "@rollup/rollup-linux-arm64-gnu": "4.26.0"
   }
 }
