@@ -12,8 +12,6 @@
     "node": "20.9.0"
   },
   "dependencies": {
-    "@ionic/vue": "^8.4.0",
-    "@ionic/vue-router": "^8.4.0",
     "axios": "^1.7.8",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0",
@@ -28,7 +26,7 @@
     "vitest": "^2.1.5"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "4.27.4",
-    "@rollup/rollup-linux-arm64-gnu": "4.27.4"
+    "@rollup/rollup-linux-arm64-gnu": "4.27.4",
+    "@rollup/rollup-linux-x64-gnu": "4.27.4"
   }
 }
