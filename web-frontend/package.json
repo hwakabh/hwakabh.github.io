@@ -14,21 +14,21 @@
   "dependencies": {
     "@ionic/vue": "^8.4.0",
     "@ionic/vue-router": "^8.4.0",
-    "axios": "^1.7.7",
-    "vue": "^3.5.12",
-    "vue-router": "^4.4.5",
+    "axios": "^1.7.8",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0",
     "vue-writer": "^2.0.2"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.1.4",
+    "@vitejs/plugin-vue": "^5.2.0",
     "@vue/test-utils": "^2.4.6",
-    "happy-dom": "^15.9.0",
+    "happy-dom": "^15.11.6",
     "http-server": "^14.1.1",
-    "vite": "^5.4.10",
-    "vitest": "^2.1.4"
+    "vite": "^5.4.11",
+    "vitest": "^2.1.5"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "4.24.4",
-    "@rollup/rollup-linux-arm64-gnu": "4.24.4"
+    "@rollup/rollup-linux-x64-gnu": "4.27.4",
+    "@rollup/rollup-linux-arm64-gnu": "4.27.4"
   }
 }

@@ -46,7 +46,7 @@ jobs:
 
       - name: Install pack
         if: steps.filter.outputs.api == 'true'
-        uses: buildpacks/github-actions/setup-pack@v5.8.0
+        uses: buildpacks/github-actions/setup-pack@v5.8.2
 
       - name: Build Express App
         if: steps.filter.outputs.api == 'true'
