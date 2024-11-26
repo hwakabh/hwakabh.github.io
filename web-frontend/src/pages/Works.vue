@@ -23,7 +23,25 @@ onMounted(() => {
 
 
 <template>
-  <h3>
+    <!-- Two -->
+    <section id="two" class="wrapper style2-alt spotlights">
+      <div class="inner">
+        <h2>Personal Works</h2>
+        <p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+        <p>Full repository list in <a href="#">GitHub</a></p>
+
+        <ul class="alt">
+          <li><a href=""><strong>bennu-official</strong></a> <br> Official Homepage of Bennu</li>
+          <li><strong>random-travelers</strong><br> Some Descriptions </li>
+          <li><strong>Luana Shanti</strong> </li>
+          <li><strong>waseda-mochida</strong> </li>
+        </ul>
+
+      </div>
+    </section>
+
+
+ <!-- <h3>
     Personal Works
   </h3>
 
@@ -44,6 +62,6 @@ onMounted(() => {
       <br>
       {{ w.imageUrl }}
     </p>
-  </div>
+  </div> -->
 
 </template>

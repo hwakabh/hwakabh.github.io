@@ -1,5 +1,5 @@
 <script setup>
-import { IonCol, IonGrid, IonRow } from '@ionic/vue';
+// import { IonCol, IonGrid, IonRow } from '@ionic/vue';
 
 // SNS Links: SVG from tabler
 // https://tabler.io/icons

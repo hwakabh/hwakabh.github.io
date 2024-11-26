@@ -39,7 +39,39 @@ const textCount = computed(() => {
 </script>
 
 <template>
-  <h3>
+    <!-- Three -->
+    <section id="three" class="wrapper style1 fade-up">
+      <div class="inner">
+        <h2>Contact</h2>
+        <div class="style1">
+          <section>
+            <form method="post" action="#">
+              <div class="fields">
+                <div class="field half">
+                  <label for="name">Name</label>
+                  <input type="text" name="name" id="name" />
+                </div>
+                <div class="field half">
+                  <label for="email">Email</label>
+                  <input type="text" name="email" id="email" />
+                </div>
+                <div class="field">
+                  <label for="message">Message</label>
+                  <textarea name="message" id="message" rows="5"></textarea>
+                </div>
+              </div>
+              <ul class="actions">
+                <li><a href="" class="button submit">Send Message</a></li>
+              </ul>
+            </form>
+          </section>
+        </div>
+      </div>
+    </section>
+
+
+
+  <!-- <h3>
     Contact
   </h3>
   <p>
@@ -52,7 +84,6 @@ const textCount = computed(() => {
     </p>
   </div>
   <div v-if="isCompleted">
-    <!-- Override part of templates in Thanks.vue -->
     <ThanksContent>
       <template v-slot:message>
         Thanks!
@@ -79,5 +110,5 @@ const textCount = computed(() => {
     <div>Word Count: {{ textCount }}</div>
 
     <button type="submit">Submit</button>
-	</form>
+	</form> -->
 </template>
