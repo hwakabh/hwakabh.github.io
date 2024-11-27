@@ -40,28 +40,29 @@ const snsIcons = [
 
 
 <template>
-  <ion-grid>
-    <ion-row class="sns-links">
-      <div v-for="(snsIcon, idx) in snsIcons"
-      :key="idx"
-      class="sns-icon" >
-        <ion-col>
-          <a
-            target="_blank"
-            :href="snsIcon.url"
-            class="sns-link" >
-            <component :is="snsIcon.comp" />
-          </a>
-        </ion-col>
-      </div>
-    </ion-row>
-  </ion-grid>
+  <div class="sns-links">
+    <p v-for="(snsIcon, idx) in snsIcons"
+    :key="idx"
+    class="sns-icon" >
+      <a
+        target="_blank"
+        :href="snsIcon.url"
+        class="sns-link" >
+        <component :is="snsIcon.comp" />
+      </a>
+    </p>
+  </div>
 </template>
 
 
 <style scoped>
+p.sns-icon {
+  margin: 0.5em;
+}
+
+
 .sns-links {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
 }
 </style>
