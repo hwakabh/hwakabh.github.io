@@ -40,7 +40,6 @@ const words = ref([
       <SocialLink />
       <br>
       <ul class="actions">
-        <!-- <li><a href="/about" class="button scrolly">Learn more</a></li> -->
         <li><router-link to="/about" class="button scrolly">Learn more</router-link></li>
       </ul>
     </div>

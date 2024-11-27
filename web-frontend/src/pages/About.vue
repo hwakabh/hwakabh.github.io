@@ -82,10 +82,12 @@ axios.get('/api/v1/cv/publications')
               </li>
             </div>
 
-          <ul class="actions">
-            <li>Blog</li>
-            <!-- <li><router-link to="/blogs" class="button">Blog</router-link></li> -->
-          </ul>
+          <br>
+          <div>
+            <ul class="actions">
+              <li><router-link to="/help" class="button primary">Blog</router-link></li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -95,13 +97,13 @@ axios.get('/api/v1/cv/publications')
         <div class="inner">
 
           <h2>Professional</h2>
-          <p>
-            <blockquote>
+          <blockquote>
             Born in 1991 in Tokyo, and got into IT from maintaining a university club's homepage. <br>
             Currently works as a software engineer and also works as a freelancer.  <br>
             Likes coffee, gin, music and relaxing cafes <br>
             Dislike sweet or spicy foods  <br>
           </blockquote>
+          <p>
           Please see more details including major accomplishments in <a href="https://www.linkedin.com/in/hiroyuki-wakabayashi-61b661157/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </p>
 
