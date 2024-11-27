@@ -12,20 +12,20 @@
     "node": "20.9.0"
   },
   "dependencies": {
-    "@ionic/vue": "^8.4.0",
-    "@ionic/vue-router": "^8.4.0",
+    "@ionic/vue": "^8.4.1",
+    "@ionic/vue-router": "^8.4.1",
     "axios": "^1.7.8",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0",
     "vue-writer": "^2.0.2"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.2.0",
+    "@vitejs/plugin-vue": "^5.2.1",
     "@vue/test-utils": "^2.4.6",
     "happy-dom": "^15.11.6",
     "http-server": "^14.1.1",
     "vite": "^5.4.11",
-    "vitest": "^2.1.5"
+    "vitest": "^2.1.6"
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "4.27.4",
