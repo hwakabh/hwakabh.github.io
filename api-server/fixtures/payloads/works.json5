@@ -4,7 +4,6 @@
     {
       "title": "Bennu Official Homepage",
       "url": "https://bennu-official.page/home/",
-      "imageUrl": "",
       "gitHubRepoUrl": "https://github.com/hwakabh/bennu-official",
       "descriptions": "Official Homepage of Bennu",
       "techStacks": [
@@ -17,7 +16,6 @@
     {
       "title": "random-travelers",
       "url": "https://random-travelers.com",
-      "imageUrl": "",
       "gitHubRepoUrl": "https://github.com/hwakabh/random-travelers",
       "descriptions": "People who make thier decisions decided by Cloud Native",
       "techStacks": [
@@ -29,7 +27,6 @@
     {
       "title": "6ow3idGirl",
       "url": "https://6ow3idgirl.com",
-      "imageUrl": "",
       "gitHubRepoUrl": "https://github.com/hwakabh/6ow3idGirl",
       "descriptions": "Official Homepage of 6ow 3id girl",
       "techStacks": [
@@ -39,7 +36,6 @@
     {
       "title": "waseda-mochida",
       "url": "",
-      "imageUrl": "",
       "gitHubRepoUrl": "https://github.com/hwakabh/waseda-mochida",
       "descriptions": "Official Homepage of Waseda Mochida",
       "techStacks": [
@@ -51,7 +47,6 @@
     {
       "title": "Luana Shanti",
       "url": "https://luana-shanti.jp",
-      "imageUrl": "",
       "gitHubRepoUrl": "",
       "descriptions": "Luana Shanti Homepage hosted by WordPress",
       "techStacks": [
