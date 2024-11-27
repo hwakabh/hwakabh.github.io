@@ -54,7 +54,7 @@ axios.get('/api/v1/cv/publications')
           </blockquote>
 
           <h3>Musics</h3>
-          <p>
+          <div>
             Fetched from <a href="https://music.apple.com/jp/playlist/pl.u-xlyNEdkuA4ymPy" target="_blank" rel="noopener noreferrer">Personal Apple Music playlist</a>
             <iframe
               allow="autoplay *; encrypted-media *;"
@@ -64,23 +64,23 @@ axios.get('/api/v1/cv/publications')
               sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
               src="https://embed.music.apple.com/jp/playlist/pl.u-xlyNEdkuA4ymPy">
             </iframe>
-          </p>
+          </div>
 
           <h3>Books</h3>
-            <p>
+            <div>
               Fetched from latest books in bookshelf API from <a href="https://booklog.jp/users/hwakabh" target="_blank" rel="noopener noreferrer">booklog</a>
               <li v-for="(b, idx) in bookData" :key="idx">
               {{ b }}
               </li>
-            </p>
+            </div>
 
           <h3>Movies</h3>
-            <p>
+            <div>
               Fetched from latest clips from <a href="https://filmarks.com/users/11ne56"  target="_blank" rel="noopener noreferrer">Filmarks</a>
               <li v-for="(m, idx) in movieData" :key="idx">
                 {{ m }}
               </li>
-            </p>
+            </div>
 
           <ul class="actions">
             <li>Blog</li>
@@ -95,42 +95,44 @@ axios.get('/api/v1/cv/publications')
         <div class="inner">
 
           <h2>Professional</h2>
-          <blockquote>
+          <p>
+            <blockquote>
             Born in 1991 in Tokyo, and got into IT from maintaining a university club's homepage. <br>
             Currently works as a software engineer and also works as a freelancer.  <br>
             Likes coffee, gin, music and relaxing cafes <br>
             Dislike sweet or spicy foods  <br>
           </blockquote>
+          Please see more details including major accomplishments in <a href="https://www.linkedin.com/in/hiroyuki-wakabayashi-61b661157/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </p>
 
           <h3>Career History</h3>
-          <p>
+          <div>
             <ul>
               <li>2024-10 - Present: Resident Solutions Engineer / HashiCorp</li>
               <li>2019-06 - 2024-10: Telco Solutions Architect / VMware (merged by Broadcom Software)</li>
               <li>2015-04 - 2019-06: Delivery Specialist / EMC Corporation (merged by Dell Technologies)</li>
             </ul>
-            Please see more details including major accomplishments in <a href="https://www.linkedin.com/in/hiroyuki-wakabayashi-61b661157/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          </p>
+          </div>
 
           <h3>Educations</h3>
             <div v-for="(e, idx) in educationData"
               :key="idx"
               class="education-detail" >
-                <p>
+                <div>
                   <div> {{ e.start }} - {{ e.end }} : {{ e.title }} </div>
                   <div> {{ e.descriptions }}</div>
-                </p>
+                </div>
             </div>
 
           <h3>Publications / Exposures</h3>
             <div v-for="(pb, idx) in publicationData"
               :key="idx"
               class="publications-detail" >
-                <p>
+                <div>
                   <div> {{ pb.title }} </div>
-                  <div> {{ pb.descriptions }}</div>
-                  <div> Presented at {{ pb.date }}, <a :href="pb.link" target="_target">Download Link(pdf)</a></div>
-                </p>
+                  <li> {{ pb.descriptions }}</li>
+                  <li> Presented at {{ pb.date }}, <a :href="pb.link" target="_target">Download Link(pdf)</a></li>
+                </div>
             </div>
 
         </div>
@@ -140,8 +142,8 @@ axios.get('/api/v1/cv/publications')
 </template>
 
 <style scoped>
-.subsections {
+h3 {
   margin-top: 10pt;
-  margin-bottom: 10pt;
+  margin-bottom: 5pt;
 }
 </style>

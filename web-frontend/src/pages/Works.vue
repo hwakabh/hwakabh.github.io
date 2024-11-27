@@ -23,7 +23,7 @@ onMounted(() => {
   <section id="two" class="wrapper style2-alt spotlights">
     <div class="inner">
       <h2>Personal Works</h2>
-      <p>Full repository list in <a href="#">GitHub</a></p>
+      <p>Full repository list in <a href="https://github.com/hwakabh" target="_blank">GitHub</a></p>
 
       <ul v-for="(w, idx) in workData"
         :key="idx"

@@ -10,7 +10,6 @@ import './assets/noscript.css';
 axios.defaults.baseURL = import.meta.env.VITE_API_ENDPOINT ?? 'http://localhost:3000';
 
 const app = createApp(App);
-// app.use(IonicVue);
 app.use(router);
 
 router.isReady().then(() => {

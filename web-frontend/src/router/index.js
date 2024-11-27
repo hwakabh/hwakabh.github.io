@@ -4,7 +4,7 @@ import Home from '../pages/Home.vue';
 import About from '../pages/About.vue';
 import Works from '../pages/Works.vue';
 import Contact from '../pages/Contact.vue';
-import Help from '../pages/help.vue';
+import Help from '../pages/Help.vue';
 
 const routes = [
   {
