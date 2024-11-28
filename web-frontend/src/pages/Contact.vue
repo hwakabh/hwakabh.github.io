@@ -39,7 +39,7 @@ const textCount = computed(() => {
 </script>
 
 <template>
-  <section id="three" class="wrapper style1 fade-up">
+  <section id="three" class="wrapper style1 fullscreen fade-up">
     <div class="inner">
       <h2>Contact</h2>
       <p>Please feel free to get in touch! </p>

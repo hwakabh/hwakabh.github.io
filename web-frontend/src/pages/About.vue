@@ -41,7 +41,7 @@ axios.get('/api/v1/cv/publications')
 
 
 <template>
-  <section id="one" class="wrapper style2 spotlights">
+  <section id="one" class="wrapper style2 fullscreen spotlights">
     <section>
       <div class="content">
         <div class="inner">
@@ -60,6 +60,7 @@ axios.get('/api/v1/cv/publications')
               allow="autoplay *; encrypted-media *;"
               frameborder="0"
               height="450"
+              title="Apple Music Playlist"
               style="width:100%;max-width:660px;overflow:hidden;background:transparent;"
               sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
               src="https://embed.music.apple.com/jp/playlist/pl.u-xlyNEdkuA4ymPy">
@@ -98,10 +99,9 @@ axios.get('/api/v1/cv/publications')
 
           <h2>Professional</h2>
           <blockquote>
-            Born in 1991 in Tokyo, and got into IT from maintaining a university club's homepage. <br>
-            Currently works as a software engineer and also works as a freelancer.  <br>
-            Likes coffee, gin, music and relaxing cafes <br>
-            Dislike sweet or spicy foods  <br>
+            Consulting Architect with background in design/deployment/optimization of Telecomm infrastructures, programming, and application development. <br>
+            Focused on customer’s outcome with knowledges of both infrastructures and application, and leading high impact projects. <br>
+            Handled troubleshooting of high-severity cases with customer and global development/support team. <br>
           </blockquote>
           <p>
           Please see more details including major accomplishments in <a href="https://www.linkedin.com/in/hiroyuki-wakabayashi-61b661157/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -132,8 +132,10 @@ axios.get('/api/v1/cv/publications')
               class="publications-detail" >
                 <div>
                   <div> {{ pb.title }} </div>
-                  <li> {{ pb.descriptions }}</li>
-                  <li> Presented at {{ pb.date }}, <a :href="pb.link" target="_target">Download Link(pdf)</a></li>
+                  <ul>
+                    <li> {{ pb.descriptions }}</li>
+                    <li> Presented at {{ pb.date }}, <a :href="pb.link" target="_target">Download Link(pdf)</a></li>
+                  </ul>
                 </div>
             </div>
 
