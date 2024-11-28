@@ -2,7 +2,6 @@
 import { ref } from 'vue'
 import VueWriter from 'vue-writer'
 
-import HelloWorld from '../components/HelloWorld.vue'
 import SocialLink from '../components/SocialLink.vue'
 
 const words = ref([
@@ -23,7 +22,6 @@ const words = ref([
 </script>
 
 <template>
-  <HelloWorld msg="Hi, there!" />
 
   <VueWriter
     class="top-message"
@@ -31,15 +29,26 @@ const words = ref([
     :delay="1000"
     :type-speed="80"
     :erase-speed="80"
-     >
+    >
   </VueWriter>
 
-  <SocialLink />
+  <section id="intro" class="wrapper style1 fullscreen fade-up">
+    <div class="inner">
+      <h1 class="top-message">Hi, there!</h1>
+      <p>Just another fine responsive site template designed by <a href="http://html5up.net">HTML5 UP</a><br />
+      and released for free under the <a href="http://html5up.net/license">Creative Commons</a>.</p>
+      <SocialLink />
+      <br>
+      <ul class="actions">
+        <li><router-link to="/about" class="button scrolly">Learn more</router-link></li>
+      </ul>
+    </div>
+  </section>
+
 </template>
 
 <style scoped>
 .top-message {
   font-size: 40pt;
-  text-align: center;
 }
 </style>

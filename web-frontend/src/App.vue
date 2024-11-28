@@ -1,64 +1,28 @@
 <script setup>
-// required for page scrolling
-import { IonPage, IonContent } from '@ionic/vue';
-
-import { IonCol, IonGrid, IonRow } from '@ionic/vue';
+import SidebarContent from './components/SidebarContent.vue';
 import FooterContent from './components/FooterContent.vue';
+
 </script>
 
 <template>
-  <ion-page>
-    <ion-content>
+<!-- <script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script> -->
 
-      <header>
-        <ion-grid>
-          <ion-row>
-            <ion-col />
-            <ion-col size="8">
-              <div class="route-wrap">
-                <router-link to="/">Home</router-link>
-                |
-                <router-link to="/about">About me</router-link>
-                |
-                <router-link to="/cv">Resume</router-link>
-                |
-                <router-link to="/works">Side Gigs</router-link>
-            </div>
-            </ion-col>
-            <ion-col />
-          </ion-row>
-        </ion-grid>
+  <SidebarContent />
 
-      </header>
+  <div id="wrapper">
+    <router-view />
+  </div>
 
-      <main>
-        <ion-grid>
-          <ion-row>
-            <ion-col />
-            <ion-col size="10">
+  <footer id="footer" class="wrapper style1-alt">
+    <FooterContent />
+  </footer>
 
-              <router-view />
-
-            </ion-col>
-            <ion-col />
-          </ion-row>
-        </ion-grid>
-      </main>
-
-      <footer>
-        <ion-grid>
-          <ion-row>
-            <ion-col />
-            <ion-col size="10">
-              <FooterContent />
-            </ion-col>
-            <ion-col />
-          </ion-row>
-        </ion-grid>
-      </footer>
-
-    </ion-content>
-  </ion-page>
 </template>
 
 <style scoped>
