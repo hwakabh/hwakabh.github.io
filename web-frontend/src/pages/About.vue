@@ -111,6 +111,7 @@ axios.get('/api/v1/cv/publications')
           <div>
             <ul>
               <li>2024-10 - Present: Resident Solutions Engineer / <a href="https://www.hashicorp.com/" target="_blank" rel="noopener noreferrer">HashiCorp</a></li>
+              <li>2021-01 - 2023-12: Chief Technology Officer / <a href="https://glocalist.co/ja-JP/" target="_blank" rel="noopener noreferrer">Glocalist</a></li>
               <li>2019-06 - 2024-10: Telco Solutions Architect / <a href="https://www.vmware.com" target="_blank" rel="noopener noreferrer">VMware</a><br>(merged by Broadcom)</li>
               <li>2015-04 - 2019-06: Delivery Specialist / <a href="https://www.emc.com" target="_blank" rel="noopener noreferrer">EMC Corporation </a><br>(merged by Dell Technologies)</li>
             </ul>
