@@ -42,7 +42,11 @@ const textCount = computed(() => {
   <section id="three" class="wrapper style1 fullscreen fade-up">
     <div class="inner">
       <h2>Contact</h2>
-      <p>Please feel free to get in touch! </p>
+      <p>
+        Please feel free to get in touch. I will wait to hear from you! <br>
+        The mail will be sent to my personal Gmail via backend API, and this form uses TLS for sending email with <a href="https://www.brevo.com" target="_blank" rel="noopener noreferrer">Brevo</a>. <br>
+        The contents and your personal information will be encrypted.
+      </p>
       <div v-if="isError">
         <p>
           Failed to send email, please try again after reload!
@@ -51,7 +55,7 @@ const textCount = computed(() => {
       <div v-if="isCompleted">
         <ThanksContent>
           <template v-slot:message>
-            Thanks!
+            Thanks! I will reply back soon!
           </template>
 
         <template v-if="senderEmail" v-slot:sender>
@@ -66,7 +70,7 @@ const textCount = computed(() => {
             <div class="fields">
               <div class="field half">
                 <label for="name">Name</label>
-                <input v-model="senderName" name="sendername" id="sendername" type="text">
+                <input v-model="senderName" name="sendername" id="sendername" type="text" placeholder="John Doe">
               </div>
               <div class="field half">
                 <label for="email">Email</label>
@@ -74,7 +78,7 @@ const textCount = computed(() => {
               </div>
               <div class="field">
                 <label for="body">Message</label>
-                <textarea v-model="senderBody" />
+                <textarea v-model="senderBody" placeholder=""/>
               </div>
             </div>
             <button type="submit">Send Message</button>
