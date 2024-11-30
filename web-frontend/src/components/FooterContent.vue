@@ -7,10 +7,9 @@ const props = defineProps({});
   <div class="inner">
     <ul class="menu">
       <li>&copy; Untitled. All rights reserved.</li>
-      <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+      <li>Design: <a href="http://html5up.net">HTML5 UP</a> | Revised: <a href="https://github.com/hwakabh">hwakabh</a></li>
     </ul>
   </div>
-<!-- <p class="copyright">(c) 2024 hwakabh All Right Reserved.</p> -->
 </template>
 
 <style scoped>
