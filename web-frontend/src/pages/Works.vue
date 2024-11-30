@@ -25,7 +25,7 @@ onMounted(() => {
       <h2>Personal Works</h2>
       <p>
         Some of the featured projects I have built, mainly for personal purpose or works as freelancer.<br>
-        Also there is a full list as repositories in <a href="https://github.com/hwakabh" target="_blank">GitHub</a>
+        Also there is a full list as repositories in <a href="https://github.com/hwakabh" target="_blank" rel="noopener noreferrer">GitHub</a>
       </p>
 
       <ul v-for="(w, idx) in workData"
