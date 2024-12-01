@@ -5,7 +5,6 @@ import { IconMail } from '@tabler/icons-vue';
 <template>
   <IconMail
     :stroke="1.5"
-    :fill="none"
     class="icon icon-tabler icon-tabler-mail"
     />
 </template>
