@@ -4,13 +4,13 @@
     {
       "title": "Bennu Official Homepage",
       "url": "https://bennu-official.page/home/",
-      "gitHubRepoUrl": "https://github.com/hwakabh/bennu-official",
+      "gitHubRepoUrl": "https://github.com/hwakabh/bennu-official.page",
       "descriptions": "Official Homepage of Bennu",
       "techStacks": [
         "Python",
         "Django",
-        "Kubernetes", "Google Kubernetes Engine",
-        "Cloud Native Builpacks", "Google Cloud Buildpacks",
+        "Kubernetes (Google Kubernetes Engine)",
+        "Cloud Native Builpacks (Google Cloud Buildpacks)",
       ],
     },
     {
@@ -27,21 +27,23 @@
     {
       "title": "6ow3idGirl",
       "url": "https://6ow3idgirl.com",
-      "gitHubRepoUrl": "https://github.com/hwakabh/6ow3idGirl",
+      "gitHubRepoUrl": "https://github.com/hwakabh/6ow3idGirl.com",
       "descriptions": "Official Homepage of 6ow 3id girl",
       "techStacks": [
         "Express",
+        "Next.js"
       ]
     },
     {
       "title": "waseda-mochida",
       "url": "",
-      "gitHubRepoUrl": "https://github.com/hwakabh/waseda-mochida",
+      "gitHubRepoUrl": "https://github.com/hwakabh/waseda-mochida.com",
       "descriptions": "Official Homepage of Waseda Mochida",
       "techStacks": [
         "Python",
         "Flask",
-        "LINE Pay"
+        "LINE Pay API",
+        "Heroku"
       ]
     },
     {
@@ -51,6 +53,7 @@
       "descriptions": "Luana Shanti Homepage hosted by WordPress",
       "techStacks": [
         "WordPress",
+        "CSS"
       ]
     },
   ]
