@@ -35,6 +35,11 @@ onMounted(() => {
           <strong><a :href="w.url" target="_blank"> {{ w.title }} </a></strong>
           <br>
           {{ w.descriptions }}
+          <br>
+          <span v-for="(t, idx) in w.techStacks" :key="idx">
+            {{ t }}
+            <span v-if="idx+1 != w.techStacks.length"> / </span>
+          </span>
         </li>
       </ul>
 
