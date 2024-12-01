@@ -4,8 +4,8 @@ import { IconBrandLinkedin } from '@tabler/icons-vue';
 
 <template>
   <IconBrandLinkedin
+    :stroke="1.5"
+    :fill="none"
     class="icon icon-tabler icon-tabler-brand-linkedin"
-    stroke={1.5}
-    fill="none"
     />
 </template>
