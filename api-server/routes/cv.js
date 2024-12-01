@@ -55,25 +55,6 @@ router.get('/educations', function(req, res, next) {
   });
 });
 
-router.get('/projects', async (req, res, next) => {
-  // #swagger.tags = ['CV']
-  // #swagger.summary = 'returns list of projects with static contents'
-  // #swagger.description = '/api/v1/cv/projects'
-  const projects = await axios.get(url)
-    .then(response => {
-      return response.data.projects
-    })
-    .catch(error => {
-      console.log(error);
-    })
-
-  res.header('Content-Type', 'application/json; charset=utf-8');
-  res.json({
-    "path": req.originalUrl,
-    "content": projects
-  });
-});
-
 router.get('/publications', function(req, res, next) {
   // #swagger.tags = ['CV']
   // #swagger.summary = 'returns list of publications with static contents'
