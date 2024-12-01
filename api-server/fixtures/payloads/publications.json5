@@ -3,7 +3,7 @@
   "list": [
     {
       title: 'VMware Explore 2022',
-      descriptions: 'Presentation of step-by-step automations of Kubernetes Operations',
+      descriptions: 'Presentation of step-by-step CI/CD pipeline design for Kubernetes Operations',
       date: '2022/11/16',
       filename: '20221116_VMware-Explore-2022-Japan_MA22278.pdf',
     },
@@ -15,9 +15,15 @@
     },
     {
       title: 'Graduation Thesis',
-      descriptions: 'Winner prediction of Soccer WorldCup 2018 with Ordered Probit model',
+      descriptions: 'Quantitative winner prediction of Soccer WorldCup 2018, using Ordered Probit model',
       date: '2015/02/02',
       filename: '20150202_Graduation_Thesis.pdf',
+    },
+    {
+      title: 'Competition Thesis (co-write)',
+      descriptions: 'Quantitative analysis of relations between romantic satisfactions and distance/communications, using Marginal Rate of Substitution.',
+      date: '2014/01/15',
+      filename: '20140115_SoC_Competition_Thesis.pdf',
     }
   ]
 }

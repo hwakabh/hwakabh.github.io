@@ -39,45 +39,53 @@ const textCount = computed(() => {
 </script>
 
 <template>
-  <h3>
-    Contact
-  </h3>
-  <p>
-    Please feel free to get in touch!
-  </p>
+  <section id="three" class="wrapper style1 fullscreen fade-up">
+    <div class="inner">
+      <h2>Contact</h2>
+      <p>
+        Please feel free to get in touch. I will wait to hear from you! <br>
+        The mail will be sent to my personal Gmail via backend API, and this form uses TLS for sending email with <a href="https://www.brevo.com" target="_blank" rel="noopener noreferrer">Brevo</a>. <br>
+        The contents and your personal information will be encrypted.
+      </p>
+      <div v-if="isError">
+        <p>
+          Failed to send email, please try again after reload!
+        </p>
+      </div>
+      <div v-if="isCompleted">
+        <ThanksContent>
+          <template v-slot:message>
+            Thanks! I will reply back soon!
+          </template>
 
-  <div v-if="isError">
-    <p>
-      Failed to send email!
-    </p>
-  </div>
-  <div v-if="isCompleted">
-    <!-- Override part of templates in Thanks.vue -->
-    <ThanksContent>
-      <template v-slot:message>
-        Thanks!
-      </template>
+        <template v-if="senderEmail" v-slot:sender>
+            {{ senderEmail }}
+          </template>
+        </ThanksContent>
+      </div>
 
-    <template v-if="senderEmail" v-slot:sender>
-        {{ senderEmail }}
-      </template>
-    </ThanksContent>
-  </div>
+      <div class="style1">
+        <section>
+          <form v-if="!isCompleted && !isError" @submit.prevent="sendMail">
+            <div class="fields">
+              <div class="field half">
+                <label for="name">Name</label>
+                <input v-model="senderName" name="sendername" id="sendername" type="text" placeholder="John Doe">
+              </div>
+              <div class="field half">
+                <label for="email">Email</label>
+                <input v-model="senderEmail" name="Email" id="email" type="email" placeholder="me@example.com">
+              </div>
+              <div class="field">
+                <label for="body">Message</label>
+                <textarea v-model="senderBody" placeholder=""/>
+              </div>
+            </div>
+            <button type="submit">Send Message</button>
+          </form>
+        </section>
+      </div>
+    </div>
+  </section>
 
-  <form v-if="!isCompleted && !isError" @submit.prevent="sendMail">
-	  <label for="name">Your Name</label>
-  	  <input v-model="senderName" name="sendername" id="sendername">
-    <br>
-
-    <label for="email">Your Email</label>
-  	  <input v-model="senderEmail" name="Email" id="email" type="email" placeholder="me@example.com">
-    <br>
-
-	  <label for="body">Body</label>
-  	  <textarea v-model="senderBody"/>
-    <br>
-    <div>Word Count: {{ textCount }}</div>
-
-    <button type="submit">Submit</button>
-	</form>
 </template>

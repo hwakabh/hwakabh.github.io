@@ -146,20 +146,6 @@
         }
       }
     },
-    "/api/v1/cv/projects": {
-      "get": {
-        "tags": [
-          "CV"
-        ],
-        "summary": "returns list of projects with static contents",
-        "description": "/api/v1/cv/projects",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/api/v1/cv/publications": {
       "get": {
         "tags": [

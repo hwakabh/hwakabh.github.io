@@ -2,8 +2,6 @@
 import axios from "axios";
 import { ref, onMounted } from "vue";
 
-import GitHubIcon from '../components/icons/GitHub.vue';
-
 const workData = ref([]);
 axios.get('/api/v1/works')
   .then((resp) => {
@@ -14,7 +12,6 @@ axios.get('/api/v1/works')
     console.log(err);
   })
 
-
 // Vue lifecycle hooks
 onMounted(() => {
   console.log(workData);
@@ -23,27 +20,29 @@ onMounted(() => {
 
 
 <template>
-  <h3>
-    Personal Works
-  </h3>
+  <section id="two" class="wrapper style2-alt fullscreen spotlights">
+    <div class="inner">
+      <h2>Personal Works</h2>
+      <p>
+        Some of the featured projects I have built, mainly for personal purpose or works as freelancer.<br>
+        Also there is a full list as repositories in <a href="https://github.com/hwakabh" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </p>
 
-  <div v-for="(w, idx) in workData"
-  :key="idx"
-  class="work-detail" >
-    <p>
-      <a :href="w.url" target="_blank"> {{ w.title }} </a>
+      <ul v-for="(w, idx) in workData"
+        :key="idx"
+        class="alt work-detail" >
+        <li>
+          <strong><a :href="w.url" target="_blank"> {{ w.title }} </a></strong>
+          <br>
+          {{ w.descriptions }}
+          <br>
+          <span v-for="(t, idx) in w.techStacks" :key="idx">
+            {{ t }}
+            <span v-if="idx+1 != w.techStacks.length"> / </span>
+          </span>
+        </li>
+      </ul>
 
-      <a v-if="w.gitHubRepoUrl" :href="w.gitHubRepoUrl" target="_blank">
-        <component :is="GitHubIcon" />
-      </a>
-      <br>
-
-      Descriptions: {{ w.descriptions }}
-      <br>
-      Technical Stacks: {{ w.techStacks }}
-      <br>
-      {{ w.imageUrl }}
-    </p>
-  </div>
-
+    </div>
+  </section>
 </template>
