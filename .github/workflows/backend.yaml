@@ -63,7 +63,7 @@ jobs:
         with:
           image: 'us-central1-docker.pkg.dev/hwakabh-dev/gh-pages/api:latest'
           service: 'gh-pages-api-server'
-          flags: '--min-instances=3'
+          flags: '--service-min-instances=3'
           env_vars: |
             MAIL_API_KEY=${{ env.MAIL_API_KEY }}
             RAPID_API_KEY=${{ env.RAPID_API_KEY }}
