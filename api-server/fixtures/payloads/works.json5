@@ -3,14 +3,14 @@
   "list": [
     {
       "title": "Bennu Official Homepage",
-      "url": "https://bennu-official.page/home/",
+      "url": "https://www.bennu-official.page",
       "gitHubRepoUrl": "https://github.com/hwakabh/bennu-official.page",
       "descriptions": "Official Homepage of Bennu",
       "techStacks": [
         "Python",
         "Django",
-        "Kubernetes (Google Kubernetes Engine)",
-        "Cloud Native Builpacks (Google Cloud Buildpacks)",
+        "Railway",
+        "Nixpacks"
       ],
     },
     {
