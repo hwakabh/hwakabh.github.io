@@ -18,7 +18,7 @@
       "title": "random-travelers",
       "url": "https://random-travelers.com",
       "gitHubRepoUrl": "https://github.com/hwakabh/random-travelers",
-      "descriptions": "Hobby application with randomness, with type-safed Python coding. Build with genric MVC using FastAPI.",
+      "descriptions": "Hobby application with randomness, with type-safe Python coding. Build with generic MVC using FastAPI.",
       "techStacks": [
         "Python",
         "Poetry",
