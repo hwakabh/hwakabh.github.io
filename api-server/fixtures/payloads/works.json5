@@ -5,10 +5,11 @@
       "title": "Bennu Official Homepage",
       "url": "https://www.bennu-official.page",
       "gitHubRepoUrl": "https://github.com/hwakabh/bennu-official.page",
-      "descriptions": "Official Homepage of Bennu",
+      "descriptions": "Bennu Official Homepage with generic MVC using Django.",
       "techStacks": [
         "Python",
         "Django",
+        "MySQL",
         "Railway",
         "Nixpacks"
       ],
@@ -17,10 +18,12 @@
       "title": "random-travelers",
       "url": "https://random-travelers.com",
       "gitHubRepoUrl": "https://github.com/hwakabh/random-travelers",
-      "descriptions": "People who make thier decisions decided by Cloud Native",
+      "descriptions": "Hobby application with randomness, with type-safe Python coding. Build with generic MVC using FastAPI.",
       "techStacks": [
         "Python",
         "Poetry",
+        "MySQL",
+        "Mako",
         "jQuery"
       ]
     },
@@ -28,7 +31,7 @@
       "title": "6ow3idGirl",
       "url": "https://6ow3idgirl.com",
       "gitHubRepoUrl": "https://github.com/hwakabh/6ow3idGirl.com",
-      "descriptions": "Official Homepage of 6ow 3id girl",
+      "descriptions": "Official Homepage of 6ow 3id girl with generic MVC using Next.js.",
       "techStacks": [
         "Express",
         "Next.js"
@@ -36,14 +39,15 @@
     },
     {
       "title": "waseda-mochida",
-      "url": "",
+      "url": "https://www.waseda-mochida.com",
       "gitHubRepoUrl": "https://github.com/hwakabh/waseda-mochida.com",
-      "descriptions": "Official Homepage of Waseda Mochida",
+      "descriptions": "Official Homepage of Waseda Mochida with full-stack features of Heroku.",
       "techStacks": [
         "Python",
         "Flask",
+        "PostgreSQL",
         "LINE Pay API",
-        "Heroku"
+        "Heroku",
       ]
     },
     {
