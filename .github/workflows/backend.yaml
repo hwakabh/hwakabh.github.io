@@ -2,13 +2,10 @@ name: Backend CI
 on:
   push:
     branches:
-      - '**'
-      - '!main'
-      # - main
+      - main
     # All updates except api-server/** will be ignored
     paths:
-      - '**'
-      # - 'api-server/**'
+      - 'api-server/**'
   workflow_dispatch:
 
 env:
@@ -30,17 +27,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # https://github.com/docker/login-action#github-container-registry
       - name: Login to GHCR
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-        # https://github.com/docker/login-action#github-container-registry
 
+      # https://github.com/buildpacks/github-actions#setup-pack-cli-action
       - name: Install pack
         uses: buildpacks/github-actions/setup-pack@v5.8.5
-        # https://github.com/buildpacks/github-actions#setup-pack-cli-action
 
       # Google Cloud buildpacks
       #   https://cloud.google.com/docs/buildpacks/builders
