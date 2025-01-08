@@ -7,7 +7,8 @@ on:
       # - main
     # All updates except api-server/** will be ignored
     paths:
-      - 'api-server/**'
+      - '**'
+      # - 'api-server/**'
   workflow_dispatch:
 
 env:
