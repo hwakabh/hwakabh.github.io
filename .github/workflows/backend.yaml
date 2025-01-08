@@ -22,7 +22,7 @@ jobs:
 
     # For Workload Identity
     permissions:
-      # contents: 'read'
+      contents: 'write'
       id-token: 'write'
 
     steps:
