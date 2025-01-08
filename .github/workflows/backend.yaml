@@ -22,7 +22,8 @@ jobs:
 
     # For Workload Identity & push to GHCR
     permissions:
-      contents: 'write'
+      contents: 'read'
+      packages: 'write'
       id-token: 'write'
 
     steps:
