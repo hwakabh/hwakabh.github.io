@@ -2,7 +2,9 @@ name: Backend CI
 on:
   push:
     branches:
-      - main
+      - '**'
+      - '!main'
+      # - main
     # All updates except api-server/** will be ignored
     paths:
       - 'api-server/**'
@@ -30,6 +32,29 @@ jobs:
         uses: buildpacks/github-actions/setup-pack@v5.8.5
         # https://github.com/buildpacks/github-actions#setup-pack-cli-action
 
+      # # https://github.com/docker/login-action#google-artifact-registry-gar
+      # # Note that Cloud Run supports only GAR(GCR) and DockerHub
+      # - name: Login to GAR
+      #   uses: docker/login-action@v3
+      #   with:
+      #     registry: us-central1-docker.pkg.dev
+      #     username: oauth2accesstoken
+      #     password: ${{ steps.auth.outputs.access_token }}
+
+      # Google Cloud buildpacks
+      #   https://cloud.google.com/docs/buildpacks/builders
+      #   https://cloud.google.com/docs/buildpacks/nodejs
+      - name: Publish packages
+        run: |
+          pack build ghcr.io/hwakabh/gh-pages-api:latest \
+            --builder gcr.io/buildpacks/builder:latest \
+            --path ./api-server/ \
+            --publish
+          # pack build us-central1-docker.pkg.dev/hwakabh-dev/gh-pages/api:latest \
+          #   --builder gcr.io/buildpacks/builder:latest \
+          #   --path ./api-server/ \
+          #   --publish
+
       # https://github.com/google-github-actions/auth
       - name: Auth with Google Cloud
         id: auth
@@ -39,29 +64,10 @@ jobs:
           service_account: 'gh-action-cloudrun@hwakabh-dev.iam.gserviceaccount.com'
           token_format: access_token
 
-      # https://github.com/docker/login-action#google-artifact-registry-gar
-      # Note that Cloud Run supports only GAR(GCR) and DockerHub
-      - name: Login to GAR
-        uses: docker/login-action@v3
-        with:
-          registry: us-central1-docker.pkg.dev
-          username: oauth2accesstoken
-          password: ${{ steps.auth.outputs.access_token }}
-
-      # Google Cloud buildpacks
-      #   https://cloud.google.com/docs/buildpacks/builders
-      #   https://cloud.google.com/docs/buildpacks/nodejs
-      - name: Publish packages
-        run: |
-          pack build us-central1-docker.pkg.dev/hwakabh-dev/gh-pages/api:latest \
-            --builder gcr.io/buildpacks/builder:latest \
-            --path ./api-server/ \
-            --publish
-
       # https://github.com/google-github-actions/deploy-cloudrun
       - uses: 'google-github-actions/deploy-cloudrun@v2'
         with:
-          image: 'us-central1-docker.pkg.dev/hwakabh-dev/gh-pages/api:latest'
+          image: 'ghcr.io/hwakabh/gh-pages-api:latest'
           service: 'gh-pages-api-server'
           flags: '--service-min-instances=3'
           env_vars: |
