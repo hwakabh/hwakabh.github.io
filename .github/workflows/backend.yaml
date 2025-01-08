@@ -64,7 +64,7 @@ jobs:
       # https://github.com/google-github-actions/deploy-cloudrun
       - uses: 'google-github-actions/deploy-cloudrun@v2'
         with:
-          image: 'ghcr.io/hwakabh/gh-pages-api:latest'
+          image: 'us-central1-docker.pkg.dev/hwakabh-dev/ghcr/hwakabh/gh-pages-api:latest'
           service: 'gh-pages-api-server'
           flags: '--service-min-instances=3'
           env_vars: |
