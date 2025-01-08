@@ -18,7 +18,7 @@ env:
 jobs:
   image_build_and_push:
     name: Build & Ship OCI image
-    runs-on: ubuntu-24.08
+    runs-on: ubuntu-24.04
 
     # For Workload Identity & push to GHCR
     permissions:
