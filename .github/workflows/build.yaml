@@ -51,7 +51,7 @@ jobs:
       - name: Build Express App
         if: steps.filter.outputs.api == 'true'
         run: |
-          pack build us-central1-docker.pkg.dev/hwakabh-dev/gh-pages/api:latest \
+          pack build ghcr.io/hwakabh/gh-pages-api:local \
             --builder gcr.io/buildpacks/builder:latest \
             --path ./api-server/
 
