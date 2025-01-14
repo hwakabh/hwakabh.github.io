@@ -13,7 +13,7 @@ on:
 jobs:
   build_and_test:
     name: Build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout
@@ -46,7 +46,7 @@ jobs:
 
       - name: Install pack
         if: steps.filter.outputs.api == 'true'
-        uses: buildpacks/github-actions/setup-pack@v5.8.5
+        uses: buildpacks/github-actions/setup-pack@v5.8.6
 
       - name: Build Express App
         if: steps.filter.outputs.api == 'true'
