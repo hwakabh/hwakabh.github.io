@@ -7,7 +7,7 @@ Personal Portfolio Page with GitHub fullstack
 ## Architecture
 Based on JavaScript/TypeScript and fullstack features of GitHub \
 Frontend: Vue.js \
-Backend: Express \
+Backend: Express
 
 ![Arch](./app-diagram.drawio.svg)
 
