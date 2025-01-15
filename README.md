@@ -5,9 +5,9 @@
 Personal Portfolio Page with GitHub fullstack
 
 ## Architecture
-Based on JavaScript/TypeScript and fullstack features of GitHub
-Frontend: Vue.js
-Backend: Express
+Based on JavaScript/TypeScript and fullstack features of GitHub \
+Frontend: Vue.js \
+Backend: Express \
 
 ![Arch](./app-diagram.drawio.svg)
 
@@ -27,11 +27,12 @@ Depending on your development requirements, there is a few options to use Makefi
 
 ## Motivations
 Leveraging fullstack features of GitHub such as:
-- GitHub Actions
+- GitHub Actions & GitHub Apps
 - GHCR (GitHub Container Registry)
 - Release automation
 - Code Owners and scaffolded policy files (contributing/Security policies or Code of Conduct)
 - Dependabot
+- CodeQL
 - Issue/PR templates
 
 Personal workouts with JavaScript ecosystem
