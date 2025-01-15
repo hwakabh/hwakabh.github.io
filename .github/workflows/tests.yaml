@@ -1,4 +1,4 @@
-name: Build CI
+name: Tests CI
 
 on:
   pull_request:
@@ -11,18 +11,17 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-apps:
-    name: Build Apps
+  tests:
+    name: Tests
     runs-on: ubuntu-24.04
+
+    permissions:
+      issues: write
+      contents: read
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Setup node.js environment
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20.9.0
 
       - name: Filter Path
         uses: dorny/paths-filter@v3
@@ -31,17 +30,23 @@ jobs:
           filters: '.github/config/paths-filter.yaml'
         # https://github.com/dorny/paths-filter
 
-      # Run only for Backend
-      - name: Install pack
-        if: steps.filter.outputs.api == 'true'
-        uses: buildpacks/github-actions/setup-pack@v5.8.7
+      - name: Setup node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.9.0
 
-      - name: Build Express App
+      # Run only for Backend
+      - name: Install dependencies
         if: steps.filter.outputs.api == 'true'
+        working-directory: ./api-server
         run: |
-          pack build ghcr.io/hwakabh/gh-pages-api:local \
-            --builder gcr.io/buildpacks/builder:latest \
-            --path ./api-server/
+          npm ci
+
+      - name: Run Jest
+        if: steps.filter.outputs.api == 'true'
+        working-directory: ./api-server
+        run: |
+          npx jest
 
       # Run only for Frontend
       - name: Install dependencies
@@ -50,10 +55,8 @@ jobs:
         run: |
           npm ci
 
-      - name: Build Vite App
+      - name: Run Vitest for compoenent testings
         if: steps.filter.outputs.ui == 'true'
         working-directory: ./web-frontend
-        env:
-          VITE_API_ENDPOINT: ${{ secrets.VITE_API_ENDPOINT }}
         run: |
-          npx vite build
+          npx vitest run

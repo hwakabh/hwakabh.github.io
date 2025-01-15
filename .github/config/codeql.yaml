@@ -1,0 +1,8 @@
+# ref:
+# for `javascript-typescript` codeql-suites: https://github.com/github/codeql/tree/main/javascript/ql/src/codeql-suites
+# for `actions` codeql-suites: https://github.com/github/codeql/tree/main/actions/ql/src/codeql-suites
+
+name: "CodeQL configurations"
+
+queries:
+  - uses: security-and-quality
