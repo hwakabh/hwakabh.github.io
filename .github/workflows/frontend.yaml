@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-and-deploy:
+  build-and-upload:
     name: Build Vue app and Deploy
     runs-on: ubuntu-24.04
     steps:
