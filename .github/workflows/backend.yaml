@@ -13,7 +13,7 @@ env:
   RAPID_API_KEY: ${{ secrets.RAPID_API_KEY }}
 
 jobs:
-  image_build_and_push:
+  build-and-ship:
     name: Build & Ship OCI image
     runs-on: ubuntu-24.04
 
