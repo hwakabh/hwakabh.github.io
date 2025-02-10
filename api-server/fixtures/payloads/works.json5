@@ -39,7 +39,7 @@
     },
     {
       "title": "waseda-mochida",
-      "url": "https://www.waseda-mochida.com",
+      "url": "https://waseda-mochida.com",
       "gitHubRepoUrl": "https://github.com/hwakabh/waseda-mochida.com",
       "descriptions": "Official Homepage of Waseda Mochida with full-stack features of Heroku.",
       "techStacks": [
