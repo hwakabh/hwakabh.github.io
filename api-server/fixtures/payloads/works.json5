@@ -60,5 +60,18 @@
         "CSS"
       ]
     },
+    {
+      "title": "mosaiqued",
+      "url": "https://mosaiqued-1037550336239.us-central1.run.app/",
+      "gitHubRepoUrl": "",
+      "descriptions": "Dynamic Mosaic Art generator",
+      "techStacks": [
+        "Python",
+        "OpenCV",
+        "numpy",
+        "Starlette",
+        "asyncio",
+      ]
+    },
   ]
 }
