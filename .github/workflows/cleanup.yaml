@@ -7,8 +7,8 @@ on:
   workflow_dispatch:
 
 permission:
-  packages: write
-  deployments: write
+  packages: delete
+  deployments: delete
 
 jobs:
   clean-ghcr:
