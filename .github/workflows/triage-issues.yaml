@@ -35,3 +35,16 @@ jobs:
           include-title: 1
           include-body: 0
         # https://github.com/github/issue-labeler
+
+  semantic-issue:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check Issue Title
+        uses: hwakabh/semantic-issue-action@v0.4.1
+        with:
+          repo: 'hwakabh/hwakabh.github.io'
+          token: ${{ secrets.GITHUB_TOKEN }}
+        # https://github.com/hwakabh/semantic-issue-action

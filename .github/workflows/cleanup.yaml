@@ -6,6 +6,10 @@ on:
     - cron: '0 10 * * *'
   workflow_dispatch:
 
+permission:
+  packages: write
+  deployments: write
+
 jobs:
   clean-ghcr:
     name: Delete old unused container images
