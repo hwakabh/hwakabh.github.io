@@ -2,13 +2,14 @@ name: Cleanup
 
 on:
   schedule:
-    # Runs on 19:00 JST every day, note that cron syntax applied as UTC
-    - cron: '0 10 * * *'
+    # Runs on 23:30 JST every day, note that cron syntax applied as UTC
+    - cron: "30 14 * * *"
   workflow_dispatch:
 
-permission:
-  packages: delete
-  deployments: delete
+permissions:
+  packages: write
+  deployments: write
+  issues: write
 
 jobs:
   clean-ghcr:
@@ -29,7 +30,23 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Clean up Environments
-        uses: hwakabh/envkeeper@v0.5.0
+        uses: hwakabh/envkeeper@v0.5.1
         with:
           repo: ${{ github.repository }}
           token: ${{ secrets.PAT_CLEANUP }}
+
+  close-issues:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/stale@v9
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          stale-issue-message: "This issue is stale because it has been open for 14 days with no activity."
+          close-issue-message: "This issue was closed because it has been inactive for 3 days since being marked as staled."
+          stale-issue-label: "staled"
+          # NOTE: for validating behaviors of cron, set minimal values
+          days-before-issue-stale: 14
+          days-before-issue-close: 3
+          # Does not apply for PRs
+          days-before-pr-stale: -1
+          days-before-pr-close: -1
