@@ -24,7 +24,7 @@
     "happy-dom": "^17.2.2",
     "http-server": "^14.1.1",
     "vite": "^6.2.0",
-    "vitest": "^3.0.7"
+    "vitest": "^3.0.8"
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-arm64-gnu": "4.34.9",
