@@ -38,7 +38,7 @@ jobs:
 
       # https://github.com/buildpacks/github-actions#setup-pack-cli-action
       - name: Install pack
-        uses: buildpacks/github-actions/setup-pack@v5.8.8
+        uses: buildpacks/github-actions/setup-pack@v5.8.9
 
       # Google Cloud buildpacks
       #   https://cloud.google.com/docs/buildpacks/builders
