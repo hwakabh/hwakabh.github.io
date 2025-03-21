@@ -24,6 +24,8 @@ jobs:
 
       - name: Make release PR
         uses: bakunyo/git-pr-release-action@master
+        with:
+          args: '--squashed'
         env:
           TZ: "Asia/Tokyo"
           GITHUB_TOKEN: ${{ secrets.PAT_GIT_PR_RELEASE }}
