@@ -38,8 +38,11 @@ tests:
 
 
 # Branch name matches
+bugs:
+- head-branch: ['^fix/', '^hotfix/']
+
 dependabot:
 - head-branch: ['^dependabot/']
 
-bugs:
-- head-branch: ['^fix/', '^hotfix/']
+security:
+- head-branch: ['^security/']
