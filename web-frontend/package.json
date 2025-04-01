@@ -24,10 +24,10 @@
     "happy-dom": "^17.4.4",
     "http-server": "^14.1.1",
     "vite": "^6.2.4",
-    "vitest": "^3.0.9"
+    "vitest": "^3.1.1"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-arm64-gnu": "4.37.0",
-    "@rollup/rollup-linux-x64-gnu": "4.37.0"
+    "@rollup/rollup-linux-arm64-gnu": "4.38.0",
+    "@rollup/rollup-linux-x64-gnu": "4.38.0"
   }
 }
