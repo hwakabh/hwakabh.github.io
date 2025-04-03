@@ -86,7 +86,9 @@ axios.get('/api/v1/cv/publications')
           <br>
           <div>
             <ul class="actions">
-              <li><router-link to="/help" class="button primary">Blog</router-link></li>
+              <div class="button primary"><a href="https://hwakabh.tumblr.com" target="_blank" rel="noopener noreferrer">Blog</a></div>
+              <!-- TODO: implement http-clients to tumbler via backend API -->
+              <!-- <li><router-link to="/help" class="button primary">Blog</router-link></li> -->
             </ul>
           </div>
         </div>

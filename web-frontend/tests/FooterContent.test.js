@@ -7,7 +7,7 @@ describe("component: FooterComponent.vue", () => {
     expect("FooterContent").toBe(FooterContent.__name)
   })
   test("Component can accept value as props and render as HTML", async () => {
-    const expected = "© Untitled. All rights reserved.Design: HTML5 UP";
+    const expected = "© hwakabh. All rights reserved.Design: HTML5 UPRevised: hwakabhreleased for free under the Creative Commons";
     const wrapper = shallowMount(FooterContent)
     // // if compoenents has props
     // const wrapper = shallowMount(FooterContent, { props: {
