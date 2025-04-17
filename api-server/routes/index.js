@@ -15,7 +15,7 @@ router.get('/', function(req, res) {
 router.get('/health', function(req, res) {
   // #swagger.tags = ['General']
   // #swagger.summary = 'Endpoint of probe target'
-  // #swagger.description = '/healthz'
+  // #swagger.description = '/health'
   res.status(200).json({
     "status": "ok"
   });
