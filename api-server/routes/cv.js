@@ -78,7 +78,6 @@ router.get('/publications/:filename', function(req, res, next) {
   // #swagger.tags = ['CV']
   // #swagger.summary = 'send file with pdf format'
   // #swagger.description = '/api/v1/cv/publications/:filename'
-  console.log(`Start sending file: ${req.params.filename}`);
   res.setHeader('Content-type', 'application/pdf');
   res.sendFile(`${req.params.filename}`, { root: __dirname + "/../fixtures/pubs/" })
 });
