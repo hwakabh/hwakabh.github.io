@@ -67,4 +67,3 @@ jobs:
           flags: '--service-min-instances=3'
           env_vars: |
             MAIL_API_KEY=${{ env.MAIL_API_KEY }}
-            RAPID_API_KEY=${{ env.RAPID_API_KEY }}

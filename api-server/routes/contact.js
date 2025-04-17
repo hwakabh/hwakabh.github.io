@@ -3,7 +3,6 @@ const router = express.Router();
 const axios = require('axios');
 
 
-// TODO: passing through request body to external SMTP services
 router.post('/', async (req, res, next) => {
   // #swagger.tags = ['Contact']
   // #swagger.summary = 'invoke external API to send email'

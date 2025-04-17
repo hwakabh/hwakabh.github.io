@@ -40,7 +40,7 @@ app.use(cors(
     ],
     credentials: true,
   }
-))
+));
 
 // --- Routes
 const indexRouter = require('./routes/index');
