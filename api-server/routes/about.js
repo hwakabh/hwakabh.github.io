@@ -2,9 +2,7 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 
-const https = require('https');
 const jsdom = require('jsdom');
-const { type } = require('os');
 const { JSDOM } = jsdom;
 
 router.get('/', (req, res, next) => {
