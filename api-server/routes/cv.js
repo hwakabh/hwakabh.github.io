@@ -1,13 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const axios = require('axios');
-
-const rapidApiUrl = 'https://linkedin-api8.p.rapidapi.com/';
-const linkedInUsername = 'hiroyuki-wakabayashi-61b661157';
-const url = rapidApiUrl + '?username=' + linkedInUsername;
-
-axios.defaults.headers.common['x-rapidapi-host'] = 'linkedin-api8.p.rapidapi.com';
-axios.defaults.headers.common['x-rapidapi-key'] = process.env.RAPID_API_KEY;
 
 
 router.get('/', (req, res, next) => {
@@ -18,27 +10,6 @@ router.get('/', (req, res, next) => {
   res.json({
     "path": req.originalUrl,
     "content": "Here is root of CV"
-  });
-});
-
-router.get('/certifications', async (req, res, next) => {
-  // #swagger.tags = ['CV']
-  // #swagger.summary = '/api/v1/cv/certifications'
-  // #swagger.description = 'returns list of certifications with static contents'
-  const certificates = await axios.get(url)
-    .then(response => {
-      return response.data.certifications
-    })
-    .catch(error => {
-      console.log(error);
-    })
-
-  res.header({
-    'Content-Type': 'application/json; charset=utf-8',
-  });
-  res.json({
-    "path": req.originalUrl,
-    "content": certificates
   });
 });
 
