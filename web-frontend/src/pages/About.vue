@@ -112,7 +112,7 @@ axios.get('/api/v1/cv/publications')
           <h3>Career History</h3>
           <div>
             <ul>
-              <li>2024/10 - Present: Resident Solutions Engineer at <a href="https://www.hashicorp.com/" target="_blank" rel="noopener noreferrer">HashiCorp</a></li>
+              <li>2024/10 - Present: Resident Solutions Engineer at <a href="https://www.hashicorp.com/" target="_blank" rel="noopener noreferrer">HashiCorp</a><br>(merged by IBM)</li>
               <li>2021/01 - 2023/12: Chief Technology Officer at <a href="https://glocalist.co/ja-JP/" target="_blank" rel="noopener noreferrer">Glocalist</a></li>
               <li>2019/06 - 2024/10: Telco Solutions Architect at <a href="https://www.vmware.com" target="_blank" rel="noopener noreferrer">VMware</a><br>(merged by Broadcom)</li>
               <li>2015/04 - 2019/06: Delivery Specialist at <a href="https://www.emc.com" target="_blank" rel="noopener noreferrer">EMC Corporation </a><br>(merged by Dell Technologies)</li>
