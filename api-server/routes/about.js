@@ -39,7 +39,7 @@ router.get('/books', async (req, res, next) => {
     "path": req.originalUrl,
     "content": books
   });
-})
+});
 
 
 // TODO: need to add scraping features
