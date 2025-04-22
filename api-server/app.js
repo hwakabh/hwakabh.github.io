@@ -19,6 +19,7 @@ const rateLimit = require('express-rate-limit');
 const apiRequestLimiter = rateLimit({
   windowMs: 1 * 60 * 1000,
   max: 20,
+  validate: { xForwardedForHeader: false },
   handler: (req, res) => {
     return res.status(429).json({
       path: req.originalUrl,
