@@ -11,8 +11,6 @@ updates:
       - "dependabot"
       - "deps"
       - "app(api)"
-    reviewers:
-      - "hwakabh"
     groups:
       non-majors:
         applies-to: version-updates
@@ -31,8 +29,6 @@ updates:
       - "dependabot"
       - "deps"
       - "app(ui)"
-    reviewers:
-      - "hwakabh"
     groups:
       non-majors:
         applies-to: version-updates
@@ -51,8 +47,6 @@ updates:
       - "dependabot"
       - "deps"
       - "ci"
-    reviewers:
-      - "hwakabh"
     groups:
       non-majors:
         applies-to: version-updates
