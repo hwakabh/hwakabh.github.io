@@ -14,14 +14,14 @@
   "dependencies": {
     "@tabler/icons-vue": "^3.33.0",
     "axios": "^1.9.0",
-    "vue": "^3.5.14",
+    "vue": "^3.5.15",
     "vue-router": "^4.5.1",
     "vue-writer": "^2.0.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.4",
     "@vue/test-utils": "^2.4.6",
-    "happy-dom": "^17.4.7",
+    "happy-dom": "^17.5.4",
     "http-server": "^14.1.1",
     "vite": "^6.3.5",
     "vitest": "^3.1.4"
