@@ -27,7 +27,7 @@
     "vitest": "^3.2.2"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-arm64-gnu": "4.41.1",
-    "@rollup/rollup-linux-x64-gnu": "4.41.1"
+    "@rollup/rollup-linux-arm64-gnu": "4.42.0",
+    "@rollup/rollup-linux-x64-gnu": "4.42.0"
   }
 }
