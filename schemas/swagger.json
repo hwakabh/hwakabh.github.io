@@ -226,6 +226,34 @@
           }
         }
       }
+    },
+    "/api/v1/_config/git": {
+      "get": {
+        "tags": [
+          "Config"
+        ],
+        "summary": "Fetch raw data from hwakabh/dotfiles",
+        "description": "/api/v1/_config/git",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/_config/bashrc": {
+      "get": {
+        "tags": [
+          "Config"
+        ],
+        "summary": "Fetch raw data from hwakabh/dotfiles",
+        "description": "/api/v1/_config/bashrc",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   }
 }
