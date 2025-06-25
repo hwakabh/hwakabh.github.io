@@ -24,7 +24,7 @@
     "morgan": "~1.10.0"
   },
   "devDependencies": {
-    "jest": "^30.0.2",
+    "jest": "^30.0.3",
     "nodemon": "^3.1.10"
   }
 }
