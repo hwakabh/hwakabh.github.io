@@ -9,7 +9,7 @@
     "test": "vitest run"
   },
   "engines": {
-    "node": "20.9.0"
+    "node": "22.12.0"
   },
   "dependencies": {
     "@tabler/icons-vue": "^3.34.0",
