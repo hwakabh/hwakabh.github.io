@@ -33,7 +33,7 @@ jobs:
       - name: Setup node.js environment
         uses: actions/setup-node@v4
         with:
-          node-version: 20.9.0
+          node-version: 22.12.0
 
       # Run only for Backend
       - name: Install dependencies
@@ -75,7 +75,7 @@ jobs:
       - name: Setup node.js environment
         uses: actions/setup-node@v4
         with:
-          node-version: 20.9.0
+          node-version: 22.12.0
 
       - name: Filter Path
         uses: dorny/paths-filter@v3
