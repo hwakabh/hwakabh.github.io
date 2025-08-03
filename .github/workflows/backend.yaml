@@ -11,7 +11,7 @@ on:
 
 env:
   MAIL_API_KEY: ${{ secrets.MAIL_API_KEY }}
-  RAPID_API_KEY: ${{ secrets.RAPID_API_KEY }}
+  TUMBLR_CONSUMER_KEY: ${{ secrets.TUMBLR_CONSUMER_KEY }}
 
 jobs:
   build-and-ship:
@@ -67,3 +67,4 @@ jobs:
           flags: '--service-min-instances=3'
           env_vars: |
             MAIL_API_KEY=${{ env.MAIL_API_KEY }}
+            TUMBLR_CONSUMER_KEY=${{ env.TUMBLR_CONSUMER_KEY }}
