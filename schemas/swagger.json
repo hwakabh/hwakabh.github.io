@@ -226,6 +226,20 @@
           }
         }
       }
+    },
+    "/api/v1/posts/": {
+      "get": {
+        "tags": [
+          "Logues"
+        ],
+        "summary": "returns dynamic content for the blog page",
+        "description": "/api/v1/logues",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   }
 }
