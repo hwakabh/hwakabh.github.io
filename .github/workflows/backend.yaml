@@ -64,7 +64,7 @@ jobs:
         with:
           image: 'us-central1-docker.pkg.dev/hwakabh-dev/ghcr/hwakabh/gh-pages-api:latest'
           service: 'gh-pages-api-server'
-          flags: '--service-min-instances=3'
+          flags: '--service-min-instances=1'
           env_vars: |
             MAIL_API_KEY=${{ env.MAIL_API_KEY }}
             TUMBLR_CONSUMER_KEY=${{ env.TUMBLR_CONSUMER_KEY }}
