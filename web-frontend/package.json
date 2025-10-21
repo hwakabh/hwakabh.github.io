@@ -21,13 +21,13 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.1",
     "@vue/test-utils": "^2.4.6",
-    "happy-dom": "^20.0.3",
+    "happy-dom": "^20.0.7",
     "http-server": "^14.1.1",
-    "vite": "^7.1.10",
+    "vite": "^7.1.11",
     "vitest": "^3.2.4"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-arm64-gnu": "4.52.4",
-    "@rollup/rollup-linux-x64-gnu": "4.52.4"
+    "@rollup/rollup-linux-arm64-gnu": "4.52.5",
+    "@rollup/rollup-linux-x64-gnu": "4.52.5"
   }
 }
