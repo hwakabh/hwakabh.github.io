@@ -21,7 +21,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Filter Path
         uses: dorny/paths-filter@v3
@@ -70,7 +70,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Setup node.js environment
         uses: actions/setup-node@v6
@@ -87,7 +87,7 @@ jobs:
       # Run only for Backend
       - name: Install pack
         if: steps.filter.outputs.api == 'true'
-        uses: buildpacks/github-actions/setup-pack@v5.9.6
+        uses: buildpacks/github-actions/setup-pack@v5.9.7
 
       - name: Build Express App
         if: steps.filter.outputs.api == 'true'

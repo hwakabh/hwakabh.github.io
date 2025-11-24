@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Assign author to issue
         if: github.event.action == 'opened'
@@ -40,10 +40,10 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Check Issue Title
-        uses: hwakabh/semantic-issue-action@v0.6.1
+        uses: hwakabh/semantic-issue-action@v0.6.2
         with:
           repo: 'hwakabh/hwakabh.github.io'
           token: ${{ secrets.GITHUB_TOKEN }}
