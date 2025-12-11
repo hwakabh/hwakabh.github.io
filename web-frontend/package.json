@@ -15,7 +15,7 @@
     "@tabler/icons-vue": "^3.35.0",
     "axios": "^1.13.2",
     "vue": "^3.5.25",
-    "vue-router": "^4.6.3",
+    "vue-router": "^4.6.4",
     "vue-writer": "^2.0.2"
   },
   "devDependencies": {
