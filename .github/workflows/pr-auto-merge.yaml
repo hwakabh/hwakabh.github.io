@@ -1,7 +1,6 @@
 name: Dependabot Automerge with delay
 
 on:
-  # PRが更新された時、または定期実行（念のため）
   pull_request:
     types:
       - opened
