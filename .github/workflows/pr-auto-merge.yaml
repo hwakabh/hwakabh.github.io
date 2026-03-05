@@ -1,0 +1,43 @@
+name: Dependabot Automerge with delay
+
+on:
+  # PRが更新された時、または定期実行（念のため）
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+  schedule:
+    # check every 1 hour
+    - cron: '0 * * * *'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  dependabot-merge:
+    runs-on: ubuntu-latest
+    # Check PRs only created by dependabot
+    if: github.actor == 'dependabot[bot]'
+    steps:
+      - name: Check PR age and Merge
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        run: |
+          # Fetch timestamp of PR created (ISO8601 format)
+          CREATED_AT=$(gh pr view $PR_URL --json createdAt --template '{{.createdAt}}')
+          
+          # Calculate time delta
+          NOW=$(date +%s)
+          CREATED_SEC=$(date -d "$CREATED_AT" +%s)
+          DIFF_SEC=$((NOW - CREATED_SEC))
+          
+          # Check if passing 24 hours or not
+          if [ $DIFF_SEC -ge 86400 ]; then
+            echo "24 hours have passed. Enabling auto-merge..."
+            gh pr merge $PR_URL --auto --merge
+          else
+            echo "Waiting for 24 hours to pass. (Current age: $((DIFF_SEC / 3600)) hours)"
+          fi
